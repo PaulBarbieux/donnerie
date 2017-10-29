@@ -27,4 +27,4 @@
 
 app - local.php
 app - paperjam.php
-/clientFiles/*
+/webroot/clientFiles/*
