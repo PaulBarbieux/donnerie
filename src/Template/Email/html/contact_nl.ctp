@@ -1,0 +1,2 @@
+<P><I>Message envoyé par <A href="mailto:<?= $email ?>"><?= $name ?></A> via le formulaire de contact sur cette adresse : <A href="<?= $url ?>"><?= $url ?></A></I></P>
+<P><strong><?= $message ?></strong></P>

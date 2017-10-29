@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Ruda');
+/*
+	Main styles
+*/
+BODY {
+	font-family: 'Ruda', sans-serif;
+	background-image:url("../img/bg-triangular.png");
+	margin-top:80px;
+}
+
+/*
+	Header
+*/
+NAV.navbar {
+	margin-bottom:20px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	background: #84D5CB url(../img/bg-triangular.png);
+	/*
+	background: -moz-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
+	background: -webkit-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
+	background: -o-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
+	background: -ms-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
+	background: linear-gradient(180deg, #DEEBEB 0%, #7BB0AF 100%);
+	*/
+}
+NAV.navbar .nav-item {
+	border-left: 1px solid #CCE0E0;
+}
+NAV.navbar .btn-group {
+	padding-top: .425rem;
+	padding-bottom: .425rem;
+}
+NAV.navbar .btn-group .btn {
+	border-color:#FFF;
+	color:#FFF;
+}
+NAV.navbar .btn-group .btn.active {
+	color:#222;
+	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:         inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+/*
+	Card
+*/
+.card {
+	display:block; /* Bug IE 11 https://github.com/twbs/bootstrap/pull/22288 */
+	border-radius: 0;
+	border-color: #EEE;
+	-webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+	box-shadow:         0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.card .card-header {
+	border-bottom-style:none;
+}
+.card .card-header H1,
+.card .card-header H2,
+.card .card-header H3 {
+	margin-bottom:0;
+}
+/*
+	Card in packery (items)
+*/
+.card.grid-item {
+	font-size:0.8rem;
+}
+.card.grid-item .card-header {
+	padding: 0.5rem;
+}
+.card.grid-item .card-title {
+	font-size:1.2rem;
+	padding: 0;
+	margin:0;
+	overflow:hidden;
+}
+.card.grid-item .card-illu {
+	width:100%;
+	height:200px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+.card.grid-item .card-block {
+	padding: 0.7rem;
+}
+.card.grid-item.item-r .card-header {
+	background-color:#999999;
+}
+.card.grid-item.item-r .card-title {
+	color:#FFF !important;
+}
+/*
+	For items
+*/
+.item-img {
+	position:relative;
+}
+.item-state {
+	position:absolute;
+	bottom:0;
+	right:0;
+	display:block;
+	padding: 1px 3px;
+	zoom: 1;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+.card .item-state,
+A.card .item-state {
+	color:#FFF !important;
+}
+.item-state.new {
+	background-color: #009900;
+}
+.item-state.used {
+	background-color:#FF6600;
+}
+.item-state.broken {
+	background-color:#CC0000;
+}
+.item-indicators {
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	padding: 1px 3px;
+}
+.item-same-street {
+	cursor:help;
+	background-image:url("../img/item-same-street.png");
+	display:block;
+	width:34px;
+	height:34px;
+	position:absolute;
+	top:-12px;
+	right:-12px;
+}
+.card.item-r .item-state {
+	background-color:#999999;
+}
+.item-dialog TD {
+	padding:0;
+}
+.item-description-left {
+	background-image:url("../img/item-description-left.png");
+	background-repeat:no-repeat;
+	background-position:right top;
+	width:25px;
+}
+.item-description {
+	padding:10px;
+	border-bottom: solid 2px #DDDDDD;
+}
+/* Actions placed in a block */
+.block-actions {
+	position:absolute;
+	top:2px;
+	right:2px;
+}
+/*
+	Link card
+*/
+A.card * {
+	color:#333 !important;
+}
+A.card:hover {
+	border-color: #0275d8 !important;
+}
+A.card:hover,
+A.card:focus {
+	text-decoration:none !important;
+}
+/*
+	Paginator
+*/
+.paginator {
+    text-align: center;
+	padding-top:10px;
+	margin-top:10px;
+	border-top: dotted 2px #DDD;
+}
+.paginator UL LI {
+    float: none;
+    display: inline-block;
+	padding: 0 5px;
+	border-left: solid 1px #DDD;
+}
+.paginator UL LI:first-child {
+	border-left-style: none;
+}
+.paginator P {
+    text-align: right;
+    color: rgba(0, 0 ,0 , 0.54);
+}
+.paginator UL LI A {
+    color: rgba(0, 0 ,0 , 0.54);
+}
+.paginator UL LI.active A {
+    background-color: #DCE47E;
+    color: #FFF;
+    font-weight: bold;
+    cursor: default;
+}
+.paginator UL .disabled:hover A {
+    background: none;
+}
+.asc:after {
+    content: " \2193";
+}
+.desc:after {
+    content: " \2191";
+}
+/*
+	More styles for inputs
+*/
+.custom-file {
+	width:100%;
+}
+.custom-file-control:lang(fr)::before {
+	content: "Parcourir";
+}
+.custom-file-control:lang(fr)::after {
+	content: "Choisir un fichier...";
+}
+:-ms-input-placeholder.form-control {
+    color: #BBB;
+    opacity: 1;
+}
+.form-group > LABEL {
+	font-weight:bold;
+}
+::-webkit-input-placeholder {
+  color: #AAA !important;
+  opacity:1;
+}
+::-moz-placeholder {
+  color: #AAA !important;
+  opacity:1;
+}
+:-ms-input-placeholder {
+  color: #AAA !important;
+  opacity:1;
+}
+::placeholder {
+  color: #AAA !important;
+  opacity:1;
+}
+/*
+	Gravatar : afficher une lettre quand il n'y a pas d'image (Gravatar renvoie une image transparente) 
+*/
+.gravatar {
+	background-repeat:no-repeat;
+	background-size: cover;	
+}
+NAV .gravatar {
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow:    0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+	box-shadow:         0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+/* CakePHP error message */
+.error-message {
+	color:#990000;
+}
+/* Image with border */
+.img-border {
+	padding:10px;
+	border: solid 1px #EEE;
+}
+/*
+	Contact
+*/
+#contact-block {
+	z-index: 99999;
+	position:fixed;
+	right:5px;
+	bottom:0;
+}
+#contact-block > A {
+	padding: 2px 5px;
+	border-radius: 4px 4px 0 0 ;
+	background-color:#FF5151;
+	color:#FFF;
+}
+#contact-block FORM {
+	display:none;
+	padding:10px;
+	border-radius: 0 4px 0 0 ;
+	background-color:#FF5151;
+	width:350px;
+}
+/*
+	Image uploading
+*/
+.image-upload INPUT[type="file"] {
+	display: none;
+}
+.image-upload .image-preview {
+	cursor: pointer;
+	position:relative;
+}
