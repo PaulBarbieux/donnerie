@@ -15,7 +15,7 @@
 		</DIV>
 		<DIV class="card-block">
 			<DIV class="item-img">
-				<IMG src="<?= $this->Url->build("/".$item->image_1_url) ?>" class="img-fluid">
+				<IMG src="<?= $this->Url->build($item->image_1_url ? "/".$item->image_1_url : "/img/item-".$item->type."-no-image.jpg") ?>" class="img-fluid">
 				<SPAN class="item-state <?= h($item->state) ?>"><?= h($item->category->title_fr) ?></SPAN>
 			</DIV>
 		</DIV>
