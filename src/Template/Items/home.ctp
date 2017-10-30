@@ -32,9 +32,21 @@
 			</DIV>
 		</DIV>
 		<DIV class="card-block">
-			<P><?= nl2br(h(truncateText($item->description,200))) ?></P>
+			<P><?= nl2br(h($this->Text->truncate($item->description,200))) ?></P>
 		</DIV>
 	</A>
 <?php endforeach; ?>
 </div>
-<div class="col-12 text-center"><?= $this->element('paginator_home') ?></div>
+<div class="col-12 text-center">
+	<DIV class="paginator">
+		<UL>
+			<LI><?= $this->Paginator->counter(['format' => __('Il y a {{count}} annonces')]) ?></LI>
+			<?php
+				if ($this->Paginator->hasPrev()) 
+					echo $this->Paginator->prev('< ' . __('Annonces plus récentes'));
+				if ($this->Paginator->hasNext()) 
+					echo $this->Paginator->next(__('Annonces plus anciennes') . ' >');
+			?>
+		</UL>
+	</DIV>
+</div>
