@@ -32,7 +32,7 @@
 			</DIV>
 		</DIV>
 		<DIV class="card-block">
-			<P><?= nl2br(h($this->Text->truncate($item->description,200))) ?></P>
+			<P><?= nl2br(h($this->Text->truncate($item->description,HOME_TRUNCATE_TEXT))) ?></P>
 		</DIV>
 	</A>
 <?php endforeach; ?>

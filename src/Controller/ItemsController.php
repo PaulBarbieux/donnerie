@@ -58,7 +58,7 @@ class ItemsController extends AppController
 	public function home()
 	{
 		$items = $this->Items->find('all' , [ 'order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Users', 'Categories' ] ] );
-        $this->paginate = ['limit'=>15];
+        $this->paginate = ['limit'=>HOME_LIMIT_ITEMS];
         $this->set(compact('items'), $this->paginate($items));
 		$this->set('root',WWW_ROOT);
         $this->set('_serialize', ['items']);
