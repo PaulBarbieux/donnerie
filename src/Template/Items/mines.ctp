@@ -27,7 +27,7 @@
 			</DIV>
 		</DIV>
 		<DIV class="card-block">
-			<P><?= h($item->description) ?></P>
+			<P><?= nl2br(h($item->description)) ?></P>
 		</DIV>
 		<DIV class="block-actions">
 			<DIV class="btn-group">
