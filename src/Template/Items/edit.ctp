@@ -9,7 +9,7 @@
 		</DIV>
 		<DIV class="card-block">
 			<?php
-				$this->loadHelper('Form', [ 'templates' => 'app_form', ]); 
+				$this->loadHelper('Form', [ 'templates' => 'app_form' ]); 
 			?>
 			<?= $this->Form->create($item, ['enctype' => 'multipart/form-data']) ?>
 			<DIV class="row">
