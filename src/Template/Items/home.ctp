@@ -1,4 +1,7 @@
-<?php $this->assign('title', __("Accueil")); ?>
+<?php
+$this->assign('title', __("Accueil"));
+$dateNow = new DateTime();
+?>
 
 <div class="col-sm-12 grid">
 <?php foreach ($items as $item): ?>
@@ -20,7 +23,16 @@
 		</DIV>
 		<DIV class="card-block">
 			<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="http://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=25&d=blank">
-			<?= h($item->user->alias) . " " . __("le") . " " . h($item->created->i18nFormat("d MMMM YYYY")) ?>
+			<?php
+			$diff = $dateNow->diff(new DateTime($item->created->i18nFormat("YYYY-MM-d")));
+			switch ($diff->days) {
+				case 0 : $createdString = __("aujourd'hui"); break;
+				case 1 : $createdString = __("hier"); break;
+				case 2 : $createdString = __("avant-hier"); break;
+				default : $createdString = __("il y a {0} jours",$diff->days);
+			}
+			?>
+			<?= h($item->user->alias) . ", " . $createdString ?>
 		</DIV>
 		<DIV class="card-block">
 			<DIV class="item-img">
