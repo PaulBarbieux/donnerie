@@ -29,7 +29,7 @@
 				<DIV class="col-md-7">
 					<h1><?= h($item->title) ?></h1>
 					<P><?= $this->Html->link($item->category->title_fr, [ 'action' => 'category', $item->category->id]) ?>
-						/ <?= ( $item->type == "d" ? h($item->state_label) : __("Je cherche") ) ?></P>
+						/ <SPAN class="item-state <?= ( $item->type == "d" ? $item->state : "request" ) ?>"><?= ( $item->type == "d" ? h($item->state_label) : __("Je cherche") ) ?></SPAN></P>
 					<TABLE class="item-dialog">
 						<TR>
 							<TD class="item-gravatar" valign="top">
