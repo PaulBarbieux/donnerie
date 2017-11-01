@@ -6,22 +6,6 @@
 </div>
 <div class="col-sm-12 grid">
 	<?php foreach ($items as $item): ?>
-	<A href="<?= $this->Url->build("/items/view/".$item->id) ?>" class="card grid-item" style="width:200px; ">
-		<DIV class="card-header">
-			<h2 class="card-title"><?= h($item->title) ?></h2>
-		</DIV>
-		<DIV class="card-block">
-			Posté le <?= h($item->created->i18nFormat("d MMMM YY")) ?>
-		</DIV>
-		<DIV class="card-block">
-			<DIV class="item-img">
-				<IMG src="<?= $this->Url->build($item->image_1_url ? "/".$item->image_1_url : "/img/item-".$item->type."-no-image.jpg") ?>" class="img-fluid">
-				<SPAN class="item-state <?= h($item->state) ?>"><?= h($item->category->title_fr) ?></SPAN>
-			</DIV>
-		</DIV>
-		<DIV class="card-block">
-			<P><?= nl2br(h($item->description)) ?></P>
-		</DIV>
-	</A>
+	<?= $this->element('grid-item', ['item'=>$item, 'category'=>false, 'user'=>h($owner->alias)] ) ?>
 	<?php endforeach; ?>
 </div>

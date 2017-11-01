@@ -89,9 +89,10 @@ class ItemsController extends AppController
 			$this->Flash->error(__("Utilisateur inconnu"));
 			return $this->redirect(['action'=>"home"]);
 		} else {
-			$items = $this->Items->find('all' , [ 'order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Categories' ] ] )
+			$items = $this->Items->find('all' , [ 'order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Categories' , 'Users' ] ] )
 				->where([ 'user_id'=>$owner_id ]);
 			$this->set(compact('owner','items'));
+			$this->set('root',WWW_ROOT);
 			$this->set('_serialize', ['owner','items']);
 			$this->viewBuilder()->setLayout("packery");
 		}
@@ -106,6 +107,7 @@ class ItemsController extends AppController
 		$items = $this->Items->find( 'all' , [ 'order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Users' ] ] )
 				->where([ 'category_id'=>$category_id ]);
 		$this->set(compact('items', 'category'));
+		$this->set('root',WWW_ROOT);
 		$this->set('_serialize', ['items']);
 		$this->viewBuilder()->setLayout("packery");
 	}
