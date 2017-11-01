@@ -22,7 +22,7 @@
 	<P>Quant au bilinguisme, le site a le mérite d'en tenir compte, mais les traductions sont en cours.</P>
 	<H2>Qui est derrière ce site ?</H2>
 	<P>Nous aimerions vous dire qu'une solide équipe motivée est derrière ce projet...</P>
-	<P>En fait, <S>nous</S> je suis seul à le développer. C'est mon métier. Mais c'est aussi une mission en dehors de mon bureau : sous le nom d'<A href="http://www.extrapaul.be" target="_blank">ExtraPaul</A>, je développe des sites pour des associations et acteurs actifs dans la société civile.</P>
+	<P>En fait, <S>nous</S> je suis seul à le développer. C'est mon métier. Mais c'est aussi une mission en dehors de mon bureau : sous le nom d'<A href="http://www.extrapaul.be" target="_blank">ExtraPaul</A>, je développe des sites pour des associations et acteurs de la société civile.</P>
 	<H2>Puis-je installer ce site pour ma commune ou mon quartier ?</H2>
 	<P>Oui. Mon but est bien de proposer un site facilement exploitable par n'importe quels commune, quartier, groupe.</P>
 	<P>Et mon souhait est de le voir adopté par un maximum de communautés...</P>
