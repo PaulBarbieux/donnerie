@@ -99,18 +99,19 @@ NAV.navbar .btn-group .btn.active {
 	position:relative;
 }
 .item-state {
+	padding: 1px 3px;
+	color:#FFF;
+}
+.grid-item .item-state,
+A.grid-item .item-state {
+	color:#FFF !important;
 	position:absolute;
 	bottom:0;
 	right:0;
 	display:block;
-	padding: 1px 3px;
 	zoom: 1;
 	filter: alpha(opacity=70);
 	opacity: 0.7;
-}
-.card .item-state,
-A.card .item-state {
-	color:#FFF !important;
 }
 .item-state.new {
 	background-color: #009900;
@@ -120,6 +121,9 @@ A.card .item-state {
 }
 .item-state.broken {
 	background-color:#CC0000;
+}
+.item-state.request {
+	background-color:#999999;
 }
 .item-indicators {
 	position:absolute;
