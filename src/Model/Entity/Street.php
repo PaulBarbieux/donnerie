@@ -8,9 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $title_fr
- * @property string $description_fr
  * @property string $title_nl
- * @property string $description_nl
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -32,4 +30,12 @@ class Street extends Entity
         '*' => true,
         'id' => false
     ];
+	
+	/*
+		Nom dans la bonne langue
+	*/
+	protected function _getName()
+    {
+		return $this->_properties['name_' . LG];
+    }
 }

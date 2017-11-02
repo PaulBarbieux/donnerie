@@ -20,7 +20,7 @@ class StreetsTable extends Table
         parent::initialize($config);
 
         $this->setTable('streets');
-        $this->setDisplayField('name_fr');
+        $this->setDisplayField('name'); // Nom dans la bonne langue (voir l'entité)
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
