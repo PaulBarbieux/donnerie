@@ -35,7 +35,7 @@ class CategoriesTable extends Table
         parent::initialize($config);
 
         $this->setTable('categories');
-        $this->setDisplayField('title_fr');
+        $this->setDisplayField('title'); // Champ virtuel, dans la bonne langue : voir l'entité
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

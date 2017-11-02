@@ -28,7 +28,7 @@
 				</DIV>
 				<DIV class="col-md-7">
 					<h1><?= h($item->title) ?></h1>
-					<P><?= $this->Html->link($item->category->title_fr, [ 'action' => 'category', $item->category->id]) ?>
+					<P><?= $this->Html->link($item->category->title, [ 'action' => 'category', $item->category->id]) ?>
 						/ <SPAN class="item-state <?= ( $item->type == "d" ? $item->state : "request" ) ?>"><?= ( $item->type == "d" ? h($item->state_label) : __("Je cherche") ) ?></SPAN></P>
 					<TABLE class="item-dialog">
 						<TR>
@@ -44,7 +44,7 @@
 									</TR>
 									<TR>
 										<TD></TD>
-										<TD class="item-date"><?= $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id] , ['title' => "Voir ses annonces"]) ?>
+										<TD class="item-date"><?= $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id] , ['title' => __("Voir ses annonces")]) ?>
 											le <?= h($item->created->i18nFormat("d MMMM YYYY")) ?></TD>
 									</TR>
 								</TABLE>
@@ -56,7 +56,7 @@
 					<?php if ($this->request->session()->read("Auth.User.id")) { ?>
 					<FORM method="post">
 						<TEXTAREA name="message" class="form-control" rows="5" required></TEXTAREA>
-						<BUTTON type="submit" name="contact" class="btn btn-primary" value="send"><i class="fa fa-paper-plane" aria-hidden="true"></i> Envoyer</BUTTON>
+						<BUTTON type="submit" name="contact" class="btn btn-primary" value="send"><i class="fa fa-paper-plane" aria-hidden="true"></i> <?= __("Envoyer") ?></BUTTON>
 					</FORM>
 					<?php } else { ?>
 					<P><?= __("Vous devez") . " " . $this->Html->link(__("vous connecter"), array('controller'=>"users", 'action'=>"login", '?'=>['redirect'=>"/items/view/".$item->id])) . " " . __("pour pouvoir contacter {0}" , h($item->user->alias) ) ?>.</P>

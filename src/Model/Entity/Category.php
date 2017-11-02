@@ -2,6 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\View\Helper\SessionHelper;
 
 /**
  * Category Entity
@@ -32,4 +33,19 @@ class Category extends Entity
         '*' => true,
         'id' => false
     ];
+	
+	/*
+		Titre dans la bonne langue
+	*/
+	protected function _getTitle()
+    {
+		return $this->_properties['title_' . LG];
+    }
+	/*
+		Description dans la bonne langue
+	*/
+	protected function _getDescription()
+    {
+		return $this->_properties['description_' . LG];
+    }
 }

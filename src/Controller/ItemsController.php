@@ -199,7 +199,7 @@ class ItemsController extends AppController
             	$this->Flash->error(__('The item could not be saved. Please, try again.'));
 			}
         }
-        $categories = $this->Items->Categories->find('list', ['valueField'=> function($category) { return $category->title_fr." (".lcfirst($category->description_fr).")"; } ]);
+        $categories = $this->Items->Categories->find('list', ['valueField'=> function($category) { return $category->title." (".lcfirst($category->description).")"; } ]);
         $this->set(compact('item', 'categories'));
         $this->set('_serialize', ['item']);
     }

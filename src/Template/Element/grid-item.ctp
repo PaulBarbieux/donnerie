@@ -37,7 +37,7 @@ $heightImgGrid = round(176 / $widthSrc * $heightSrc);
 				<?php if ($category) { ?>
 				<?= $category ?>
 				<?php } else { ?>
-				<?= h($item->category->title_fr) ?>
+				<?= h($item->category->title) ?>
 				<?php } ?>
 			</SPAN>
 			<?php if ($item->user->street == $this->request->session()->read("Auth.User.street") and $item->user->id != $this->request->session()->read("Auth.User.id")) { ?>

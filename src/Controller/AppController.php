@@ -66,8 +66,10 @@ class AppController extends Controller
 		*/
 		if ($this->request->session()->check('Config.language')) {
 			I18n::locale($this->request->session()->read('Config.language'));
+			define('LG',substr($this->request->session()->read('Config.language'),0,2));
         } else {
 			I18n::locale("fr_FR");
+			define('LG','fr');
 		}
 
         /*
