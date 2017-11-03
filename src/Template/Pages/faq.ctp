@@ -10,7 +10,12 @@
 	<H2>Combien d'annonces puis-je poster&nbsp;?</H2>
 	<P>Autant que vous voulez ! Au plus vous en postez, au plus notre site sera vivant. Toutefois, n'oubliez pas de retirer les annonces dont les objets ont trouvé acquéreur.</P>
 	<H2>Que signifie le bandeau de couleur sur la photo de chaque annonce&nbsp;?</H2>
-	<P>Le bandeau reprend la catégorie de l'objet (jardin, vêtement, électroménager...), sur un fond de couleur : vert (en excellent état), orange (usagé mais remplit sa mission), rouge (état médiocre).</P>
+	<P>Le bandeau reprend la catégorie de l'objet (jardin, vêtement, électroménager...), sur un fond de couleur : </P>
+	<UL>
+		<LI><SPAN class="item-state new">vert</SPAN> : en excellent état, comme neuf, à peine utilisé;</LI>
+		<LI><SPAN class="item-state used">orange</SPAN> : usagé mais remplit sa mission;</LI>
+		<LI><SPAN class="item-state broken">rouge</SPAN> : état médiocre, pour les pièces ou à réparer.</LI>
+	</UL>
 	<H2>Pourquoi doit-on indiquer sa rue lors de l'inscription ?</H2>
 	<P>Le site limite son <A href="<?= $this->Url->build("/pages/info") ?>" title="En voici la raison">utilisation à une localité</A>.</P>
 	<P>Le choix de votre rue permet de nous assurer que vous habitez ou travaillez dans notre commune. Nous n'allons pas vérifier l'information, mais vous pourriez faire l'objet de plaintes d'autres utilisateurs du site s'il se révélait que vous êtes sans lien avec la commune.</P>
@@ -32,6 +37,16 @@
 		<LI>Vous serez plus vite débarrass&eacute; de votre objet.</LI>
 		<LI>Et puis, donner est tellement gratifiant !</LI>
 	</OL>
+	<H2>Pourquoi certaines annonces ont un titre blanc sur fond gris&nbsp;?</H2>
+	<P>Il s'agit de demandes : vous récupérez des pneus pour en faire des sculptures, vous cherchez après des bocaux pour vos confitures, ou vous avez besoin de cartons pour déménager ? Postez une annonce de type "Je cherche"...</P>
+	<H2>Puis-je voir les annonces d'une personne en particulier&nbsp;?</H2>
+	<P>Oui, de manière indirecte : cliquez d'abord sur une de ses annonces. Vous êtes dans le détail de l'annonce, et le pseudodyme de l'annonceur est un lien. Cliquez dessus : vous voyez toutes ses annonces.</P>
+	<H2>Puis-je voir les annonces d'une catégorie en particulier&nbsp;?</H2>
+	<P>Oui, de manière indirecte, et pour autant qu'il existe au moins une annonce dans la catégorie qui vous intéresse.</P>
+	<P>Quand vous êtes dans le détail d'une annonce, sa catégorie est un lien : cliquez dessus pour voir toutes les annonces de cette catégorie.</P>
+	<H2>Pourquoi certaines annonces apparaissent avec une étoile bleue ?</H2>
+	<P><IMG src="<?= $this->Url->build("img/item-same-street.png") ?>"> Ces annonces sont postées par un habitant de votre rue. Donc, un voisin !</P>
+	<P>Attention, ces étoiles ne peuvent apparaître que si vous êtes identifié sur le site...</P>
 	<H2>Pourquoi certaines personnes ont leur photo et moi pas ?</H2>
 	<P>Nous utilisons <A href="https://fr.gravatar.com/" target="_blank">le service en ligne Gravatar</A> pour trouver la photo attachée à votre adresse email. Vous devez donc vous inscrire sur Gravatar pour avoir votre photo sur notre site.</P>
 	<P>Ce service, gratuit, est utilisé par des milliers de sites web. Votre avantage est de retrouver la même photo (souvent appelée "avatar") sur les sites utilisant Gravatar, et le nôtre est de simplifier la gestion de votre profil.</P>
