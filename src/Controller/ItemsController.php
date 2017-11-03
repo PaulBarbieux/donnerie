@@ -180,7 +180,7 @@ class ItemsController extends AppController
 				}
 			}
 			if (isset($filesResults['errors'])) {
-				$this->Flash->error(__($filesResults['errors'][0]));
+				$this->Flash->error($filesResults['errors'][0]);
 			} elseif ($this->Items->save($item)) {
 				// Send email to admin
 				$email = new Email();
@@ -249,7 +249,7 @@ class ItemsController extends AppController
 			}
 			// Messages
 			if (isset($filesResults['errors'])) {
-				$this->Flash->error(__($filesResults['errors'][0]));
+				$this->Flash->error($filesResults['errors'][0]);
             } elseif ($this->Items->save($item)) {
                 $this->Flash->success(__("L'annonce est modifiée."));
 				if ($admin) {
