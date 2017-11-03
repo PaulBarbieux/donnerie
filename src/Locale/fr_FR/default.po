@@ -4,530 +4,577 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2017-07-29 13:13+0200\n"
-"PO-Revision-Date: 2017-07-29 13:24+0200\n"
+"POT-Creation-Date: 2017-11-02 16:16+0100\n"
+"PO-Revision-Date: 2017-11-02 16:24+0100\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.0.1\n"
-"Last-Translator: \n"
-"Language: fr_FR\n"
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/CategoriesController.php:57;82
+#: Controller/AppController.php:60
+msgid "Veuillez vous connecter pour pouvoir faire cette action"
+msgstr ""
+
+#: Controller/AppController.php:132
+msgid "Votre message a été envoyé. Merci."
+msgstr ""
+
+#: Controller/AppController.php:179
+msgid ""
+"{0} est trop grande. Choisissez une autre image ou réduisez celle-ci avec un "
+"programme d'image."
+msgstr ""
+
+#: Controller/AppController.php:182
+msgid "{0} ({1}) n'est pas un format accepté : gif, jpg, png."
+msgstr ""
+
+#: Controller/AppController.php:187
+msgid ""
+"{0} est trop en largeur ou trop en hauteur : {1}px / {2}px. Veuillez choisir "
+"une image avec des proportions standard."
+msgstr ""
+
+#: Controller/CategoriesController.php:22 Controller/StreetsController.php:15
+#: Controller/UsersController.php:36
+msgid "Action invalide."
+msgstr ""
+
+#: Controller/CategoriesController.php:68;93
 msgid "The category has been saved."
 msgstr "La catégorie est enregistrée."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/CategoriesController.php:60;86
+#: Controller/CategoriesController.php:71;97
 msgid "The category could not be saved. Please, try again."
 msgstr "La catégoriée n'a pas pu être enregistrée."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/CategoriesController.php:104
+#: Controller/CategoriesController.php:115
 msgid ""
 "La catégorie est supprimée. Les annonces l'utilisant n'apparaissent plus."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/CategoriesController.php:106
+#: Controller/CategoriesController.php:117
 msgid "The category could not be deleted. Please, try again."
 msgstr "La catégorie n'a pas pu être supprimée."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:87
+#: Controller/ItemsController.php:89
 msgid "Utilisateur inconnu"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:163
+#: Controller/ItemsController.php:154
 msgid "Votre message a été envoyé à "
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:194
+#: Controller/ItemsController.php:196
 msgid "Votre annonce est en ligne."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:197;246
+#: Controller/ItemsController.php:199;261
 msgid "The item could not be saved. Please, try again."
 msgstr "L'annonce ne peut pas être enregistrée."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:239
+#: Controller/ItemsController.php:254
 msgid "L'annonce est modifiée."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:268
-msgid "L'anonce est supprimée."
+#: Controller/ItemsController.php:283
+msgid "L'annonce est supprimée."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/ItemsController.php:270
+#: Controller/ItemsController.php:285
 msgid "The item could not be deleted. Please, try again."
 msgstr "L'annonce n'a pas pu être supprimée."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:35
-msgid "Action invalide."
+#: Controller/StreetsController.php:45;61
+msgid "The street has been saved."
+msgstr "La rue est enregistrée."
+
+#: Controller/StreetsController.php:48;64
+msgid "The street could not be saved. Please, try again."
+msgstr "La rue ne peut pas être enregistrée."
+
+#: Controller/StreetsController.php:75
+msgid ""
+"Cette rue est supprimée. Cela n'impacte pas les utilisateurs ayant déjà "
+"choisi cette rue."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:85
+#: Controller/StreetsController.php:77
+msgid "The street could not be deleted. Please, try again."
+msgstr "La rue n'a pas pu être supprimée."
+
+#: Controller/UsersController.php:86
 msgid "Vous n'avez pas rempli deux fois le même mot de passe"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:102
+#: Controller/UsersController.php:104
 msgid ""
-"Vous êtes enregistré. Un email de confirmation vient de vous être envoyé."
+"Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. "
+"Cela peut prendre quelques minutes - vérifiez votre dossier des spams."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:107
+#: Controller/UsersController.php:109
 msgid "Cet email est déjà enregistré."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:110;152
+#: Controller/UsersController.php:111
+msgid "Ce pseudonyme est hélas déjà pris. Choisissez-en un autre."
+msgstr ""
+
+#: Controller/UsersController.php:113;157
 msgid "The user could not be saved. Please, try again."
 msgstr "Problème lors de l'enregistrement de l'utilasateur."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:126
+#: Controller/UsersController.php:131
 msgid "Erreur technique"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:149
+#: Controller/UsersController.php:154
 msgid "The user has been saved."
 msgstr "L'utilisateur est enregistré."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:173
+#: Controller/UsersController.php:173
+msgid "Les deux encodages du mot de passe ne correspondent pas."
+msgstr ""
+
+#: Controller/UsersController.php:179
+msgid "Modifications enregistrées."
+msgstr ""
+
+#: Controller/UsersController.php:181
+msgid "The user could not be saved."
+msgstr "Problème lors de l'enregistrement de l'utilasateur."
+
+#: Controller/UsersController.php:200
 msgid "The user has been deleted."
 msgstr "L'utilasateur est supprimé."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:175
+#: Controller/UsersController.php:202
 msgid "The user could not be deleted. Please, try again."
 msgstr "Problème technique lors de la suppression de l'utilisateur."
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Controller/UsersController.php:188
+#: Controller/UsersController.php:218
 msgid "Invalid username or password, try again"
 msgstr "L'email ou le mot de passe est invalide"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/index.ctp:2
+#: Template/Categories/index.ctp:2 Template/Element/header.ctp:45
 msgid "Categories"
 msgstr "Catégories"
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Categories/index.ctp:14
-#: web/Donnerie/www//Template/Categories/view.ctp:8;65
-#: web/Donnerie/www//Template/Items/index.ctp:16
-#: web/Donnerie/www//Template/Users/index.ctp:13
-#: web/Donnerie/www//Template/Users/view.ctp:8;61
+#: Template/Categories/index.ctp:18 Template/Items/index.ctp:17
+#: Template/Streets/index.ctp:16 Template/Users/index.ctp:14
+#: Template/Users/view.ctp:8;61
 msgid "Actions"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Categories/index.ctp:25
+#: Template/Categories/index.ctp:31
 msgid ""
 "Êtes-vous sûr de supprimer la catégorie {0} ? Les annonces de cette "
 "catégorie ne s'afficheront plus."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:9
-msgid "Edit Category"
-msgstr "Modifier la catégorie"
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:10
-msgid "Delete Category"
-msgstr "Supprimer la catégorie"
-
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Categories/view.ctp:10;83
-#: web/Donnerie/www//Template/Users/view.ctp:79
-msgid "Are you sure you want to delete # {0}?"
-msgstr "Êtes-vous sûr de supprimer {0} ?"
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:11
-msgid "List Categories"
-msgstr "Liste des catégories"
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:12
-msgid "New Category"
-msgstr "Nouvelle catégorie"
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:13
-#: web/Donnerie/www//Template/Users/view.ctp:13
-msgid "List Donations"
-msgstr "Liste des annonces"
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:14
-#: web/Donnerie/www//Template/Users/view.ctp:14
-msgid "New Donation"
-msgstr "Nouvelle annonce"
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:21
-msgid "Title Fr"
+#: Template/Element/grid-item.ctp:25
+msgid "aujourd'hui"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:25
-msgid "Title Nl"
+#: Template/Element/grid-item.ctp:26
+msgid "hier"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Categories/view.ctp:29;54
-#: web/Donnerie/www//Template/Users/view.ctp:50
-msgid "Id"
+#: Template/Element/grid-item.ctp:27
+msgid "avant-hier"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Categories/view.ctp:33;63
-#: web/Donnerie/www//Template/Users/view.ctp:37;59
-msgid "Created"
+#: Template/Element/grid-item.ctp:28
+msgid "il y a {0} jours"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Categories/view.ctp:37;64
-#: web/Donnerie/www//Template/Users/view.ctp:41;60
-msgid "Modified"
+#: Template/Element/grid-item.ctp:44
+msgid "C'est dans votre rue"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:42
-msgid "Description Fr"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:46
-msgid "Description Nl"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:50
-#: web/Donnerie/www//Template/Users/view.ctp:46
-msgid "Related Donations"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:55
-#: web/Donnerie/www//Template/Users/view.ctp:51
-msgid "Title"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:56
-#: web/Donnerie/www//Template/Items/add.ctp:15
-#: web/Donnerie/www//Template/Items/edit.ctp:15
-#: web/Donnerie/www//Template/Users/view.ctp:52
-msgid "Description"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:57
-#: web/Donnerie/www//Template/Users/view.ctp:53
-msgid "State"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:58
-#: web/Donnerie/www//Template/Users/view.ctp:54
-msgid "Category Id"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:59
-#: web/Donnerie/www//Template/Users/view.ctp:55
-msgid "Image 1 Url"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:60
-#: web/Donnerie/www//Template/Users/view.ctp:56
-msgid "Image 2 Url"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:61
-#: web/Donnerie/www//Template/Users/view.ctp:57
-msgid "Image 3 Url"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:62
-#: web/Donnerie/www//Template/Users/view.ctp:58
-msgid "User Id"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:81
-#: web/Donnerie/www//Template/Users/view.ctp:77
-msgid "View"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:82
-#: web/Donnerie/www//Template/Users/view.ctp:78
-msgid "Edit"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Categories/view.ctp:83
-#: web/Donnerie/www//Template/Users/view.ctp:79
-msgid "Delete"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Element/header.ctp:14
+#: Template/Element/header.ctp:25
 msgid "Ajouter votre annonce"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Element/header.ctp:41
-#: web/Donnerie/www//Template/Items/mines.ctp:2
+#: Template/Element/header.ctp:29
+msgid "Infos"
+msgstr ""
+
+#: Template/Element/header.ctp:32
+msgid "F.A.Q."
+msgstr ""
+
+#: Template/Element/header.ctp:33
+msgid "À propos de ce site"
+msgstr ""
+
+#: Template/Element/header.ctp:43
+msgid "Utilisateurs"
+msgstr ""
+
+#: Template/Element/header.ctp:44
+msgid "Annonces"
+msgstr ""
+
+#: Template/Element/header.ctp:46
+msgid "Rues"
+msgstr ""
+
+#: Template/Element/header.ctp:56 Template/Items/mines.ctp:1;4
 msgid "Mes annonces"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Element/header.ctp:42
-#: web/Donnerie/www//Template/Users/me.ctp:7
+#: Template/Element/header.ctp:57 Template/Users/me.ctp:2;9
 msgid "Mon profil"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Element/header.ctp:43
+#: Template/Element/header.ctp:58
 msgid "Se déconnecter"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Element/header.ctp:47
+#: Template/Element/header.ctp:63
 msgid "Se connecter"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Element/paginator.ctp:3
+#: Template/Element/header.ctp:82
+msgid "Contact"
+msgstr ""
+
+#: Template/Element/header.ctp:86
+msgid "Votre nom"
+msgstr ""
+
+#: Template/Element/header.ctp:87
+msgid "Votre email"
+msgstr ""
+
+#: Template/Element/header.ctp:90
+msgid "Problème technique"
+msgstr ""
+
+#: Template/Element/header.ctp:91
+msgid "Signaler une annonce ou un utilisateur"
+msgstr ""
+
+#: Template/Element/header.ctp:92
+msgid "Question sur le site"
+msgstr ""
+
+#: Template/Element/header.ctp:93
+msgid "Avoir ce site pour ma communauté"
+msgstr ""
+
+#: Template/Element/header.ctp:94
+msgid "(Choisissez)"
+msgstr ""
+
+#: Template/Element/header.ctp:96 Template/Items/view.ctp:59
+#: Template/Users/register.ctp:21
+msgid "Envoyer"
+msgstr ""
+
+#: Template/Element/paginator.ctp:3
 msgid "first"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Element/paginator.ctp:4
+#: Template/Element/paginator.ctp:4
 msgid "previous"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Element/paginator.ctp:6
+#: Template/Element/paginator.ctp:6
 msgid "next"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Element/paginator.ctp:7
+#: Template/Element/paginator.ctp:7
 msgid "last"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites
-#: web/Donnerie/www//Template/Element/paginator.ctp:9
+#: Template/Element/paginator.ctp:9
 msgid ""
 "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
 "total"
 msgstr ""
 "Page {{page}} de {{pages}}, {{current}} ligne(s) sur un total de {{count}}"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:4
+#: Template/Items/add.ctp:3 Template/Items/mines.ctp:6
+msgid "Nouvelle annonce"
+msgstr ""
+
+#: Template/Items/add.ctp:8
 msgid "Créer une annonce"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:14
-#: web/Donnerie/www//Template/Items/edit.ctp:14
+#: Template/Items/add.ctp:22 Template/Items/edit.ctp:8
+msgid "Je donne"
+msgstr ""
+
+#: Template/Items/add.ctp:22 Template/Items/edit.ctp:8
+#: Template/Items/view.ctp:32
+msgid "Je cherche"
+msgstr ""
+
+#: Template/Items/add.ctp:27 Template/Items/edit.ctp:18
 msgid "Dénomination"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:14
-#: web/Donnerie/www//Template/Items/edit.ctp:14
+#: Template/Items/add.ctp:27 Template/Items/edit.ctp:18
 msgid "Vélo de course, Table de jardin, etc."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:15
-#: web/Donnerie/www//Template/Items/edit.ctp:15
+#: Template/Items/add.ctp:28 Template/Items/edit.ctp:19
+#: Template/Users/view.ctp:52
+msgid "Description"
+msgstr ""
+
+#: Template/Items/add.ctp:28 Template/Items/edit.ctp:19
 msgid "Donner des détails : marque, usage, comment venir le chercher, etc"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:16
-#: web/Donnerie/www//Template/Items/edit.ctp:16
-msgid "Etat"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:17
-msgid ""
-"Comme neuf, jamais ou peu utilisé, pas de trace d'usure. Précisez dans la "
-"description s'il y a l'amballage d'origine, une garantie en cours..."
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:18
-msgid "Usagé, mais ne nécessite pas de réparation."
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:19
-msgid ""
-"À réparer, ou pour récupérer des pièces. Ne remplit pas correctement sa "
-"fonction en l'état."
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:20
-#: web/Donnerie/www//Template/Items/edit.ctp:17
-msgid "Catégorie"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:20
-msgid "(choisissez)"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:24
+#: Template/Items/add.ctp:34
 msgid ""
 "Pour améliorer le succès de votre annonce, fournissez quelques photos. La "
 "première sera utilisée dans la page d'accueil."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/add.ctp:33
+#: Template/Items/add.ctp:50 Template/Items/edit.ctp:20
+msgid "Catégorie"
+msgstr ""
+
+#: Template/Items/add.ctp:50
+msgid "(choisissez la meilleure catégorie possible)"
+msgstr ""
+
+#: Template/Items/add.ctp:53 Template/Items/edit.ctp:22
+msgid "Etat"
+msgstr ""
+
+#: Template/Items/add.ctp:54
+msgid "(indiquez l'état du don)"
+msgstr ""
+
+#: Template/Items/add.ctp:55
+msgid ""
+"Comme neuf, jamais ou peu utilisé, pas de trace d'usure. Précisez dans la "
+"description s'il y a l'amballage d'origine, une garantie en cours..."
+msgstr ""
+
+#: Template/Items/add.ctp:56
+msgid "Usagé, mais ne nécessite pas de réparation."
+msgstr ""
+
+#: Template/Items/add.ctp:57
+msgid ""
+"À réparer, ou pour récupérer des pièces. Ne remplit pas correctement sa "
+"fonction en l'état."
+msgstr ""
+
+#: Template/Items/add.ctp:61
 msgid "send"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/category.ctp:2
+#: Template/Items/add.ctp:66 Template/Items/edit.ctp:59
+msgid "Ce fichier n'est pas une image."
+msgstr ""
+
+#: Template/Items/category.ctp:4
 msgid "Les annonces de catégorie {0}"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:4
-msgid "Modifier l'annonce {0}"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:16
+#: Template/Items/edit.ctp:22
 msgid "Comme neuf"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:16
+#: Template/Items/edit.ctp:22
 msgid "Usagé"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:16
+#: Template/Items/edit.ctp:22
 msgid "À réparer"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:21
+#: Template/Items/edit.ctp:27
 msgid "Images"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:22
-msgid "La première image illustre votre annonce en page d'accueil."
+#: Template/Items/edit.ctp:28
+msgid ""
+"La première image illustre votre annonce en page d'accueil. Sans image, une "
+"photo par défaut sera utilisée."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/edit.ctp:57
-#: web/Donnerie/www//Template/Users/edit.ctp:16
-#: web/Donnerie/www//Template/Users/me.ctp:23
+#: Template/Items/edit.ctp:53 Template/Users/edit.ctp:17
+#: Template/Users/me.ctp:29
 msgid "Enregistrer"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/home.ctp:9
-msgid "le"
+#: Template/Items/home.ctp:2
+msgid "Accueil"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/index.ctp:2
+#: Template/Items/home.ctp:13
+msgid "Il y a {{count}} annonces"
+msgstr ""
+
+#: Template/Items/home.ctp:16
+msgid "Annonces plus récentes"
+msgstr ""
+
+#: Template/Items/home.ctp:18
+msgid "Annonces plus anciennes"
+msgstr ""
+
+#: Template/Items/index.ctp:2
 msgid "Items"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/index.ctp:37
+#: Template/Items/index.ctp:39
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/mines.ctp:3
+#: Template/Items/mines.ctp:5
 msgid ""
 "Voici vos annonces. Pensez à les supprimer quand elles ne sont plus "
 "d'actualité."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/mines.ctp:4
-msgid "Nouvelle annonce"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/mines.ctp:15
+#: Template/Items/mines.ctp:17
 msgid "Posté le"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/mines.ctp:36
-#: web/Donnerie/www//Template/Users/index.ctp:38
+#: Template/Items/mines.ctp:24
+msgid "Pas d'image : image par défaut utilisée"
+msgstr ""
+
+#: Template/Items/mines.ctp:42 Template/Users/index.ctp:40
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/user.ctp:3
+#: Template/Items/user.ctp:5
 msgid "Les annonces de {0}"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/view.ctp:50
+#: Template/Items/view.ctp:47
+msgid "Voir ses annonces"
+msgstr ""
+
+#: Template/Items/view.ctp:55
 msgid "Prendre contact pour cette annonce"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/view.ctp:57
+#: Template/Items/view.ctp:62
 msgid "Vous devez"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/view.ctp:57
+#: Template/Items/view.ctp:62
 msgid "vous connecter"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Items/view.ctp:57
+#: Template/Items/view.ctp:62
 msgid "pour pouvoir contacter {0}"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Layout/error.ctp:35
-#: web/Donnerie/www//Template/Error/error400.ctp:36
-#: web/Donnerie/www//Template/Error/error500 old.ctp:41
+#: Template/Layout/error.ctp:35 Template/Error/error400.ctp:36
+#: Template/Error/error500 old.ctp:41
 msgid "Error"
 msgstr "Erreur"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Layout/error.ctp:43
+#: Template/Layout/error.ctp:43
 msgid "Back"
 msgstr "Retour"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/delete_me.ctp:2
-#: web/Donnerie/www//Template/Users/me.ctp:25
+#: Template/Pages/advices.ctp:1
+msgid "Bonnes pratiques"
+msgstr ""
+
+#: Template/Pages/faq.ctp:1
+msgid "FAQ"
+msgstr ""
+
+#: Template/Pages/info.ctp:1
+msgid "À propos"
+msgstr ""
+
+#: Template/Streets/index.ctp:2
+msgid "Streets"
+msgstr ""
+
+#: Template/Streets/index.ctp:27
+msgid "Êtes-vous sûr de supprimer la rue {0} ?"
+msgstr "Êtes-vous sûr de supprimer la rue {0} ?"
+
+#: Template/Users/delete_me.ctp:2 Template/Users/me.ctp:31
 msgid "Supprimer mon profil"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/edit.ctp:11
+#: Template/Users/edit.ctp:11 Template/Users/me.ctp:18
+#: Template/Users/register.ctp:17
+msgid "(choisissez)"
+msgstr ""
+
+#: Template/Users/edit.ctp:15
 msgid "Donner un mot de passe pour écraser l'ancien"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/edit.ctp:17
+#: Template/Users/edit.ctp:18
 msgid "Annuler"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/index.ctp:2
+#: Template/Users/index.ctp:2
 msgid "Users"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/login.ctp:9
+#: Template/Users/login.ctp:1;11
 msgid "Identifiez-vous"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/login.ctp:13
+#: Template/Users/login.ctp:15
 msgid "Se Connecter"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/login.ctp:17
+#: Template/Users/login.ctp:19
 msgid "Vous n'avez pas de compte ?"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/login.ctp:18
+#: Template/Users/login.ctp:20
 msgid "Créer votre compte"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:17
-msgid ""
-"Si vous voulez changer votre mot de passe, encodez deux fois le nouveau. "
-"Pour laisser votre mot de passe inchangé, laissez ces zones vides."
+#: Template/Users/me.ctp:19 Template/Users/register.ctp:18
+msgid "Langue"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:20
-#: web/Donnerie/www//Template/Users/register.ctp:13
+#: Template/Users/me.ctp:20 Template/Users/register.ctp:19
+msgid "Français"
+msgstr ""
+
+#: Template/Users/me.ctp:20 Template/Users/register.ctp:19
+msgid "Nederlands"
+msgstr ""
+
+#: Template/Users/me.ctp:23
+msgid ""
+"Si vous voulez changer votre mot de passe, encodez deux fois le nouveau. "
+"Laissez ces zones vides si vous ne voulez pas le changer."
+msgstr ""
+
+#: Template/Users/me.ctp:26 Template/Users/register.ctp:15
 msgid "Mot de passe"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:21
-#: web/Donnerie/www//Template/Users/register.ctp:14
+#: Template/Users/me.ctp:27 Template/Users/register.ctp:16
 msgid "Confirmez le mot de passe"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:30
+#: Template/Users/me.ctp:38
 msgid "Photo de profil"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:31
+#: Template/Users/me.ctp:39
 msgid ""
 "Notre site utilise <A href='http://fr.gravatar.com' "
 "target='_blank'>Gravatar</A> pour avoir votre photo de profil. Si votre "
@@ -535,85 +582,154 @@ msgid ""
 "Gravatar :"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:33
+#: Template/Users/me.ctp:41
 msgid ""
 "Gravatar permet de lier une photo à votre adresse email : simple, efficace "
 "et utile sur beaucoup de sites."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/me.ctp:34
+#: Template/Users/me.ctp:42
 msgid "Créez votre Gravatar"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:7
+#: Template/Users/register.ctp:2;9
 msgid "Inscrivez-vous"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:8
+#: Template/Users/register.ctp:10
 msgid ""
 "L'inscription est nécessaire pour poster des annonces et contacter des "
 "annonceurs. Seul votre pseudonyme sera visible par les utilisateurs du site."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:11
+#: Template/Users/register.ctp:13
 msgid "Pseudonyme"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:11
-msgid "Le nom que le public verra"
+#: Template/Users/register.ctp:13
+msgid "Le nom montré publiquement"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:12
-#: web/Donnerie/www//Template/Users/view.ctp:25
+#: Template/Users/register.ctp:14 Template/Users/view.ctp:25
 msgid "Email"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:15
-#: web/Donnerie/www//Template/Users/view.ctp:33
+#: Template/Users/register.ctp:17 Template/Users/view.ctp:33
 msgid "Rue"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:15
-msgid "Rue, avenue... sans le numéro"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/register.ctp:18
-msgid "Envoyer"
-msgstr ""
-
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:9
+#: Template/Users/view.ctp:9
 msgid "Edit User"
 msgstr "Modifier l'utilisateur"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:10
+#: Template/Users/view.ctp:10
 msgid "Delete User"
 msgstr "Supprimer l'utilisateur"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:10
+#: Template/Users/view.ctp:10
 msgid "Êtes-vous sûr de supprimer # {0} ?"
 msgstr "Êtes-vous sûr de supprimer {0} ?"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:11
+#: Template/Users/view.ctp:11
 msgid "List Users"
 msgstr "Liste des utilisateurs"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:12
+#: Template/Users/view.ctp:12
 msgid "New User"
 msgstr "Nouvel utilateur"
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:21
+#: Template/Users/view.ctp:13
+msgid "List Donations"
+msgstr "Liste des annonces"
+
+#: Template/Users/view.ctp:14
+msgid "New Donation"
+msgstr "Nouvelle annonce"
+
+#: Template/Users/view.ctp:21
 msgid "Pseudo"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Users/view.ctp:29
+#: Template/Users/view.ctp:29
 msgid "Rôle"
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Error/error400.ctp:37
+#: Template/Users/view.ctp:37;59
+msgid "Created"
+msgstr ""
+
+#: Template/Users/view.ctp:41;60
+msgid "Modified"
+msgstr ""
+
+#: Template/Users/view.ctp:46
+msgid "Related Donations"
+msgstr ""
+
+#: Template/Users/view.ctp:50
+msgid "Id"
+msgstr ""
+
+#: Template/Users/view.ctp:51
+msgid "Title"
+msgstr ""
+
+#: Template/Users/view.ctp:53
+msgid "State"
+msgstr ""
+
+#: Template/Users/view.ctp:54
+msgid "Category Id"
+msgstr ""
+
+#: Template/Users/view.ctp:55
+msgid "Image 1 Url"
+msgstr ""
+
+#: Template/Users/view.ctp:56
+msgid "Image 2 Url"
+msgstr ""
+
+#: Template/Users/view.ctp:57
+msgid "Image 3 Url"
+msgstr ""
+
+#: Template/Users/view.ctp:58
+msgid "User Id"
+msgstr ""
+
+#: Template/Users/view.ctp:77
+msgid "View"
+msgstr ""
+
+#: Template/Users/view.ctp:78
+msgid "Edit"
+msgstr ""
+
+#: Template/Users/view.ctp:79
+msgid "Delete"
+msgstr ""
+
+#: Template/Users/view.ctp:79
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Êtes-vous sûr de supprimer {0} ?"
+
+#: Template/Error/error400.ctp:37
 msgid "The requested address {0} was not found on this server."
 msgstr ""
 
-#: C:/Users/Utilisateur/Sites web/Donnerie/www//Template/Error/error500
-#: old.ctp:39
+#: Template/Error/error500 old.ctp:39
 msgid "An Internal Error Has Occurred"
 msgstr ""
+
+#~ msgid "Edit Category"
+#~ msgstr "Modifier la catégorie"
+
+#~ msgid "Delete Category"
+#~ msgstr "Supprimer la catégorie"
+
+#~ msgid "List Categories"
+#~ msgstr "Liste des catégories"
+
+#~ msgid "New Category"
+#~ msgstr "Nouvelle catégorie"
