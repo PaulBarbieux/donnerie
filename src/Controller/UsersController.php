@@ -99,7 +99,7 @@ class UsersController extends AppController
 							'site_url' => Router::url("/", true), 
 							'site_name' => "Donnerie", 
 							'confirm_url' => Router::url("/users/activate/".$confirmCode, true)])
-						->subject("Donnerie : confirmez votre inscription")
+						->subject(__("Donnerie : confirmez votre inscription"))
 						->send();
 					$this->Flash->success(__("Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. Cela peut prendre quelques minutes - vérifiez votre dossier des spams.",$user->username));
 					return $this->redirect(['controller' => 'items', 'action' => 'home']);
@@ -110,7 +110,7 @@ class UsersController extends AppController
 				} elseif (isset($errors['alias']['_isUnique'])) {
 					$this->Flash->error(__('Ce pseudonyme est hélas déjà pris. Choisissez-en un autre.'));
 				} else {
-					$this->Flash->error(__('The user could not be saved. Please, try again.'));
+					$this->Flash->error(__("Aïe, l'enregistrement a rencontré un problème. Ré-essayez. Si le problème persiste, contactez-nous (lien en bas à droite)."));
 				}
 			}
         }
