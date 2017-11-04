@@ -19,7 +19,7 @@ use Cake\Event\Event;
 use Cake\I18n\I18n;
 use Cake\Core\Configure;
 use Cake\Mailer\Email;
-
+use Cake\ORM\TableRegistry;
 	
 /**
  * Application Controller
@@ -63,6 +63,7 @@ class AppController extends Controller
 		
 		/*
 			Language
+			LG vaut "fr" ou "nl", à utiliser pour les noms de colonnes ou variables. Exemple : "title_".LG
 		*/
 		if ($this->request->session()->check('Config.language')) {
 			I18n::locale($this->request->session()->read('Config.language'));
@@ -113,11 +114,7 @@ class AppController extends Controller
 			}
 			$data['message'] = strip_tags(trim($data['message']));
 			$data['url'] = $this->referer();
-			if ($this->request->session()->read('Config.language') == "nl_NL") {
-				$template = "contact_nl";
-			} else {
-				$template = "contact_fr";
-			}
+			$template = "contact_".LG;
 			$email = new Email();
 			$email->replyTo([$data['email'] => $data['name']])
 				->setTemplate($template)
@@ -126,7 +123,7 @@ class AppController extends Controller
 					'name' => $data['name'], 
 					'url' => $data['url'], 
 					'message' => nl2br($data['message'])])
-				->to(EMAIL_ADMIN)
+				->setTo($this->getAdminEmails())
 				->subject("Donnerie : message de ".$data['name'])
 				->send();
 			$this->Flash->success(__("Votre message a été envoyé. Merci."));
@@ -248,5 +245,17 @@ class AppController extends Controller
 		return true;
 	}
 
+	/*
+		Fournir la liste des adresses email des administrateurs sous la forme email => alias.
+	*/
+	public function getAdminEmails() {
+		$users = TableRegistry::get('Users');
+		$adminUsers = $users->find()->where(['role'=>"admin"]);
+		$adminEmails = array();
+		foreach ($adminUsers as $adminUser) {
+			$adminEmails[$adminUser->username] = $adminUser->alias;
+		}
+		return $adminEmails;
+	}
 	
 }

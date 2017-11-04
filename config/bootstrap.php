@@ -237,8 +237,6 @@ function isItHuman() {
 */
 // Nom du site
 define ("SITE_NAME","Donnerie (beta)");
-// Email de l'administrateur
-define ("EMAIL_ADMIN","donnerie@paperjam.be");
 // Nombre d'annonces pour la pagination de l'accueil
 define ("HOME_LIMIT_ITEMS",16);
 // Troncation des textes d'annonces en page d'accueil
