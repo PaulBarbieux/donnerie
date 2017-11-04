@@ -141,7 +141,7 @@ class ItemsController extends AppController
 			$message = trim(strip_tags($this->request->getData('message')));
 			$email = new Email();
 			$email->replyTo([$this->Auth->user('username') => $this->Auth->user('alias')])
-				->setTemplate('contact_item_fr')
+				->setTemplate('contact_item_'.LG)
 				->viewVars([
 					'owner' => $item->user->alias, 
 					'applicant' => $this->Auth->user('alias'), 
@@ -149,9 +149,9 @@ class ItemsController extends AppController
 					'item_link' => Router::url("/items/view/".$item->id, true), 
 					'message' => $message])
 				->to($item->user->username)
-				->subject("Donnerie : message pour votre annonce ".$item->title)
+				->subject(__("Donnerie : message pour votre annonce {0}" , $item->title ))
 				->send();
-			$this->Flash->success(__("Votre message a été envoyé à ").$item->user->alias.".");
+			$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
 		}
 		$item->state_label = $this->getStateLabel($item->state);
         $this->set('item', $item);
@@ -184,8 +184,9 @@ class ItemsController extends AppController
 			} elseif ($this->Items->save($item)) {
 				// Send email to admin
 				$email = new Email();
-				$email->to(EMAIL_ADMIN)
-					->setTemplate('item_added_fr')
+				$email
+					->setTo($this->getAdminEmails())
+					->setTemplate('item_added_'.LG)
 					->viewVars([
 						'alias' => $this->Auth->user('alias'), 
 						'title' => $item->title, 
@@ -196,7 +197,7 @@ class ItemsController extends AppController
                 $this->Flash->success(__('Votre annonce est en ligne.'));
                 return $this->redirect(['action' => 'mines']);
             } else {
-            	$this->Flash->error(__('The item could not be saved. Please, try again.'));
+            	$this->Flash->error(__("Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème persiste contactez-nous (lien en bas à droite)."));
 			}
         }
         $categories = $this->Items->Categories->find('list', ['valueField'=> function($category) { return $category->title." (".lcfirst($category->description).")"; } ]);
