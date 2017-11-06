@@ -219,47 +219,59 @@ class ItemsController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+			// Get new data
             $item = $this->Items->patchEntity($item, $this->request->getData());	
 			$filesResults = $this->uploadFiles('clientFiles', $this->request->getData('image'));
-			// 1) $filesResults contains 0 to 3 files : fill its in empty file-x-url
-			// ### Comment supprimer les anciens fichiers dans le répertoire ?
-			if ($filesResults and !isset($filesResults['errors'])) {
-				foreach ($filesResults['urls'] as $fileUrl) {
-					if (!$item->image_1_url) {
-						$item->image_1_url = $fileUrl;
-					} elseif (!$item->image_2_url) {
-						$item->image_2_url = $fileUrl;
-					} elseif (!$item->image_3_url) {
-						$item->image_3_url = $fileUrl;
-					}
-				}
-			}
-			// 2) Shift files if necessary
-			if (!$item->image_1_url) {
-				if ($item->image_2_url) {
-					$item->image_1_url = $item->image_2_url;
-					$item->image_2_url = false;
-				} elseif ($item->image_3_url) {
-					$item->image_1_url = $item->image_3_url;
-					$item->image_3_url = false;
-				}
-			}
-			if (!$item->image_2_url and $item->image_3_url) {
-				$item->image_2_url = $item->image_3_url;
-				$item->image_3_url = false;
-			}
 			// Messages
 			if (isset($filesResults['errors'])) {
 				$this->Flash->error($filesResults['errors'][0]);
-            } elseif ($this->Items->save($item)) {
-                $this->Flash->success(__("L'annonce est modifiée."));
-				if ($admin) {
-					return $this->redirect(['action' => 'index']);
-				} else {
-                	return $this->redirect(['action' => 'mines']);
+			} else {
+				// 1) $filesResults contains 0 to 3 files : fill its in empty file-x-url
+				if ($filesResults and !isset($filesResults['errors'])) {
+					foreach ($filesResults['urls'] as $fileUrl) {
+						if (!$item->image_1_url) {
+							$item->image_1_url = $fileUrl;
+						} elseif (!$item->image_2_url) {
+							$item->image_2_url = $fileUrl;
+						} elseif (!$item->image_3_url) {
+							$item->image_3_url = $fileUrl;
+						}
+						if (isset($imagesToDelete[$fileUrl])) {
+							unset($imagesToDelete[$fileUrl]); // Keep this file
+						}
+					}
 				}
-            }
-            $this->Flash->error(__('The item could not be saved. Please, try again.'));
+				// 2) Old files, to delete
+				$filesToDelete = $item->extractOriginalChanged(['image_1_url','image_2_url','image_3_url']);
+				// 3) Shift files if necessary
+				if (!$item->image_1_url) {
+					if ($item->image_2_url) {
+						$item->image_1_url = $item->image_2_url;
+						$item->image_2_url = false;
+					} elseif ($item->image_3_url) {
+						$item->image_1_url = $item->image_3_url;
+						$item->image_3_url = false;
+					}
+				}
+				if (!$item->image_2_url and $item->image_3_url) {
+					$item->image_2_url = $item->image_3_url;
+					$item->image_3_url = false;
+				}
+            	if ($this->Items->save($item)) {
+					// 4) Delete old files
+					foreach ($filesToDelete as $fileToDelete) {
+						if ($fileToDelete != "") unlink (WWW_ROOT.$fileToDelete);
+					}
+					// Message
+					$this->Flash->success(__("L'annonce est modifiée."));
+					if ($admin) {
+						return $this->redirect(['action' => 'index']);
+					} else {
+						return $this->redirect(['action' => 'mines']);
+					}
+            	}
+            	$this->Flash->error(__('The item could not be saved. Please, try again.'));
+			}
         }
         $categories = $this->Items->Categories->find('list');
         $this->set(compact('item', 'categories', 'admin', 'owner'));
