@@ -192,7 +192,7 @@ class AppController extends Controller
 		foreach($formdata as $file) {
 			if ($file['name'] != "") {
 				// transform file name
-				$filename = str_replace(' ', '_', $file['name']);
+				$filename = goodFileName($file['name']);
 				// switch based on error code
 				switch($file['error']) {
 					case 0:
