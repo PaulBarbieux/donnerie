@@ -30,23 +30,24 @@ if ($this->request->session()->read("Auth.User.id")) {
 				</A>
 				<DIV class="dropdown-menu" aria-labelledby="infoLinks">
 					<?= $this->Html->link(__("F.A.Q."), array('controller'=>"pages", 'action'=>"faq"), array('class'=>"dropdown-item")) ?>
+					<?= $this->Html->link(__("Charte"), array('controller'=>"pages", 'action'=>"charter"), array('class'=>"dropdown-item")) ?>
 					<?= $this->Html->link(__("À propos de ce site"), array('controller'=>"pages", 'action'=>"info"), array('class'=>"dropdown-item")) ?>
 				</DIV>
 			</LI>
 			<?php if ($connected) { ?>
-			<?php if ($admin) { ?>
-			<LI class="nav-item dropdown">
-				<A class="nav-link dropdown-toggle" href="#" id="adminLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<I class="fa fa-cogs"></I>
-				</A>
-				<DIV class="dropdown-menu" aria-labelledby="adminLinks">
-					<?= $this->Html->link(__("Utilisateurs"), array('controller'=>"users", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
-					<?= $this->Html->link(__("Annonces"), array('controller'=>"items", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
-					<?= $this->Html->link(__("Categories"), array('controller'=>"categories", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
-					<?= $this->Html->link(__("Rues"), array('controller'=>"streets", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
-				</DIV>
-			</LI>
-			<?php } ?>
+				<?php if ($admin) { ?>
+				<LI class="nav-item dropdown">
+					<A class="nav-link dropdown-toggle" href="#" id="adminLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<I class="fa fa-cogs"></I>
+					</A>
+					<DIV class="dropdown-menu" aria-labelledby="adminLinks">
+						<?= $this->Html->link(__("Utilisateurs"), array('controller'=>"users", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
+						<?= $this->Html->link(__("Annonces"), array('controller'=>"items", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
+						<?= $this->Html->link(__("Categories"), array('controller'=>"categories", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
+						<?= $this->Html->link(__("Rues"), array('controller'=>"streets", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
+					</DIV>
+				</LI>
+				<?php } ?>
 			<LI class="nav-item dropdown">
 				<A class="nav-link dropdown-toggle" href="#" id="myProfileLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($this->request->session()->read('Auth.User.alias'),0,1)).".jpg") ?>');" src="http://www.gravatar.com/avatar/<?php echo md5($this->request->session()->read('Auth.User.username')) ?>?s=25&d=blank">
