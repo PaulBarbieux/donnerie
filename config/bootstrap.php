@@ -218,20 +218,6 @@ function goodFileName($fileName) {
 	return str_replace($search, $replace, $fileName);
 }
 
-// Detect robot : the form must contain an input "start" set with time() and a "last_name" (the trap)
-function isItHuman() {
-	if (!isset($_POST['start']) or !isset($_POST['last_name'])) {
-		return false;
-	}
-	if (time() - $_POST['start'] < 5) {
-		// Form set in less than 5 seconds -> robot !
-		return false;
-	} elseif ($_POST['last_name'] != "") {
-		return false;
-	}
-	return (time() - $_POST['start']);
-}
-
 /*
 	Validations
 */
@@ -278,3 +264,5 @@ define ("HOME_LIMIT_ITEMS",16);
 define ("HOME_TRUNCATE_TEXT",100);
 // Peut-on répondre à une annonce sans être connecté ?
 define ("PUBLIC_CONTACT",true);
+// Renvoyer les tentatives de robots vers un email (vérifier qu'il s'agit bien de spams)
+define ("EMAIL_REDIRECT_SPAM","paul.barbieux@gmail.com"); // Mettre false pour aucun envoi
