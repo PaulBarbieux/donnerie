@@ -13,6 +13,7 @@
     <?= $this->Form->input('username', array('label'=>"Email" , 'templateVars'=>$col)) ?>
     <?= $this->Form->input('password', array('label'=>"Mot de passe" , 'templateVars'=>$col)) ?>
 	<?= $this->Form->submit(__('Se Connecter')); ?>
+	<?= $this->element('robot-form-trap'); ?>
 	<?= $this->Form->end() ?>
 </div>
 <div class="col-sm-6">

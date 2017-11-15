@@ -124,12 +124,36 @@ class AppController extends Controller
 					'url' => $data['url'], 
 					'message' => nl2br($data['message'])])
 				->setTo($this->getAdminEmails())
-				->subject("Donnerie : message de ".$data['name'])
+				->subject(__("{0} : message de {1}", SITE_NAME, $data['name']))
 				->send();
 			$this->Flash->success(__("Votre message a été envoyé. Merci."));
 			$this->redirect($this->referer());
 		}
 	}
+	
+	// Detect robot : the form must contain an input "start" set with time() and a hidden input "last_name" (the trap)
+	public function isItHuman($delay=5) {
+		$human = true;
+		if (time() - $this->request->getData('start') < $delay) {
+			// Form set rapidly -> robot !				
+			$human = false;
+		} elseif ($this->request->getData('last_name') != "") {
+			// Hidden input filled -> robot !
+			$human = false;
+		}
+		if (!$human and EMAIL_REDIRECT_SPAM !== false) {
+			// Alert an administrator
+			Email::deliver(
+				EMAIL_REDIRECT_SPAM, 
+				SITE_NAME.' : suspicion de spam', 
+				"La fonction isItHuman() suspecte un robot derrière cet envoi (".$this->referer().") :<br><br>
+				".implode("<br>",$this->request->getData())."<br><br>
+				Temps d'encodage : ". (time() - $this->request->getData('start') . " sec")
+			);
+		}
+		return $human;
+	}
+
 	
 	/**
 	 * uploads files to the server 

@@ -18,6 +18,7 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement
 			echo $this->Form->control('street' , [ 'label'=>__("Rue") ,  'empty'=>__("(choisissez)") , 'templateVars'=>$col ]);
 			echo $this->Form->control('language' , ['type' => 'radio', 'label'=>__("Langue") , 'templateVars'=>$col , 
 							'options' => ['fr'=>__("Français"), 'nl'=>__("Nederlands")] ]);
+			echo $this->element('robot-form-trap');
         ?>
     <?= $this->Form->submit	(__('Envoyer')) ?>
     <?= $this->Form->end() ?>

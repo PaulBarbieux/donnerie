@@ -138,46 +138,48 @@ class ItemsController extends AppController
             'contain' => ['Categories', 'Users']
         ]);
 		if ($this->request->is('post')) {
-			// Send message
-			$message = trim(strip_tags($this->request->getData('message')));
-			if (strlen($message) < 50) {
-				$this->Flash->error(__("Votre message est vide ou trop court."));
-				$error = true;
-			}
-			if (!$error) {
-				$email = new Email();
-				if ($this->Auth->user('id') !== null) {
-					// Connected user
-					$email->replyTo([$this->Auth->user('username') => $this->Auth->user('alias')]);
-					$applicant = $this->Auth->user('alias');
-				} else {
-					// Not connected
-					$applicant = trim(strip_tags($this->request->getData('name')));
-					$applicantEmail = trim(strip_tags($this->request->getData('email')));
-					if ($applicant == "" or $applicantEmail == "") {
-						$this->Flash->error(__("Veuillez donner votre nom et votre email."));
-						$error = true;
-					} elseif (!isItEmail($applicantEmail)) {
-						$this->Flash->error(__("Votre adresse email n'est pas valide."));
-						$error = true;
+			if ($this->isItHuman()) {
+				// Send message
+				$message = trim(strip_tags($this->request->getData('message')));
+				if (strlen($message) < 50) {
+					$this->Flash->error(__("Votre message est vide ou trop court."));
+					$error = true;
+				}
+				if (!$error) {
+					$email = new Email();
+					if ($this->Auth->user('id') !== null) {
+						// Connected user
+						$email->replyTo([$this->Auth->user('username') => $this->Auth->user('alias')]);
+						$applicant = $this->Auth->user('alias');
 					} else {
-						$email->replyTo([$applicantEmail => $applicant]);
+						// Not connected
+						$applicant = trim(strip_tags($this->request->getData('name')));
+						$applicantEmail = trim(strip_tags($this->request->getData('email')));
+						if ($applicant == "" or $applicantEmail == "") {
+							$this->Flash->error(__("Veuillez donner votre nom et votre email."));
+							$error = true;
+						} elseif (!isItEmail($applicantEmail)) {
+							$this->Flash->error(__("Votre adresse email n'est pas valide."));
+							$error = true;
+						} else {
+							$email->replyTo([$applicantEmail => $applicant]);
+						}
 					}
 				}
-			}
-			if (!$error) {
-				$email
-					->setTemplate('contact_item_'.LG)
-					->viewVars([
-						'owner' => $item->user->alias, 
-						'applicant' => $applicant, 
-						'item_title' => $item->title, 
-						'item_link' => Router::url("/items/view/".$item->id, true), 
-						'message' => $message])
-					->to($item->user->username)
-					->subject(__("Donnerie : message pour votre annonce {0}" , $item->title ))
-					->send();
-				$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
+				if (!$error) {
+					$email
+						->setTemplate('contact_item_'.LG)
+						->viewVars([
+							'owner' => $item->user->alias, 
+							'applicant' => $applicant, 
+							'item_title' => $item->title, 
+							'item_link' => Router::url("/items/view/".$item->id, true), 
+							'message' => $message])
+						->to($item->user->username)
+						->subject(__("Donnerie : message pour votre annonce {0}" , $item->title ))
+						->send();
+					$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
+				}
 			}
 		}
 		$item->state_label = $this->getStateLabel($item->state);

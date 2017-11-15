@@ -81,36 +81,38 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
 		$user->role = "user"; // User by default
         if ($this->request->is('post')) {
-			$data = $this->request->getData();
-			if ($data['password'] != $data['password2']) {
-				$this->Flash->error(__("Vous n'avez pas rempli deux fois le même mot de passe"));
-			} else {
-	            $user = $this->Users->patchEntity($user, $data);
-				$confirmCode = "waitForConfirm:".md5(time());
-				$user->status = $confirmCode;
-				$user->role = "user";
-				if ($this->Users->save($user)) {
-					// Confirmation email
-					$email = new Email();
-					$email->to($user->username)
-						->setTemplate('register_'.$user->language)
-						->viewVars([
-							'user' => $user->alias,
-							'site_url' => Router::url("/", true), 
-							'site_name' => "Donnerie", 
-							'confirm_url' => Router::url("/users/activate/".$confirmCode, true)])
-						->subject(__("Donnerie : confirmez votre inscription"))
-						->send();
-					$this->Flash->success(__("Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. Cela peut prendre quelques minutes - vérifiez votre dossier des spams.",$user->username));
-					return $this->redirect(['controller' => 'items', 'action' => 'home']);
-				}
-				$errors = $user->errors();
-				if (isset($errors['username']['_isUnique'])) {
-					$this->Flash->error(__('Cet email est déjà enregistré.'));
-				} elseif (isset($errors['alias']['_isUnique'])) {
-					$this->Flash->error(__('Ce pseudonyme est hélas déjà pris. Choisissez-en un autre.'));
+			if ($this->isItHuman()) {
+				$data = $this->request->getData();
+				if ($data['password'] != $data['password2']) {
+					$this->Flash->error(__("Vous n'avez pas rempli deux fois le même mot de passe"));
 				} else {
-					$this->Flash->error(__("Aïe, votre enregistrement a rencontré un problème. Vérifiez que vos données ne présentent pas d'erreur. Si le problème persiste, contactez-nous (lien en bas à droite)."));
+					$user = $this->Users->patchEntity($user, $data);
+					$confirmCode = "waitForConfirm:".md5(time());
+					$user->status = $confirmCode;
+					$user->role = "user";
+					if ($this->Users->save($user)) {
+						// Confirmation email
+						$email = new Email();
+						$email->to($user->username)
+							->setTemplate('register_'.$user->language)
+							->viewVars([
+								'user' => $user->alias,
+								'site_url' => Router::url("/", true), 
+								'site_name' => "Donnerie", 
+								'confirm_url' => Router::url("/users/activate/".$confirmCode, true)])
+							->subject(__("Donnerie : confirmez votre inscription"))
+							->send();
+						$this->Flash->success(__("Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. Cela peut prendre quelques minutes - vérifiez votre dossier des spams.",$user->username));
+						return $this->redirect(['controller' => 'items', 'action' => 'home']);
+					}
+					$errors = $user->errors();
+					if (isset($errors['username']['_isUnique'])) {
+						$this->Flash->error(__('Cet email est déjà enregistré.'));
+					} elseif (isset($errors['alias']['_isUnique'])) {
+						$this->Flash->error(__('Ce pseudonyme est hélas déjà pris. Choisissez-en un autre.'));
+					} else {
+						$this->Flash->error(__("Aïe, votre enregistrement a rencontré un problème. Vérifiez que vos données ne présentent pas d'erreur. Si le problème persiste, contactez-nous (lien en bas à droite)."));
+					}
 				}
 			}
         }
@@ -207,15 +209,17 @@ class UsersController extends AppController
     public function login()
     {
         if ($this->request->is('post')) {
-            $user = $this->Auth->identify();
-            if ($user) {
-                $this->Auth->setUser($user);
-				$langIso = $user['language']."_".strtoupper($user['language']);
-				$this->request->session()->write('Config.language', $langIso);
-				I18n::locale($this->request->session()->read('Config.language'));
-                return $this->redirect($this->Auth->redirectUrl());
-            }
-            $this->Flash->error(__('Invalid username or password, try again'));
+			if ($this->isItHuman(2)) {
+				$user = $this->Auth->identify();
+				if ($user) {
+					$this->Auth->setUser($user);
+					$langIso = $user['language']."_".strtoupper($user['language']);
+					$this->request->session()->write('Config.language', $langIso);
+					I18n::locale($this->request->session()->read('Config.language'));
+					return $this->redirect($this->Auth->redirectUrl());
+				}
+				$this->Flash->error(__('Invalid username or password, try again'));
+			}
         }
     }
 

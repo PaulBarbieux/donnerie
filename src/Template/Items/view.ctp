@@ -67,7 +67,8 @@ if ($this->request->session()->read("Auth.User.id")) {
 						if (PUBLIC_CONTACT and !$connected) {
 							echo $this->Form->text('name' , ['placeholder'=>__("Votre nom") , 'class'=>"form-control" , 'required'=>"required" ]);
 							echo $this->Form->email('email' , ['placeholder'=>__("Votre email") , 'class'=>"form-control" , 'required'=>"required" ]);
-						} 
+						}
+						echo $this->element('robot-form-trap');
 						?>
 						<BUTTON type="submit" name="contact" class="btn btn-primary" value="send"><i class="fa fa-paper-plane" aria-hidden="true"></i> <?= __("Envoyer") ?></BUTTON>
 					</FORM>
