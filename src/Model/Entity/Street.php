@@ -32,10 +32,14 @@ class Street extends Entity
     ];
 	
 	/*
-		Nom dans la bonne langue
+		Nom dans la bonne langue. Renvoie l'autre langue si la langue visée est vide (on suppose qu'au moins une des deux langues est remplies).
 	*/
 	protected function _getName()
     {
-		return $this->_properties['name_' . LG];
+		if ($this->_properties['name_'.LG] != "") {
+			return $this->_properties['name_'.LG];
+		} else {
+			return (LG == "fr" ? $this->_properties['name_nl'] : $this->_properties['name_fr']);
+		}
     }
 }

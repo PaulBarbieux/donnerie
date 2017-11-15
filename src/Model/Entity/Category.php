@@ -35,17 +35,25 @@ class Category extends Entity
     ];
 	
 	/*
-		Titre dans la bonne langue
+		Titre dans la bonne langue : renvoie l'autre langue si la langue visée est vide (on suppose qu'au moins une des deux langues est remplies).
 	*/
 	protected function _getTitle()
     {
-		return $this->_properties['title_' . LG];
+		if ($this->_properties['title_'.LG] != "") {
+			return $this->_properties['title_'.LG];
+		} else {
+			return (LG == "fr" ? $this->_properties['title_nl'] : $this->_properties['title_fr']);
+		}
     }
 	/*
 		Description dans la bonne langue
 	*/
 	protected function _getDescription()
     {
-		return $this->_properties['description_' . LG];
+		if ($this->_properties['description_'.LG] != "") {
+			return $this->_properties['description_'.LG];
+		} else {
+			return (LG == "fr" ? $this->_properties['description_nl'] : $this->_properties['description_fr']);
+		}
     }
 }
