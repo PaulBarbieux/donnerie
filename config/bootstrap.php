@@ -233,6 +233,41 @@ function isItHuman() {
 }
 
 /*
+	Validations
+*/
+function isItName($str) {
+	if (ereg("[^a-zA-Zëêéèàäâöôïîüûùç'. -]", $str)) {
+		return(false);
+	} else {
+		return(true);
+	}
+}
+function isItEmail($email) {
+	return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+function isItPhone($phone) {
+	if (ereg("[^0-9. -/]", $phone)) {
+		return false;
+	} else {
+		return true;
+	}	
+}
+function isItNumeric($str) {
+	if (ereg('^[[:digit:]]+$', $str)) {
+	 	return(true);
+	} else {
+		return(false);
+	}
+}
+function isItDate($input) {
+	$dateformat = 'Y/m/d';
+	$input = trim($input);
+	$time = strtotime($input);
+	$isValid = date($dateformat, $time) == $input;
+	return $isValid;
+}
+
+/*
 	Configuration du site
 */
 // Nom du site
@@ -241,3 +276,5 @@ define ("SITE_NAME","Donnerie (beta)");
 define ("HOME_LIMIT_ITEMS",16);
 // Troncation des textes d'annonces en page d'accueil
 define ("HOME_TRUNCATE_TEXT",100);
+// Peut-on répondre à une annonce sans être connecté ?
+define ("PUBLIC_CONTACT",true);

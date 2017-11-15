@@ -5,6 +5,7 @@ return [
 	'inputSubmit' => '<button type="submit" class="btn btn-primary" {{attrs}}>Envoyer</button>',
 	'label' => '<label class="{{collabel}} col-form-label" {{attrs}}>{{text}}</label>',
 	'inputContainer' => '<DIV class="form-group row">{{content}}</DIV>',
+	'inputContainerError' => '<DIV class="form-group row input {{type}}{{required}} error">{{content}}{{error}}</DIV>',
 	'input' => '<div class="{{colinput}}"><input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/></div>',
 	'select' => '<div class="{{colinput}}"><select name="{{name}}" class="form-control" {{attrs}}>{{content}}</select></div>',
 	'textarea' => '<div class="{{colinput}}"><textarea name="{{name}}" class="form-control" {{attrs}}>{{value}}</textarea></div>',

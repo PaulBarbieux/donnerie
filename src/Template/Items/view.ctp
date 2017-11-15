@@ -1,4 +1,11 @@
-<?php $this->assign('title', h($item->title)) ?>
+<?php
+$this->assign('title', h($item->title));
+if ($this->request->session()->read("Auth.User.id")) {
+	$connected = true;
+} else {
+	$connected = false;
+}
+?>
 
 <DIV class="col-sm-12">
 	<DIV class="card">
@@ -53,9 +60,15 @@
 					</TABLE>
 					<P>&nbsp;</P>
 					<H3><I class="fa fa-send"></I> <?= __("Prendre contact pour cette annonce") ?></H3>
-					<?php if ($this->request->session()->read("Auth.User.id")) { ?>
+					<?php if (PUBLIC_CONTACT or $connected) { ?>
 					<FORM method="post">
-						<TEXTAREA name="message" class="form-control" rows="5" required></TEXTAREA>
+						<?php 
+						echo $this->Form->textarea('message' , ['placeholder'=>__("Votre message concernant cette annonce") , 'class'=>"form-control" , 'required'=>"required" , 'rows'=>"5" ]);
+						if (PUBLIC_CONTACT and !$connected) {
+							echo $this->Form->text('name' , ['placeholder'=>__("Votre nom") , 'class'=>"form-control" , 'required'=>"required" ]);
+							echo $this->Form->email('email' , ['placeholder'=>__("Votre email") , 'class'=>"form-control" , 'required'=>"required" ]);
+						} 
+						?>
 						<BUTTON type="submit" name="contact" class="btn btn-primary" value="send"><i class="fa fa-paper-plane" aria-hidden="true"></i> <?= __("Envoyer") ?></BUTTON>
 					</FORM>
 					<?php } else { ?>

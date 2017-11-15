@@ -266,7 +266,10 @@ NAV .gravatar {
 }
 /* CakePHP error message */
 .error-message {
-	color:#990000;
+	background-color: #f2dede;
+	border-radius: 0.25rem;
+	padding: 2px 5px;
+	color: #a94442;
 }
 /* Image with border */
 .img-border {

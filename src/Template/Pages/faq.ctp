@@ -23,10 +23,6 @@
 	<H2>Peut-on être averti des nouvelles annonces ?</H2>
 	<P>Non : cela s'apparentrait à une liste de distribution (<EM>mailinglist</EM>), l'ancien système de donnerie virtuelle que nous voulons justement oublier.</P>
 	<P>Visitez régulièrement notre site tout comme vous iriez à une brocante. Avec l'avantage de découvrir en tête de page les dernières offres.</P>
-	<!--
-	<H2>Le site s'adressant aux gens de ma commune, puis-je malgré tout partager mon annonce dans les réseaux sociaux&nbsp;?</H2>
-	<P>Bien sûr, vous pouvez !</P>
-	-->
 </DIV>
 <DIV class="col-md-6">
 	<H2>Pourquoi donnerais-je plutôt que vendre ?</H2>
@@ -45,7 +41,7 @@
 	<P>Oui, de manière indirecte, et pour autant qu'il existe au moins une annonce dans la catégorie qui vous intéresse.</P>
 	<P>Quand vous êtes dans le détail d'une annonce, sa catégorie est un lien : cliquez dessus pour voir toutes les annonces de cette catégorie.</P>
 	<H2>Pourquoi certaines annonces apparaissent avec une étoile bleue ?</H2>
-	<P><IMG src="<?= $this->Url->build("img/item-same-street.png") ?>"> Ces annonces sont postées par un habitant de votre rue. Donc, un voisin !</P>
+	<P><IMG src="<?= $this->Url->build("/img/item-same-street.png") ?>"> Ces annonces sont postées par un habitant de votre rue. Donc, un voisin !</P>
 	<P>Attention, ces étoiles ne peuvent apparaître que si vous êtes identifié sur le site...</P>
 	<H2>Pourquoi certaines personnes ont leur photo et moi pas ?</H2>
 	<P>Nous utilisons <A href="https://fr.gravatar.com/" target="_blank">le service en ligne Gravatar</A> pour trouver la photo attachée à votre adresse email. Vous devez donc vous inscrire sur Gravatar pour avoir votre photo sur notre site.</P>

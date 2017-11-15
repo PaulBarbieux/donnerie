@@ -110,7 +110,7 @@ class UsersController extends AppController
 				} elseif (isset($errors['alias']['_isUnique'])) {
 					$this->Flash->error(__('Ce pseudonyme est hélas déjà pris. Choisissez-en un autre.'));
 				} else {
-					$this->Flash->error(__("Aïe, l'enregistrement a rencontré un problème. Ré-essayez. Si le problème persiste, contactez-nous (lien en bas à droite)."));
+					$this->Flash->error(__("Aïe, votre enregistrement a rencontré un problème. Vérifiez que vos données ne présentent pas d'erreur. Si le problème persiste, contactez-nous (lien en bas à droite)."));
 				}
 			}
         }
