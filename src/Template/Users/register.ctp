@@ -7,7 +7,8 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement
 
 <div class="col-lg-8 col-md-10 col-sm-12">
 	<H1><?= __("Inscrivez-vous") ?></H1>
-	<P><?= __("L'inscription est nécessaire pour poster des annonces et contacter des annonceurs. Seul votre pseudonyme sera visible par les utilisateurs du site.") ?></P>
+	<P><?= __("L'inscription est nécessaire pour poster des annonces") ?><?php if (!PUBLIC_CONTACT) echo __(" et contacter les annonceurs") ?>.
+	   <?= __("Seul votre pseudonyme sera visible par les utilisateurs du site.") ?>
 	<P><?= __("En vous inscrivant, vous vous engagez à respecter ") . $this->Html->link(__("notre charte"), ['controller'=>"pages", 'action'=>"charter"], ['target' => '_blank']) ?>.</P>
     <?= $this->Form->create($user) ?>
         <?php
