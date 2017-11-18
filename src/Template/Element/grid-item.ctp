@@ -1,14 +1,3 @@
-<?php
-// Size of the image : necessary for the compute by Packery JS
-if ($item->image_1_url) {
-	$imageFile = $item->image_1_url;
-} else {
-	$imageFile = "img/item-".$item->type."-no-image.jpg";
-}
-list($widthSrc,$heightSrc) = getimagesize($root.$imageFile); // To refactor to respect CakePHP
-$heightImgGrid = round(176 / $widthSrc * $heightSrc);
-?>
-
 <A href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"view",$item->id]) ?>" class="card grid-item item-<?= $item->type ?>" style="width:200px; ">
 	<DIV class="card-header">
 		<h2 class="card-title"><?= h($item->title) ?></h2>
@@ -32,7 +21,14 @@ $heightImgGrid = round(176 / $widthSrc * $heightSrc);
 	</DIV>
 	<DIV class="card-block">
 		<DIV class="item-img">
-			<IMG src="<?= $this->Url->build("/".$imageFile) ?>" width="176" height="<?= $heightImgGrid ?>">
+			<?php
+			if ($item->image_1_url) {
+				$imageFile = $item->image_1_url;
+			} else {
+				$imageFile = "img/item-".$item->type."-no-image.jpg";
+			}
+			?>
+			<IMG src="<?= $this->Url->build("/".$imageFile) ?>" class="img-fluid">
 			<SPAN class="item-state <?= h($item->state) ?>">
 				<?php if ($category) { ?>
 				<?= $category ?>

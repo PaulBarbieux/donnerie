@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <?= $this->Html->css(['bootstrap.css','style.css','font-awesome.min.css']) ?>
-	<?= $this->Html->script(['jquery-3.2.1.min.js', 'tether.min.js', 'bootstrap.min.js', 'packery.pkgd.min.js', 'init.js']); ?>
+	<?= $this->Html->script(['jquery-3.2.1.min.js', 'tether.min.js', 'bootstrap.min.js', 'imagesloaded.pkgd.min.js', 'packery.pkgd.min.js', 'init.js']); ?>
 	<!-- Packery -->
 	<script type="text/javascript">
 		jQuery('document').ready(function(){
@@ -17,9 +17,10 @@
 			  itemSelector: '.grid-item',
 			  gutter: 10
 			});
-			setTimeout(function(){
-				$gridPackery.packery('layout');
-			},1000);
+			// layout Packery after each image loads
+			$gridPackery.imagesLoaded().progress( function() {
+				$gridPackery.packery();
+			});
 		});
 	</script>
 
