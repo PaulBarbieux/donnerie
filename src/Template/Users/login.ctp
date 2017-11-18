@@ -9,6 +9,7 @@
 		$col = array('collabel' => "col-sm-3", 'colinput' => "col-sm-9");
 	?>
 	<H2><?= __("Identifiez-vous") ?></H2>
+	<P class="alert alert-warning"><?= __("En vous connectant vous acceptez l'usage de cookies pour ce site.") ?></P>
 	<?= $this->Form->create() ?>
     <?= $this->Form->input('username', array('label'=>"Email" , 'templateVars'=>$col)) ?>
     <?= $this->Form->input('password', array('label'=>"Mot de passe" , 'templateVars'=>$col)) ?>
