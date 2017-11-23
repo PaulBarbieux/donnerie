@@ -40,7 +40,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 					<TABLE class="item-dialog">
 						<TR>
 							<TD class="item-gravatar" valign="top">
-								<IMG width="100" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="http://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=100&d=blank">
+								<IMG class="gravatar img-fluid" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="http://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=100&d=blank">
 							</TD>
 							<TD><TABLE>
 									<TR>
@@ -58,7 +58,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 							</TD>
 						</TR>
 					</TABLE>
-					<P>&nbsp;</P>
+					&nbsp;
 					<H3><I class="fa fa-send"></I> <?= __("Prendre contact pour cette annonce") ?></H3>
 					<?php if (PUBLIC_CONTACT or $connected) { ?>
 					<FORM method="post">

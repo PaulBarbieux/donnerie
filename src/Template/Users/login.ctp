@@ -16,6 +16,7 @@
 	<?= $this->Form->submit(__('Se Connecter')); ?>
 	<?= $this->element('robot-form-trap'); ?>
 	<?= $this->Form->end() ?>
+	&nbsp;
 </div>
 <div class="col-sm-6">
 	<H2><?= __("Vous n'avez pas de compte ?") ?></H2>

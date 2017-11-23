@@ -80,7 +80,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 </NAV>
 
 <DIV id="contact-block">
-	<A href="javascript:void(0);"><?= __("Contact") ?></A>
+	<A id="contact-toggle" href="javascript:void(0);"><?= __("Contact") ?></A>
 	<?php
 	echo $this->Form->create(null, ['url' => ['controller' => 'App', 'action' => 'contact']]);
 	if (!$connected) {

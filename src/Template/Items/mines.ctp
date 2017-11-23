@@ -9,7 +9,7 @@
 
 <div class="col-sm-12 grid">
 <?php foreach ($items as $item): ?>
-	<DIV class="card grid-item item-<?= $item->type ?>" style="width:300px; ">
+	<DIV class="card grid-item item-<?= $item->type ?>" style="width:200px; ">
 		<DIV class="card-header">
 			<h2 class="card-title"><?= h($item->title) ?></h2>
 		</DIV>

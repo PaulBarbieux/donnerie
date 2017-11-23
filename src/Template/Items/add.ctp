@@ -44,6 +44,7 @@
 								<?= $this->Form->file('image[]') ?>
 							</DIV>
 							<?php } ?>
+							&nbsp;
 						</DIV>
 					</DIV>
 					<DIV class="col-md-12">

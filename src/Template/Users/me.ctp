@@ -33,6 +33,7 @@ $col = array('collabel' => "col-md-4", 'colinput' => "col-md-8");
 			<?= $this->Form->end() ?>
 		</DIV>
 	</DIV>
+	&nbsp;
 </div>
 <div class="col-md-4">
 	<H2><?= __("Photo de profil") ?></H2>

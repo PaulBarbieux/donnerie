@@ -7,7 +7,11 @@ BODY {
 	background-image:url("../img/bg-triangular.png");
 	margin-top:80px;
 }
-
+@media (max-width: 400px) {
+	HTML {
+		font-size:14px;
+	}
+}
 /*
 	Header
 */
@@ -25,9 +29,17 @@ NAV.navbar {
 	background: linear-gradient(180deg, #DEEBEB 0%, #7BB0AF 100%);
 	*/
 }
-NAV.navbar .nav-item {
-	border-left: 1px solid #CCE0E0;
+@media (min-width: 768px) {
+	NAV.navbar .nav-item {
+		border-left: 1px solid #CCE0E0;
+	}
 }
+@media (max-width: 767px) {
+	NAV.navbar .nav-item {
+		border-top: 1px solid #CCE0E0;
+	}
+}
+
 NAV.navbar .btn-group {
 	padding-top: .425rem;
 	padding-bottom: .425rem;
@@ -75,6 +87,14 @@ NAV.navbar .btn-group .btn.active {
 	padding: 0;
 	margin:0;
 	overflow:hidden;
+}
+@media (max-width: 400px) {
+	.card.grid-item {
+		font-size:1rem;
+	}
+	.card.grid-item .card-title {
+		font-size:1.2rem;
+	}
 }
 .card.grid-item .card-illu {
 	width:100%;
@@ -147,6 +167,14 @@ A.grid-item .item-state {
 }
 .item-dialog TD {
 	padding:0;
+}
+.item-gravatar {
+	width:100px;
+}
+@media (max-width: 400px) {
+	.item-gravatar {
+		width:50px;
+	}
 }
 .item-description-left {
 	background-image:url("../img/item-description-left.png");
@@ -285,7 +313,7 @@ NAV .gravatar {
 	right:5px;
 	bottom:0;
 }
-#contact-block > A {
+#contact-toggle {
 	padding: 2px 5px;
 	border-radius: 4px 4px 0 0 ;
 	background-color:#FF5151;
@@ -297,6 +325,11 @@ NAV .gravatar {
 	border-radius: 0 4px 0 0 ;
 	background-color:#FF5151;
 	width:350px;
+}
+@media (max-width: 400px) {
+	#contact-block FORM {
+		width:100%;
+	}
 }
 /*
 	Image uploading
