@@ -58,4 +58,5 @@
 	</DIV>
 </DIV>
 <INPUT type="hidden" id="error_not_image" value="<?= __("Ce fichier n'est pas une image.") ?>">
+<INPUT type="hidden" id="error_old_browser" value="<?= __("Désolé : votre navigateur est trop ancien pour charger des images. Nous travaillons à ce problème...") ?>">
 <INPUT type="hidden" id="image-add-src" value="<?= $this->Url->build("/img/image-add.png") ?>">

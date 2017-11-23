@@ -22,19 +22,23 @@ jQuery(document).ready(function(){
 	});
 	// Preview after choosing a file using FileReader API
 	$("INPUT[type='file']").change(function(){
-		var file = this.files[0];
-		preview = $(this).prev();
-		currentImgFile = $(this).parent().find("INPUT[type='hidden']");
-		if (file.type.match(/image.*/)) {
-			var reader = new FileReader();
-			reader.readAsDataURL(file);
-			reader.onloadend = function() {
-				$(preview).find("IMG").attr("src",this.result); // Show image
-				$(preview).find(".deleteImage").show(); // Show delete link
-				$(currentImgFile).val(""); // Remove current image address (edit mode)
-			}
+		if (this.files == undefined) {
+			alert($("#error_old_browser").val());
 		} else {
-			alert ($("#error_not_image").val());
+			var file = this.files[0];
+			preview = $(this).prev();
+			currentImgFile = $(this).parent().find("INPUT[type='hidden']");
+			if (file.type.match(/image.*/)) {
+				var reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onloadend = function() {
+					$(preview).find("IMG").attr("src",this.result); // Show image
+					$(preview).find(".deleteImage").show(); // Show delete link
+					$(currentImgFile).val(""); // Remove current image address (edit mode)
+				}
+			} else {
+				alert ($("#error_not_image").val());
+			}
 		}
 	});
 	// Remove file and preview
