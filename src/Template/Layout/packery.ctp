@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?= substr($this->request->session()->read('Config.language'),0,2) ?>">
+<html lang="<?= LG ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
