@@ -209,7 +209,7 @@ class UsersController extends AppController
     public function login()
     {
         if ($this->request->is('post')) {
-			if ($this->isItHuman(2)) {
+			if ($this->isItHuman(0)) {
 				$user = $this->Auth->identify();
 				if ($user) {
 					$this->Auth->setUser($user);
