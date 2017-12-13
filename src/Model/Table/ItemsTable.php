@@ -50,6 +50,7 @@ class ItemsTable extends Table
             'joinType' => 'INNER',
 			'conditions' => "Users.status IS NULL"
         ]);
+        $this->hasOne('Stats');
     }
 
     /**

@@ -116,7 +116,7 @@ class ItemsController extends AppController
     {
 		// No fusion with categories because a categorie can no more exist
         $this->paginate = [
-            'contain' => ['Users'],
+            'contain' => ['Users','Stats'],
 			'order'=>['Items.created'=>'DESC']
         ];
         $items = $this->paginate($this->Items);
@@ -135,13 +135,13 @@ class ItemsController extends AppController
     {
 		$error = false;
         $item = $this->Items->get($id, [
-            'contain' => ['Categories', 'Users']
+            'contain' => ['Categories', 'Users', 'Stats']
         ]);
 		if ($this->request->is('post')) {
 			if ($this->isItHuman()) {
 				// Send message
 				$message = trim(strip_tags($this->request->getData('message')));
-				if (strlen($message) < 50) {
+				if (strlen($message) < 30) {
 					$this->Flash->error(__("Votre message est vide ou trop court."));
 					$error = true;
 				}
@@ -167,6 +167,7 @@ class ItemsController extends AppController
 					}
 				}
 				if (!$error) {
+					// Send email
 					$email
 						->setTemplate('contact_item_'.LG)
 						->viewVars([
@@ -178,6 +179,12 @@ class ItemsController extends AppController
 						->to($item->user->username)
 						->subject(__("Donnerie : message pour votre annonce {0}" , $item->title ))
 						->send();
+					// Count stats
+					$stats = TableRegistry::get('Stats');
+					$stat = $stats->get($item->stat->id);
+					$stat->contacts++;
+					$stats->save($stat);					
+					// Completed
 					$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
 				}
 			}
@@ -224,6 +231,13 @@ class ItemsController extends AppController
 					->subject(SITE_NAME." : nouvelle annonce ".$item->title)
 					->send();
                 $this->Flash->success(__('Votre annonce est en ligne.'));
+				// Create stats line
+				$stats = TableRegistry::get('Stats');
+				$stat = $stats->newEntity();
+				$stat->user_id = $this->Auth->user('id');
+				$stat->item_id = $item->id;
+				$stats->save($stat);
+				// Completed
                 return $this->redirect(['action' => 'mines']);
             } else {
             	$this->Flash->error(__("Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème persiste contactez-nous (lien en bas à droite)."));
@@ -330,7 +344,7 @@ class ItemsController extends AppController
     }
 		
 	private function getStateLabel($state_id) {
-		$stateLabels = array('new'=>'Comme neuf', 'used'=>'Usagé', 'broken'=>'À réparer');
+		$stateLabels = array('new'=>__('Comme neuf'), 'used'=>__('Usagé'), 'broken'=>__('À réparer'));
 		if (isset($stateLabels[$state_id])) {
 			return $stateLabels[$state_id];
 		} else {

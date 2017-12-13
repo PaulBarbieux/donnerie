@@ -8,12 +8,10 @@
                 <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('state') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_1_url') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_2_url') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_3_url') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col">Contacts</th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -28,12 +26,10 @@
 							$this->Html->link($categories[$item->category_id], ['controller' => 'Categories', 'action' => 'view', $item->category_id])
 							: "Unknwown!" )
 					?></td>
-                <td><?= h($item->image_1_url) ?></td>
-                <td><?= h($item->image_2_url) ?></td>
-                <td><?= h($item->image_3_url) ?></td>
                 <td><?= $item->has('user') ? $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id]) : '' ?></td>
                 <td><?= h($item->created) ?></td>
                 <td><?= h($item->modified) ?></td>
+                <td><?= h($item->stat->contacts) ?></td>
                 <td class="actions">
                     <?= $this->Html->link("", ['action' => 'edit', $item->id, $item->user->alias] , ['class'=>"fa fa-pencil"]) ?>
                     <?= $this->Form->postLink("", ['action' => 'delete', $item->id], ['confirm' => __('Êtes vous sûr de supprimer {0}?', $item->title) , 'class'=>"fa fa-trash"]) ?>
