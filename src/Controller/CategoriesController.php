@@ -31,6 +31,10 @@ class CategoriesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Items'],
+			'order'=>['title_fr'=>'ASC']
+        ];
         $categories = $this->paginate($this->Categories);
         $this->set(compact('categories'));
         $this->set('_serialize', ['categories']);
@@ -112,7 +116,7 @@ class CategoriesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $category = $this->Categories->get($id);
         if ($this->Categories->delete($category)) {
-            $this->Flash->success(__("La catégorie est supprimée. Les annonces l'utilisant n'apparaissent plus."));
+            $this->Flash->success(__("La catégorie {0} est supprimée.", $id));
         } else {
             $this->Flash->error(__('The category could not be deleted. Please, try again.'));
         }

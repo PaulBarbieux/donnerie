@@ -15,6 +15,7 @@
 						<TH scope="col"><?= $this->Paginator->sort('description_fr') ?></TH>
 						<TH scope="col"><?= $this->Paginator->sort('title_nl') ?></TH>
 						<TH scope="col"><?= $this->Paginator->sort('description_nl') ?></TH>
+						<TH scope="col"><?= __("Items") ?></TH>
 						<TH scope="col" class="actions"><?= __('Actions') ?></TH>
 					</TR>
 				</THEAD>
@@ -26,9 +27,16 @@
 						<TD><?= h($category->description_fr) ?></TD>
 						<TD><?= h($category->title_nl) ?></TD>
 						<TD><?= h($category->description_nl) ?></TD>
+						<TD><?= $this->Html->link(h(count($category->items)), ['controller' => 'Items', 'action' => 'category', $category->id]) ?></TD>
 						<TD class="actions">
-							<?= $this->Html->link("", ['action' => 'edit', $category->id] , ['class'=>"fa fa-pencil"]) ?>
-							<?= $this->Form->postLink("", ['action' => 'delete', $category->id], ['confirm' => __("Êtes-vous sûr de supprimer la catégorie {0} ? Les annonces de cette catégorie ne s'afficheront plus.", $category->title_fr) , 'class'=>"fa fa-trash"]) ?>
+							<DIV class="btn-group">
+								<?= $this->Html->link("", ['action' => 'edit', $category->id] , ['class'=>"btn btn-sm btn-primary fa fa-pencil"]) ?>
+								<?php if (count($category->items) == 0) { ?>
+								<?= $this->Form->postLink("", ['action' => 'delete', $category->id], ['confirm' => __("Êtes-vous sûr de supprimer la catégorie {0} ?", $category->title_fr) , 'class'=>"btn btn-sm btn-danger fa fa-trash"]) ?>
+								<?php } else { ?>
+								<A class="btn btn-sm btn-danger disabled" title="<?= __("Suppression interdite : il y a des annonces pour cette catégorie.") ?>"><I class="fa fa-trash"></I></A>
+								<?php } ?>
+							</DIV>
 						</TD>
 					</tr>
 					<?php endforeach; ?>

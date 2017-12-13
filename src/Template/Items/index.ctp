@@ -23,8 +23,8 @@
                 <td><?= $this->Html->link($item->title, ['action' => 'view', $item->id]) ?></td>
                 <td><?= h($item->state) ?></td>
                 <td><?= (isset($categories[$item->category_id]) ?
-							$this->Html->link($categories[$item->category_id], ['controller' => 'Categories', 'action' => 'view', $item->category_id])
-							: "Unknwown!" )
+							$this->Html->link($categories[$item->category_id], ['controller' => 'Items', 'action' => 'category', $item->category_id])
+							: "Unknown!" )
 					?></td>
                 <td><?= $item->has('user') ? $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id]) : '' ?></td>
                 <td><?= h($item->created) ?></td>
