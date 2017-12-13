@@ -183,7 +183,9 @@ class ItemsController extends AppController
 					$stats = TableRegistry::get('Stats');
 					$stat = $stats->get($item->stat->id);
 					$stat->contacts++;
-					$stats->save($stat);					
+					$stats->save($stat);
+					// Reset form
+					$this->request->data('message', "");
 					// Completed
 					$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
 				}
