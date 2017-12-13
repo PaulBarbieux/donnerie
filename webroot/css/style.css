@@ -2,15 +2,18 @@
 /*
 	Main styles
 */
-BODY {
-	font-family: 'Ruda', sans-serif;
-	background-image:url("../img/bg-triangular.png");
-	margin-top:80px;
+HTML {
+	font-size:16px;
 }
 @media (max-width: 400px) {
 	HTML {
 		font-size:14px;
 	}
+}
+BODY {
+	font-family: 'Ruda', sans-serif;
+	background-image:url("../img/bg-triangular.png");
+	margin-top:80px;
 }
 /*
 	Header
@@ -78,6 +81,8 @@ NAV.navbar .btn-group .btn.active {
 */
 .card.grid-item {
 	font-size:0.8rem;
+	width: 200px;
+	margin: 0 5px 10px 5px;
 }
 .card.grid-item .card-header {
 	padding: 0.5rem;
@@ -91,6 +96,9 @@ NAV.navbar .btn-group .btn.active {
 @media (max-width: 400px) {
 	.card.grid-item {
 		font-size:1rem;
+		width: 90%;
+		margin-left:0;
+		margin-right:0;
 	}
 	.card.grid-item .card-title {
 		font-size:1.2rem;
@@ -257,12 +265,12 @@ A.card:focus {
 .custom-file-control:lang(fr)::after {
 	content: "Choisir un fichier...";
 }
+.form-group > LABEL {
+	font-weight:bold;
+}
 :-ms-input-placeholder.form-control {
     color: #BBB;
     opacity: 1;
-}
-.form-group > LABEL {
-	font-weight:bold;
 }
 ::-webkit-input-placeholder {
   color: #AAA !important;

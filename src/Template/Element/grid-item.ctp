@@ -1,4 +1,4 @@
-<A href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"view",$item->id]) ?>" class="card grid-item item-<?= $item->type ?>" style="width:200px; ">
+<A href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"view",$item->id]) ?>" class="card grid-item item-<?= $item->type ?>">
 	<DIV class="card-header">
 		<h2 class="card-title"><?= h($item->title) ?></h2>
 	</DIV>
