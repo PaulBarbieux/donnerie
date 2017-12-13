@@ -325,16 +325,9 @@ class ItemsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $item = $this->Items->get($id);
-		// Delete image files
-		if ($item->image_1_url) {
-			unlink(WWW_ROOT.$item->image_1_url);
-		}
-		if ($item->image_2_url) {
-			unlink(WWW_ROOT.$item->image_2_url);
-		}
-		if ($item->image_3_url) {
-			unlink(WWW_ROOT.$item->image_3_url);
-		}
+		if ($item->image_1_url) unlink(WWW_ROOT.$item->image_1_url);
+		if ($item->image_2_url) unlink(WWW_ROOT.$item->image_2_url);
+		if ($item->image_3_url) unlink(WWW_ROOT.$item->image_3_url);
         if ($this->Items->delete($item)) {
             $this->Flash->success(__("L'annonce est supprimée."));
         } else {

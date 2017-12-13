@@ -11,6 +11,7 @@
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col">Announces</th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -35,6 +36,7 @@
 				</td>
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>
+				<td><?= count(h($user->items)) ?></td>
                 <td class="actions">
                     <?= $this->Html->link("", ['action' => 'edit', $user->id] , ['class'=>"fa fa-pencil"]) ?>
                     <?= $this->Form->postLink("", ['action' => 'delete', $user->id], ['confirm' => __('Êtes-vous sûr de supprimer {0} ?', $user->username) , 'class'=>"fa fa-trash"]) ?>

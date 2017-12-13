@@ -48,9 +48,13 @@ class UsersController extends AppController
      */
     public function index()
     {
-        $users = $this->paginate($this->Users);
-        $this->set(compact('users'));
-        $this->set('_serialize', ['users']);
+		$this->paginate = [
+            'contain' => ['Items'],
+			'order'=>['username'=>'ASC']
+        ];
+       	$users = $this->paginate($this->Users);
+		$this->set(compact('users'));
+		$this->set('_serialize', ['users']);
 		$this->viewBuilder()->setLayout("full-width");
     }
 
@@ -195,15 +199,30 @@ class UsersController extends AppController
 
     public function delete($id = null)
     {
+		$error = false;
         $this->request->allowMethod(['post', 'delete']);
+		// Delete user
         $user = $this->Users->get($id);
-		// ### Progammer la suppression des annonces
         if ($this->Users->delete($user)) {
-            $this->Flash->success(__('The user has been deleted.'));
+            $this->Flash->success(__('The user {0} has been deleted.', $user->username));
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
+			$error = true;
         }
-        return $this->redirect(['action' => 'index']);
+		if (!$error) {
+			// Delete his items
+			$itemsTable = $this->loadModel('Items');
+			$queryItems = $itemsTable->find('all')->where(['user_id = ' => $id]);
+			foreach ($queryItems as $item) {
+				if ($item->image_1_url) unlink(WWW_ROOT.$item->image_1_url);
+				if ($item->image_2_url) unlink(WWW_ROOT.$item->image_2_url);
+				if ($item->image_3_url) unlink(WWW_ROOT.$item->image_3_url);
+				if (!$itemsTable->delete($item)) {
+					$this->Flash->error(__("Problème lors de la suppression de l'annonce {0}", $item->id));
+				}
+			}
+		}
+		return $this->redirect(['action' => 'index']);
     }
 
     public function login()
