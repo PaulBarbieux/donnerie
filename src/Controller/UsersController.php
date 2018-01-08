@@ -121,7 +121,7 @@ class UsersController extends AppController
 			}
         }
 		$streetsTable = $this->loadModel('Streets');
-		$streets = $streetsTable->find('list');
+		$streets = $streetsTable->find('list', ['order'=>['Streets.name_'.LG=>"ASC"]]);
         $this->set(compact(['user','streets']));
         $this->set('_serialize', ['user','streets']);
     }
@@ -163,7 +163,7 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
 		$streetsTable = $this->loadModel('Streets');
-		$streets = $streetsTable->find('list');
+		$streets = $streetsTable->find('list', ['order'=>['Streets.name_'.LG=>"ASC"]]);
         $this->set(compact(['user','streets']));
         $this->set('_serialize', ['user','streets']);
     }
@@ -189,7 +189,7 @@ class UsersController extends AppController
 			return $this->redirect(['action' => 'me']);
 		}
 		$streetsTable = $this->loadModel('Streets');
-		$streets = $streetsTable->find('list');
+		$streets = $streetsTable->find('list', ['order'=>['Streets.name_'.LG=>"ASC"]]);
         $this->set(compact(['user','streets']));
         $this->set('_serialize', ['user','streets']);
 	}
