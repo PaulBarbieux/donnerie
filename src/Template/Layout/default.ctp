@@ -15,6 +15,7 @@
 
   </head>
   <body>
+  
   	<?= $this->element('header') ?>
 	<div class="container">
 		<div class="row">
@@ -26,6 +27,7 @@
     		<?= $this->fetch('content') ?>
 		</div>
 	</div>
+	<?= $this->element('footer') ?>
 
   </body>
 </html>

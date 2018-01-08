@@ -4,6 +4,8 @@
 */
 HTML {
 	font-size:16px;
+	position: relative;
+	min-height: 100%;
 }
 @media (max-width: 400px) {
 	HTML {
@@ -42,7 +44,6 @@ NAV.navbar {
 		border-top: 1px solid #CCE0E0;
 	}
 }
-
 NAV.navbar .btn-group {
 	padding-top: .425rem;
 	padding-bottom: .425rem;
@@ -56,6 +57,22 @@ NAV.navbar .btn-group .btn.active {
 	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow:    inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
 	box-shadow:         inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+/*
+	Footer
+*/
+FOOTER {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding:20px;
+	background-color: #DDD;
+}
+FOOTER .sponsors A {
+	max-height:100px;
+}
+#footer-gap {
+	height:80px;
 }
 /*
 	Card
@@ -348,4 +365,10 @@ NAV .gravatar {
 .image-upload .image-preview {
 	cursor: pointer;
 	position:relative;
+}
+/*
+	More classes
+*/
+.disabled {
+	color: #888;
 }
