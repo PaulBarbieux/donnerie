@@ -11,9 +11,9 @@
 	<H2><?= __("Identifiez-vous") ?></H2>
 	<P class="alert alert-warning"><?= __("En vous connectant vous acceptez l'usage de cookies pour ce site.") ?></P>
 	<?= $this->Form->create() ?>
-    <?= $this->Form->input('username', array('label'=>"Email" , 'templateVars'=>$col)) ?>
-    <?= $this->Form->input('password', array('label'=>"Mot de passe" , 'templateVars'=>$col)) ?>
-	<?= $this->Form->submit(__('Se Connecter')); ?>
+    <?= $this->Form->input('username', array('label'=>__("Email") , 'templateVars'=>$col)) ?>
+    <?= $this->Form->input('password', array('label'=>__("Mot de passe") , 'templateVars'=>$col)) ?>
+	<?= $this->Form->submit(__('Se connecter')); ?>
 	<?= $this->element('robot-form-trap'); ?>
 	<?= $this->Form->end() ?>
 	&nbsp;

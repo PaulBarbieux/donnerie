@@ -131,13 +131,13 @@ class UsersController extends AppController
 		if ($user) {
 			$user->status = null;
 			if ($this->Users->save($user)) {
-				$this->Flash->success("Votre compte est activé : vous pouvez vous connecter.");
+				$this->Flash->success(__("Votre compte est activé : vous pouvez vous connecter."));
 			} else {
 				debug($errors);
 				$this->Flash->error(__('Erreur technique'));
 			}
 		} else {
-			$this->Flash->error("Votre code d'activation n'est pas valide.");
+			$this->Flash->error(__("Votre code d'activation n'est pas valide."));
 		}
 		return $this->redirect(['action' => 'login']);
 	}
@@ -237,7 +237,7 @@ class UsersController extends AppController
 					I18n::locale($this->request->session()->read('Config.language'));
 					return $this->redirect($this->Auth->redirectUrl());
 				}
-				$this->Flash->error(__('Invalid username or password, try again'));
+				$this->Flash->error(__("L'email ou le mot de passe est invalide. Avez-vous bien créé un compte sur notre site ?"));
 			}
         }
     }

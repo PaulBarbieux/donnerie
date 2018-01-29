@@ -59,7 +59,7 @@
 						?>
 					</DIV>
 				</DIV>
-				<?= $this->Form->submit(__('send')) ?>
+				<?= $this->Form->submit(__('Envoyer')) ?>
 			<?= $this->Form->end() ?>
 		</DIV>
 	</DIV>

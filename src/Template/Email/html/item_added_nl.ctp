@@ -1,4 +1,4 @@
-<P>(nl) Une annonce a été postée par <STRONG><?= $alias ?></STRONG> :</P>
+<P>Een advertentie werd geplaatst op <STRONG><?= $alias ?></STRONG>:
 <P><STRONG><?= $title ?></STRONG></P>
 <P><?= $description ?></P>
-<P><A href="<?= $url ?>">Voir l'annonce</A></P>
+<P><A href="<?= $url ?>">Zie advertentie</A></P>
