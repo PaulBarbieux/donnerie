@@ -3,18 +3,10 @@
 	Main styles
 */
 HTML {
-	font-size:16px;
 	position: relative;
 	min-height: 100%;
 }
-@media (max-width: 400px) {
-	HTML {
-		font-size:14px;
-	}
-}
 BODY {
-	font-family: 'Ruda', sans-serif;
-	background-image:url("../img/bg-triangular.png");
 	margin-top:80px;
 }
 /*
@@ -22,17 +14,6 @@ BODY {
 */
 NAV.navbar {
 	margin-bottom:20px;
-	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-	box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-	background: #84D5CB url(../img/bg-triangular.png);
-	/*
-	background: -moz-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
-	background: -webkit-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
-	background: -o-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
-	background: -ms-linear-gradient(90deg, #DEEBEB 0%, #7BB0AF 100%);
-	background: linear-gradient(180deg, #DEEBEB 0%, #7BB0AF 100%);
-	*/
 }
 @media (min-width: 768px) {
 	NAV.navbar .nav-item {
@@ -48,16 +29,6 @@ NAV.navbar .btn-group {
 	padding-top: .425rem;
 	padding-bottom: .425rem;
 }
-NAV.navbar .btn-group .btn {
-	border-color:#FFF;
-	color:#FFF;
-}
-NAV.navbar .btn-group .btn.active {
-	color:#222;
-	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow:    inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-	box-shadow:         inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-}
 /*
 	Footer
 */
@@ -66,10 +37,12 @@ FOOTER {
 	bottom: 0;
 	width: 100%;
 	padding:20px;
-	background-color: #DDD;
 }
-FOOTER .sponsors A {
-	max-height:100px;
+FOOTER .sponsors IMG {
+	max-height:50px;
+}
+FOOTER .extrapaul {
+	font-size: 0.8rem;
 }
 #footer-gap {
 	height:80px;

@@ -8,7 +8,7 @@
     <title><?= $this->fetch('title')." | ".SITE_NAME ?></title>
 
     <!-- Bootstrap CSS -->
-    <?= $this->Html->css(['bootstrap.css','style.css?20171213','font-awesome.min.css']) ?>
+    <?= $this->Html->css(['bootstrap.css','style.css','branding.css','font-awesome.min.css']) ?>
 	<?= $this->Html->script(['jquery-3.2.1.min.js', 'tether.min.js', 'bootstrap.min.js', 'imagesloaded.pkgd.min.js', 'packery.pkgd.min.js', 'init.js']); ?>
 	<!-- Packery -->
 	<script type="text/javascript">

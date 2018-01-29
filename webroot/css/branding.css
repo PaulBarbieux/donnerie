@@ -1,0 +1,45 @@
+HTML {
+	font-size:16px;
+}
+@media (max-width: 400px) {
+	HTML {
+		font-size:14px;
+	}
+}
+BODY {
+	font-family: 'Ruda', sans-serif;
+	background-image:url("../img/bg-triangular.png");
+}
+NAV.navbar {
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	background: #84D5CB url(../img/bg-triangular.png);
+}
+NAV.navbar .nav-link {
+	color: #000;
+}
+NAV.navbar .btn-group .btn {
+	border-color:#FFF;
+	color:#FFF;
+}
+NAV.navbar .navbar-toggler {
+	color: #FFF;
+	border-color:#FFF;
+}
+NAV.navbar .navbar-toggler .navbar-toggler-icon {
+	color:#FFF;
+	font-size:25px;
+	line-height:2px;
+	width:auto;
+	height:auto;
+}
+NAV.navbar .btn-group .btn.active {
+	color:#222;
+	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:         inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+FOOTER {
+	background-color: #DDD;
+}
