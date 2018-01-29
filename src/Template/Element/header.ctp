@@ -12,12 +12,12 @@ if ($this->request->session()->read("Auth.User.id")) {
 	$connected = false;
 }
 ?>
-<NAV class="navbar navbar-toggleable-sm fixed-top navbar-light">
+<NAV class="navbar navbar-toggleable-sm fixed-top">
 	<BUTTON class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    	<SPAN class="navbar-toggler-icon"></SPAN>
+    	<SPAN class="navbar-toggler-icon"><I class="fa fa-bars"></I></SPAN>
 	</BUTTON>
  	<A class="navbar-brand" href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"home"]) ?>">
-		<IMG src="<?= $this->Url->build("/img/donnerie-logo.png") ?>">
+		<IMG src="<?= $this->Url->build("/img/donnerie-logo-".LG.".png") ?>">
 	</A>
 	<DIV class="collapse navbar-collapse" id="navbarSupportedContent">
 		<UL class="navbar-nav mr-auto">
@@ -29,9 +29,9 @@ if ($this->request->session()->read("Auth.User.id")) {
 					<I class="fa fa-info-circle"></I> <?= __("Infos") ?>
 				</A>
 				<DIV class="dropdown-menu" aria-labelledby="infoLinks">
+					<?= $this->Html->link(__("Introduction"), array('controller'=>"pages", 'action'=>"intro"), array('class'=>"dropdown-item")) ?>
 					<?= $this->Html->link(__("F.A.Q."), array('controller'=>"pages", 'action'=>"faq"), array('class'=>"dropdown-item")) ?>
 					<?= $this->Html->link(__("Charte"), array('controller'=>"pages", 'action'=>"charter"), array('class'=>"dropdown-item")) ?>
-					<?= $this->Html->link(__("À propos de ce site"), array('controller'=>"pages", 'action'=>"info"), array('class'=>"dropdown-item")) ?>
 				</DIV>
 			</LI>
 			<?php if ($connected) { ?>
