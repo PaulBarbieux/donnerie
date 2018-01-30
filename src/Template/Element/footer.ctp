@@ -2,11 +2,12 @@
 <FOOTER>
 	<DIV class="container-fluid">
 		<DIV class="row">
-			<DIV class="col-12 align-content-center text-center">
+			<DIV class="col-12 d-flex justify-content-between">
 				<DIV class="sponsors">
-					
 				</DIV>
-				<?= __("Site fait avec enthousiasme par {0}", '<A href="http://www.extrapaul.be" target="_blank">ExtraPaul</A>') ?>
+				<DIV class="extrapaul">
+					<?= __("Site fait avec enthousiasme par {0}", '<A href="http://www.extrapaul.be" target="_blank">ExtraPaul</A>') ?>
+				</DIV>
 			</DIV>
 		</DIV>
 	</DIV>
