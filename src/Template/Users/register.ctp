@@ -21,6 +21,6 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement
 							'options' => ['fr'=>__("Français"), 'nl'=>__("Nederlands")] ]);
 			echo $this->element('robot-form-trap');
         ?>
-    <?= $this->Form->submit	(__('Envoyer')) ?>
+	<?= $this->Form->submit(__('Envoyer'), ['templateVars'=> ['text'=>__('Envoyer'), 'icon'=>'<I class="fa fa-paper-plane"></I>'] ]); ?>
     <?= $this->Form->end() ?>
 </div>

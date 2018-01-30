@@ -2,7 +2,8 @@
 // https://book.cakephp.org/3.0/en/views/helpers/form.html#customizing-the-templates-formhelper-uses
 
 return [
-	'inputSubmit' => '<button type="submit" class="btn btn-primary" {{attrs}}>Envoyer</button>',
+	'inputSubmit' => '<button type="submit" {{attrs}} class="btn btn-primary">{{icon}} {{text}}</button>',
+	'submitContainer' => '{{content}}',
 	'inputContainer' => '<DIV class="form-group">{{content}}</DIV>',
 	'input' => '<input type="{{type}}" name="{{name}}" class="form-control" {{attrs}}/>',
 	'select' => '<select name="{{name}}" class="form-control" {{attrs}}>{{content}}</select>',

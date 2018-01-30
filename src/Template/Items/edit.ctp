@@ -51,8 +51,10 @@
 					</DIV>
 				</DIV>
 			</DIV>
-			<BUTTON type="submit" value="send" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> <?= __("Enregistrer") ?></BUTTON>
-			<?= $this->Html->link("Annuler", array('controller'=>"items", 'action'=>"mines"), array('class'=>"btn btn-default")) ?>
+			<DIV class="btn-group">
+				<?= $this->Form->submit(__('Enregistrer'), ['templateVars'=> ['text'=>__('Enregistrer'), 'icon'=>'<I class="fa fa-check"></I>'] ]); ?>
+				<?= $this->Html->link(__("Annuler"), array('controller'=>"items", 'action'=>"mines"), array('class'=>"btn btn-secondary")) ?>
+			</DIV>
 			<?= $this->Form->end() ?>
 		</DIV>
 	</DIV>

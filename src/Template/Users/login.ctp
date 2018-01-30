@@ -13,7 +13,7 @@
 	<?= $this->Form->create() ?>
     <?= $this->Form->input('username', array('label'=>__("Email") , 'templateVars'=>$col)) ?>
     <?= $this->Form->input('password', array('label'=>__("Mot de passe") , 'templateVars'=>$col)) ?>
-	<?= $this->Form->submit(__('Se connecter')); ?>
+	<?= $this->Form->submit(__('Se connecter'), ['templateVars'=> ['text'=>__('Se connecter'), 'icon'=>'<I class="fa fa-plug"></I>'] ]); ?>
 	<?= $this->element('robot-form-trap'); ?>
 	<?= $this->Form->end() ?>
 	&nbsp;

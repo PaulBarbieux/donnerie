@@ -2,7 +2,8 @@
 // https://book.cakephp.org/3.0/en/views/helpers/form.html#customizing-the-templates-formhelper-uses
 
 return [
-	'inputSubmit' => '<button type="submit" class="btn btn-primary" {{attrs}}>Envoyer</button>',
+	'inputSubmit' => '<button type="submit" class="btn btn-primary" {{attrs}}>{{icon}} {{text}}</button>',
+	'submitContainer' => '{{content}}',
 	'label' => '<label class="{{collabel}} col-form-label" {{attrs}}>{{text}}</label>',
 	'inputContainer' => '<DIV class="form-group row">{{content}}</DIV>',
 	'inputContainerError' => '<DIV class="form-group row input {{type}}{{required}} error">{{content}}{{error}}</DIV>',

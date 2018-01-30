@@ -59,7 +59,7 @@
 						?>
 					</DIV>
 				</DIV>
-				<?= $this->Form->submit(__('Envoyer')) ?>
+				<?= $this->Form->submit(__('Envoyer'), ['templateVars'=> ['text'=>__('Envoyer'), 'icon'=>'<I class="fa fa-paper-plane"></I>'] ]); ?>
 			<?= $this->Form->end() ?>
 		</DIV>
 	</DIV>
