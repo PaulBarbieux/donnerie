@@ -256,8 +256,9 @@ function isItDate($input) {
 /*
 	Configuration du site
 */
-// Nom du site
-define ("SITE_NAME","Donnerie (beta)");
+// Nom du site (dans les différentes langues)
+define ("SITE_NAME_FR","Donnerie");
+define ("SITE_NAME_NL","Weggeefplek");
 // Nombre d'annonces pour la pagination de l'accueil
 define ("HOME_LIMIT_ITEMS",16);
 // Troncation des textes d'annonces en page d'accueil

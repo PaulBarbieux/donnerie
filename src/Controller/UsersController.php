@@ -102,7 +102,7 @@ class UsersController extends AppController
 							->viewVars([
 								'user' => $user->alias,
 								'site_url' => Router::url("/", true), 
-								'site_name' => "Donnerie", 
+								'site_name' => SITE_NAME, 
 								'confirm_url' => Router::url("/users/activate/".$confirmCode, true)])
 							->subject(__("Donnerie : confirmez votre inscription"))
 							->send();
