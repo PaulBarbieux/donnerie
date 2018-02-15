@@ -40,6 +40,11 @@ class AppController extends Controller
         $this->loadComponent('Flash');
 		
 		/*
+			Redirect to SSL
+		*/
+    	$this->loadComponent('Security', ['blackHoleCallback' => 'forceSSL']);
+		
+		/*
 			Authorization
 		*/
         $this->loadComponent('Auth', [
@@ -85,6 +90,13 @@ class AppController extends Controller
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
     }	
+	
+	// https://securityblog.gr/1963/cakephp-3-force-all-actions-to-require-ssl/
+	public function beforeFilter(Event $event) 
+	{
+		parent::beforeFilter($event); 
+		$this->Security->requireSecure();
+	}
 
     /**
      * Before render callback.
@@ -100,7 +112,12 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
     }
-	
+
+	public function forceSSL()
+	{
+		return $this->redirect('https://' . env('SERVER_NAME') . $this->request->getRequestTarget());
+	}
+
 	public function isAuthorized($user = null) {
 		return true;
 	}
