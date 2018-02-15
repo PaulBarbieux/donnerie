@@ -40,7 +40,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 					<TABLE class="item-dialog">
 						<TR>
 							<TD class="item-gravatar" valign="top">
-								<IMG class="gravatar img-fluid" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="http://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=100&d=blank">
+								<IMG class="gravatar img-fluid" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="https://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=100&d=blank">
 							</TD>
 							<TD><TABLE>
 									<TR>

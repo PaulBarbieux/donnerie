@@ -38,7 +38,7 @@ $col = array('collabel' => "col-md-4", 'colinput' => "col-md-8");
 <div class="col-md-4">
 	<H2><?= __("Photo de profil") ?></H2>
 	<P><?= __("Notre site utilise <A href='http://fr.gravatar.com' target='_blank'>Gravatar</A> pour avoir votre photo de profil. Si votre image est une lettre sur une silhouette, c'est que vous n'avez pas de Gravatar :") ?></P>
-	<P><IMG width="100" class="gravatar" style="background-image:url('../img/gravatar/<?php echo strtoupper(substr($user->alias,0,1)) ?>.jpg');" src="http://www.gravatar.com/avatar/<?php echo md5($user->username) ?>?s=100&d=blank"></P>
+	<P><IMG width="100" class="gravatar" style="background-image:url('../img/gravatar/<?php echo strtoupper(substr($user->alias,0,1)) ?>.jpg');" src="https://www.gravatar.com/avatar/<?php echo md5($user->username) ?>?s=100&d=blank"></P>
 	<P><?= __("Gravatar permet de lier une photo à votre adresse email : simple, efficace et utile sur beaucoup de sites.") ?></P>
 	<P><A href="http://fr.gravatar.com" class="btn btn-secondary" target="_blank"><I class="fa fa-share"></I> <?= __("Créez votre Gravatar") ?></A></P>
 </div>

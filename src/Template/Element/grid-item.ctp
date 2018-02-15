@@ -4,7 +4,7 @@
 	</DIV>
 	<DIV class="card-block">
 		<?php if (!$user) { ?>
-			<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="http://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=25&d=blank">
+			<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="https://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=25&d=blank">
 			<?= h($item->user->alias) . ", " ?>
 		<?php } ?>
 		<?php
