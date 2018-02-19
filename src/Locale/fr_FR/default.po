@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2018-01-24 21:31+0100\n"
-"PO-Revision-Date: 2018-01-24 21:32+0100\n"
+"PO-Revision-Date: 2018-01-31 17:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -608,7 +608,7 @@ msgstr ""
 
 #: Template/Users/login.ctp:16
 msgid "Se Connecter"
-msgstr ""
+msgstr "Se connecter"
 
 #: Template/Users/login.ctp:22
 msgid "Vous n'avez pas de compte ?"

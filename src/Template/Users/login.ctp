@@ -21,5 +21,9 @@
 <div class="col-sm-6">
 	<H2><?= __("Vous n'avez pas de compte ?") ?></H2>
 	<P><?= $this->Html->link(__("Créer votre compte"), array('controller'=>"users", 'action'=>"register"), array('class'=>"btn btn-primary")); ?></P>
+	<?php if (LG == "nl") { ?>
+	<P>Deze website is bestemd voor Jettenaren en voor personen die in Jette werken. Het gebruik ervan vereist een inschrijving. Gratis, natuurlijk!</P>
+	<?php } else { ?>
 	<P>Ce site est ouvert aux habitants de Jette ou travailleurs dans la commune&nbsp;: son utilisation nécessite une inscription. Gratuite, bien entendu&nbsp;!</P>
+	<?php } ?>
 </div>

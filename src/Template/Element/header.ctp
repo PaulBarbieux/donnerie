@@ -73,8 +73,8 @@ if ($this->request->session()->read("Auth.User.id")) {
 				$lang = "fr_FR";
 			}
 			?>
-			<A class="btn <?= ($lang == "fr_FR" ? "active" : "") ?>" href="<?= $this->Url->build(['controller'=>"app", 'action'=>"changeLanguage", "fr_FR"]) ?>">FR</A>
-			<A class="btn <?= ($lang == "nl_NL" ? "active" : "") ?>" href="<?= $this->Url->build(['controller'=>"app", 'action'=>"changeLanguage", "nl_NL"]) ?>">NL</A>
+			<A class="btn <?= (LG == "fr" ? "active" : "") ?>" href="<?= $this->Url->build(['controller'=>"app", 'action'=>"changeLanguage", "fr_FR"]) ?>">FR</A>
+			<A class="btn <?= (LG == "nl" ? "active" : "") ?>" href="<?= $this->Url->build(['controller'=>"app", 'action'=>"changeLanguage", "nl_NL"]) ?>">NL</A>
 		</DIV>
 	</DIV>
 </NAV>
@@ -83,6 +83,9 @@ if ($this->request->session()->read("Auth.User.id")) {
 	<A id="contact-toggle" href="javascript:void(0);"><?= __("Contact") ?></A>
 	<?php
 	echo $this->Form->create(null, ['url' => ['controller' => 'App', 'action' => 'contact']]);
+	?>
+	<P class="alert alert-warning"><?= __("N'utilisez pas ce formulaire pour contacter un annonceur : utilisez le formulaire dans le détail de l'annonce.") ?></P>
+	<?php
 	if (!$connected) {
 		echo $this->Form->text('name' , ['placeholder'=>__("Votre nom") , 'class'=>"form-control" , 'required'=>"required" ]);
 		echo $this->Form->email('email' , ['placeholder'=>__("Votre email") , 'class'=>"form-control" , 'required'=>"required" ]);
