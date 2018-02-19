@@ -70,6 +70,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 						}
 						echo $this->element('robot-form-trap');
 						?>
+						<IMG class="waiting-animation" src="<?= $this->Url->build("/img/loading.gif") ?>" style="display: none;">
 						<BUTTON type="submit" name="contact" class="btn btn-primary" value="send"><i class="fa fa-paper-plane" aria-hidden="true"></i> <?= __("Envoyer") ?></BUTTON>
 					</FORM>
 					<?php } else { ?>

@@ -59,6 +59,7 @@
 						?>
 					</DIV>
 				</DIV>
+				<IMG class="waiting-animation" src="<?= $this->Url->build("/img/loading.gif") ?>" style="display: none;">
 				<?= $this->Form->submit(__('Envoyer'), ['templateVars'=> ['text'=>__('Envoyer'), 'icon'=>'<I class="fa fa-paper-plane"></I>'] ]); ?>
 			<?= $this->Form->end() ?>
 		</DIV>
