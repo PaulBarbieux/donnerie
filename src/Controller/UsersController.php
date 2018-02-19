@@ -87,8 +87,10 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
 			if ($this->isItHuman()) {
 				$data = $this->request->getData();
-				if ($data['password'] != $data['password2']) {
-					$this->Flash->error(__("Vous n'avez pas rempli deux fois le même mot de passe"));
+				if (strlen($data['password']) < 8) {
+					$this->Flash->error(__("Veuillez donner un mot de passe d'au moins 8 caractères."));
+				} elseif ($data['password'] != $data['password2']) {
+					$this->Flash->error(__("Vous n'avez pas rempli deux fois le même mot de passe."));
 				} else {
 					$user = $this->Users->patchEntity($user, $data);
 					$confirmCode = "waitForConfirm:".md5(time());
