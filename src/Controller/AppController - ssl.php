@@ -62,7 +62,7 @@ class AppController extends Controller
                 'action' => 'home'
             ],
 			'authorize' => 'Controller',
-			'authError' => __("Veuillez vous connecter pour pouvoir faire cette action")
+			'authError' => __("Veuillez vous connecter pour pouvoir faire cette action.")
         ]);
 		$this->Auth->allow(['changeLanguage', 'contact']);
 		
@@ -71,11 +71,29 @@ class AppController extends Controller
 			LG vaut "fr" ou "nl", à utiliser pour les noms de colonnes ou variables. Exemple : "title_".LG
 		*/
 		if ($this->request->session()->check('Config.language')) {
+			// Get language from user profile
 			I18n::locale($this->request->session()->read('Config.language'));
 			define('LG',substr($this->request->session()->read('Config.language'),0,2));
         } else {
-			I18n::locale("fr_FR");
-			define('LG','fr');
+			// Set language based on browser, first fr or nl found
+			$firstLg = false;
+			$acceptLanguages = explode(",",$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+			foreach ($acceptLanguages as $browserLg) {
+				if (strpos($browserLg,"nl") !== false) {
+					$firstLg = "nl";
+					break;
+				} elseif (strpos($browserLg,"fr") !== false) {
+					$firstLg = "fr";
+					break;
+				}
+			}
+			if ($firstLg == "nl") {
+				I18n::locale("nl_NL");
+				define('LG','nl');
+			} else {
+				I18n::locale("fr_FR");
+				define('LG','fr');
+			}
 		}
 		if (LG == "nl") {
 			define ('SITE_NAME',SITE_NAME_NL);
