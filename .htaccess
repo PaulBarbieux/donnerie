@@ -1,3 +1,5 @@
+# App
+
 # Uncomment the following to prevent the httpoxy vulnerability
 # See: https://httpoxy.org/
 #<IfModule mod_headers.c>
