@@ -17,7 +17,7 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement
             echo $this->Form->control('password' , [ 'label'=>__("Mot de passe") , 'templateVars'=>$col ]);
             echo $this->Form->control('password2' , [ 'type'=>"password" , 'label'=>__("Confirmez le mot de passe") , 'templateVars'=>$col ]);
 			echo $this->Form->control('street' , [ 'label'=>__("Rue") ,  'empty'=>__("(choisissez)") , 'templateVars'=>$col ]);
-			echo $this->Form->control('language' , ['type' => 'radio', 'label'=>__("Langue") , 'templateVars'=>$col , 
+			echo $this->Form->control('language' , ['type' => 'radio', 'label'=>__("Langue") , 'templateVars'=>$col , 'default'=>LG ,
 							'options' => ['fr'=>__("Français"), 'nl'=>__("Nederlands")] ]);
 			echo $this->element('robot-form-trap');
         ?>
