@@ -5,7 +5,7 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");
 <div class="col-sm-12">
 	<H1><?= (!isset($street->name_fr) ? "Nouvelle rue" : "Modifier ".$street->name_fr) ?></H1>
 	<DIV class="card">
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<?= $this->Form->create($street) ?>
 				<?php
 					echo $this->Form->control('name_fr' , [ 'templateVars'=>$col ]);

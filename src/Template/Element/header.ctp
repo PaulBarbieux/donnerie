@@ -12,7 +12,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 	$connected = false;
 }
 ?>
-<NAV class="navbar navbar-toggleable-sm fixed-top">
+<NAV class="navbar navbar-expand-sm fixed-top">
 	<BUTTON class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     	<SPAN class="navbar-toggler-icon"><I class="fa fa-bars"></I></SPAN>
 	</BUTTON>

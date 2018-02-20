@@ -7,7 +7,7 @@
 		<DIV class="card-header">
 			<H1><?= __("Créer une annonce") ?></H1>
 		</DIV>
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<?php
 				$this->loadHelper('Form', [ 'templates' => 'app_form', ]); 
 			?>

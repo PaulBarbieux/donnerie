@@ -9,7 +9,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 
 <DIV class="col-sm-12">
 	<DIV class="card">
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<DIV class="row">
 				<DIV class="col-md-5">
 					<DIV class="row">

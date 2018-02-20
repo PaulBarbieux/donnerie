@@ -101,7 +101,7 @@ FOOTER .extrapaul {
 	background-size:cover;
 	background-position:center center;
 }
-.card.grid-item .card-block {
+.card.grid-item .card-body {
 	padding: 0.7rem;
 }
 .card.grid-item.item-r .card-header {
@@ -277,6 +277,10 @@ A.card:focus {
 ::placeholder {
   color: #AAA !important;
   opacity:1;
+}
+/* Inline checkbox and radio */
+.form-group.row > .form-check-label {
+	margin-left:40px;
 }
 /*
 	Gravatar : afficher une lettre quand il n'y a pas d'image (Gravatar renvoie une image transparente) 

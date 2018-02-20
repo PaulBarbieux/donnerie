@@ -2,7 +2,7 @@
 	<DIV class="card-header">
 		<h2 class="card-title"><?= h($item->title) ?></h2>
 	</DIV>
-	<DIV class="card-block">
+	<DIV class="card-body">
 		<?php if (!$user) { ?>
 			<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($item->user->alias,0,1)).".jpg") ?>');" src="https://www.gravatar.com/avatar/<?php echo md5($item->user->username) ?>?s=25&d=blank">
 			<?= h($item->user->alias) . ", " ?>
@@ -19,7 +19,7 @@
 		?>
 		<?= $createdString ?>
 	</DIV>
-	<DIV class="card-block">
+	<DIV class="card-body">
 		<DIV class="item-img">
 			<?php
 			if ($item->image_1_url) {
@@ -41,7 +41,7 @@
 			<?php } ?>
 		</DIV>
 	</DIV>
-	<DIV class="card-block">
+	<DIV class="card-body">
 		<P><?= nl2br(h($this->Text->truncate($item->description,HOME_TRUNCATE_TEXT))) ?></P>
 	</DIV>
 </A>

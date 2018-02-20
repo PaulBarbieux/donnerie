@@ -6,7 +6,7 @@
 </div>
 <div class="col-sm-12">
 	<DIV class="card">
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<TABLE class="table table-striped">
 				<THEAD>
 					<TR>

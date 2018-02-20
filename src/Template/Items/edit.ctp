@@ -7,7 +7,7 @@
 		<DIV class="card-header">
 			<H1><?= ($item->type == "d" ? __("Je donne") : __("Je cherche")) ?><?= ($admin ? " (".$owner.")" : "") ?></H1>
 		</DIV>
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<?php
 				$this->loadHelper('Form', [ 'templates' => 'app_form' ]); 
 			?>

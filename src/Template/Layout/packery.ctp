@@ -8,8 +8,8 @@
     <title><?= $this->fetch('title')." | ".SITE_NAME ?></title>
 
     <!-- Bootstrap CSS -->
-    <?= $this->Html->css(['bootstrap.css','style.css','branding.css','font-awesome.min.css']) ?>
-	<?= $this->Html->script(['jquery-3.2.1.min.js', 'tether.min.js', 'bootstrap.min.js', 'imagesloaded.pkgd.min.js', 'packery.pkgd.min.js', 'init.js']); ?>
+    <?= $this->Html->css(['bootstrap.min.css','style.css?2018022','branding.css','font-awesome.min.css']) ?>
+	<?= $this->Html->script(['jquery-3.2.1.min.js', 'tether.min.js', 'bootstrap.min.js?20180220', 'imagesloaded.pkgd.min.js', 'packery.pkgd.min.js', 'init.js']); ?>
 	<!-- Packery -->
 	<script type="text/javascript">
 		jQuery('document').ready(function(){

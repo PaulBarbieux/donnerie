@@ -13,10 +13,10 @@
 		<DIV class="card-header">
 			<h2 class="card-title"><?= h($item->title) ?></h2>
 		</DIV>
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<?= __("Posté le")." ".h($item->created->i18nFormat("d MMMM YYYY")) ?>
 		</DIV>
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<DIV class="item-img">
 				<?php if ($item->image_1_url) { ?>
 				<IMG src="<?= $this->Url->build("/".$item->image_1_url) ?>" class="img-fluid">
@@ -26,7 +26,7 @@
 				<SPAN class="item-state <?= h($item->state) ?>"><?= h($item->category->title_fr) ?></SPAN>
 			</DIV>
 		</DIV>
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<P><?= nl2br(h($item->description)) ?></P>
 		</DIV>
 		<DIV class="block-actions">

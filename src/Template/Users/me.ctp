@@ -10,7 +10,7 @@ $col = array('collabel' => "col-md-4", 'colinput' => "col-md-8");
 </div>
 <div class="col-md-8">
 	<DIV class="card">
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<?= $this->Form->create($user) ?>
 				<?php
 					echo $this->Form->control('alias' , [ 'label'=>"Pseudonyme" , 'placeholder' => "Le nom que le public verra" , 'templateVars'=>$col ] );
