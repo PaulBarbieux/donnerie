@@ -51,7 +51,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 			<LI class="nav-item dropdown">
 				<A class="nav-link dropdown-toggle" href="#" id="myProfileLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($this->request->session()->read('Auth.User.alias'),0,1)).".jpg") ?>');" src="https://www.gravatar.com/avatar/<?php echo md5($this->request->session()->read('Auth.User.username')) ?>?s=25&d=blank">
-          			Bonjour <?php echo $this->request->session()->read('Auth.User.alias'); ?>
+          			<?= __("Bonjour") ?> <?php echo $this->request->session()->read('Auth.User.alias'); ?>
         		</A>
 				<DIV class="dropdown-menu" aria-labelledby="myProfileLinks">
 					<?= $this->Html->link(__("Mes annonces"), array('controller'=>"items", 'action'=>"mines"), array('class'=>"dropdown-item")) ?>
@@ -91,10 +91,10 @@ if ($this->request->session()->read("Auth.User.id")) {
 		echo $this->Form->email('email' , ['placeholder'=>__("Votre email") , 'class'=>"form-control" , 'required'=>"required" ]);
 	}
 	echo $this->Form->select('subject' , [
-		'issue'=>__("Problème technique"), 
-		'report'=>__("Signaler une annonce ou un utilisateur"), 
-		'main'=>__("Question sur le site"),
-		'install'=>__("Avoir ce site pour ma communauté")
+		__("Problème technique")=>__("Problème technique"), 
+		__("Signaler une annonce ou un utilisateur")=>__("Signaler une annonce ou un utilisateur"), 
+		"Question sur le site"=>__("Question sur le site"),
+		"Avoir ce site pour ma communauté"=>__("Avoir ce site pour ma communauté")
 		] , ['empty' => __('(Choisissez)') , 'class'=>"form-control" , 'required'=>"required" ] );
 	echo $this->Form->textarea('message', [ 'rows'=>"5" , 'class'=>"form-control" , 'required'=>"required" ] );
 	echo $this->Form->submit(__('Envoyer'));

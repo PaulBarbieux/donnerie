@@ -147,7 +147,7 @@ class AppController extends Controller
 					'url' => $data['url'], 
 					'message' => nl2br($data['message'])])
 				->setTo($this->getAdminEmails())
-				->subject(__("{0} : message de {1}", SITE_NAME, $data['name']))
+				->subject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']))
 				->send();
 			$this->Flash->success(__("Votre message a été envoyé. Merci."));
 			$this->redirect($this->referer());
