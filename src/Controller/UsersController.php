@@ -6,6 +6,7 @@ use Cake\Event\Event;
 use Cake\Mailer\Email;
 use Cake\Routing\Router;
 use Cake\I18n\I18n;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Controller
@@ -177,7 +178,10 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
 			if ($user->passwordNew) {
 				// New password
-				if ($user->passwordNew != $user->passwordConfirm) {
+				if (strlen($user->passwordNew) < 8) {
+					$this->Flash->error(__("Veuillez donner un mot de passe d'au moins 8 caractères."));
+					return $this->redirect(['action' => 'me']);
+				} elseif ($user->passwordNew != $user->passwordConfirm) {
 					$this->Flash->error(__('Les deux encodages du mot de passe ne correspondent pas.'));
 					return $this->redirect(['action' => 'me']);
 				}
@@ -197,6 +201,22 @@ class UsersController extends AppController
 	}
 	
 	public function deleteMe() {
+		$user = $this->Users->get($this->Auth->user('id'));
+		if ($this->request->is(['patch', 'post', 'put'])) {
+			if ((new DefaultPasswordHasher)->check($this->request->getData('passwordDeleteMe'), $user->password)) {
+				if ($this->Users->delete($user)) {
+					$this->deleteUserItems($user->id);
+					$this->Flash->success(__('Votre compte est supprimé.'));
+					return $this->redirect($this->Auth->logout());
+				} else {
+					$this->Flash->error(__("Un problème technique est survenu. Contactez-nous avec le formulaire en bas à droite."));
+				}
+			} else {
+				$this->Flash->error(__("Le mot de passe ne correspond pas."));
+			 }
+		}
+		$this->set(compact('user'));
+        $this->set('_serialize', 'user');
 	}
 
     public function delete($id = null)
@@ -212,17 +232,7 @@ class UsersController extends AppController
 			$error = true;
         }
 		if (!$error) {
-			// Delete his items
-			$itemsTable = $this->loadModel('Items');
-			$queryItems = $itemsTable->find('all')->where(['user_id = ' => $id]);
-			foreach ($queryItems as $item) {
-				if ($item->image_1_url) unlink(WWW_ROOT.$item->image_1_url);
-				if ($item->image_2_url) unlink(WWW_ROOT.$item->image_2_url);
-				if ($item->image_3_url) unlink(WWW_ROOT.$item->image_3_url);
-				if (!$itemsTable->delete($item)) {
-					$this->Flash->error(__("Problème lors de la suppression de l'annonce {0}", $item->id));
-				}
-			}
+			$this->deleteUserItems($id);
 		}
 		return $this->redirect(['action' => 'index']);
     }
@@ -248,4 +258,18 @@ class UsersController extends AppController
     {
         return $this->redirect($this->Auth->logout());
     }
+	
+	private function deleteUserItems($userId) {
+		$itemsTable = $this->loadModel('Items');
+		$queryItems = $itemsTable->find('all')->where(['user_id = ' => $userId]);
+		foreach ($queryItems as $item) {
+			if ($item->image_1_url) unlink(WWW_ROOT.$item->image_1_url);
+			if ($item->image_2_url) unlink(WWW_ROOT.$item->image_2_url);
+			if ($item->image_3_url) unlink(WWW_ROOT.$item->image_3_url);
+			if (!$itemsTable->delete($item)) {
+				$this->Flash->error(__("Problème lors de la suppression de l'annonce {0}", $item->id));
+			}
+		}
+	}
+	
 }

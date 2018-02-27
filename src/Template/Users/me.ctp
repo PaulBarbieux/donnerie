@@ -27,9 +27,7 @@ $col = array('collabel' => "col-md-4", 'colinput' => "col-md-8");
 					echo $this->Form->control('passwordConfirm' , [ 'type'=>"password", 'label'=>__("Confirmez le mot de passe") , 'templateVars'=>$col ]);
 				?>
 				<BUTTON type="submit" value="send" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> <?= __("Enregistrer") ?></BUTTON>
-				<!--
-				<A href="deleteMe" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> <?= __("Supprimer mon profil") ?></A>
-				-->
+				<A href="deleteMe" class="btn btn-outline-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> <?= __("Supprimer mon compte") ?></A>
 			<?= $this->Form->end() ?>
 		</DIV>
 	</DIV>
