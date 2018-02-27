@@ -244,6 +244,24 @@ A.card:focus {
     content: " \2191";
 }
 /*
+	Override styles for messages
+*/
+.alert {
+	border-style: none;
+}
+.alert-success {
+	color: #1E541D;
+	background-color: #339131;
+}
+.alert-danger {
+	color:#550000;
+	background-color: #FF3737;
+}
+.alert-warning {
+	color: #9D3F00;
+	background-color: #FFB482;
+}
+/*
 	More styles for inputs
 */
 .custom-file {
