@@ -36,7 +36,7 @@
 	<P>Enkel voorwerpen die binnen de voorgestelde categorieën vallen worden aanvraard. Dieren, voedsel, afval,... is verboden.</P>
 <?php } else { ?>
 	<H2>Tout n'est pas à donner</H2>
-	<P>Seuls les objets entrant dans les catégories proposées sont acceptés. Sont interdit les êtres vivant, la nourriture, les déchets, etc.</P>
+	<P>Seuls les objets entrant dans les catégories proposées sont acceptés. Sont interdits les êtres vivants, la nourriture, les déchets, etc.</P>
 <?php } ?>
 </DIV>
 <DIV class="col-md-6">

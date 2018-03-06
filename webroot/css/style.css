@@ -251,15 +251,15 @@ A.card:focus {
 }
 .alert-success {
 	color: #1E541D;
-	background-color: #339131;
+	background-color: #78D176;
 }
 .alert-danger {
 	color:#550000;
-	background-color: #FF3737;
+	background-color: #FF5151;
 }
 .alert-warning {
-	color: #9D3F00;
-	background-color: #FFB482;
+	color: #8B720A;
+	background-color: #F4D65B;
 }
 /*
 	More styles for inputs
