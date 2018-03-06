@@ -86,7 +86,7 @@ class ItemsController extends AppController
 		$owner = $users->get($owner_id);
 		if ($owner->status) {
 			// User not active ### Peut-être obsolète : status vérifié au plus haut niveau
-			$this->Flash->error(__("Utilisateur inconnu"));
+			$this->Flash->error(__("Utilisateur inconnu."));
 			return $this->redirect(['action'=>"home"]);
 		} else {
 			$items = $this->Items->find('all' , [ 'order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Categories' , 'Users' ] ] )
@@ -151,6 +151,7 @@ class ItemsController extends AppController
 						// Connected user
 						$email->replyTo([$this->Auth->user('username') => $this->Auth->user('alias')]);
 						$applicant = $this->Auth->user('alias');
+						$applicantEmail = $this->Auth->user('username');
 					} else {
 						// Not connected
 						$applicant = trim(strip_tags($this->request->getData('name')));
@@ -172,7 +173,8 @@ class ItemsController extends AppController
 						->setTemplate('contact_item_'.LG)
 						->viewVars([
 							'owner' => $item->user->alias, 
-							'applicant' => $applicant, 
+							'applicant' => $applicant,
+							'email' => $applicantEmail,
 							'item_title' => $item->title, 
 							'item_link' => Router::url("/items/view/".$item->id, true), 
 							'message' => $message])
@@ -184,6 +186,19 @@ class ItemsController extends AppController
 					$stat = $stats->get($item->stat->id);
 					$stat->contacts++;
 					$stats->save($stat);
+					// Send copy to applicant
+					$email
+						->setTemplate('contact_item_copy_'.LG)
+						->viewVars([
+							'owner' => $item->user->alias, 
+							'applicant' => $applicant,
+							'email' => "noreply@donneriejette.be",
+							'item_title' => $item->title, 
+							'item_link' => Router::url("/items/view/".$item->id, true), 
+							'message' => $message])
+						->to($applicantEmail)
+						->subject(__("Donnerie : votre message pour l'annonce {0}" , $item->title ))
+						->send();
 					// Reset form
 					$this->request->data('message', "");
 					// Completed
