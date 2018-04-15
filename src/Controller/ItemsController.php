@@ -192,11 +192,11 @@ class ItemsController extends AppController
 						->viewVars([
 							'owner' => $item->user->alias, 
 							'applicant' => $applicant,
-							'email' => "noreply@donneriejette.be",
 							'item_title' => $item->title, 
 							'item_link' => Router::url("/items/view/".$item->id, true), 
 							'message' => $message])
 						->to($applicantEmail)
+						->replyTo("noreply@".DOMAIN_NAME)
 						->subject(__("Donnerie : votre message pour l'annonce {0}" , $item->title ))
 						->send();
 					// Reset form
