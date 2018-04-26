@@ -43,3 +43,6 @@ NAV.navbar .btn-group .btn.active {
 FOOTER {
 	background-color: #DDD;
 }
+.total-announces {
+	border-top-color: #84D5CB;
+}

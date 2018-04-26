@@ -246,6 +246,15 @@ A.card:focus {
     content: " \2191";
 }
 /*
+	Total of announces
+*/
+.total-announces {
+	display:inline-block;
+	margin-top:20px;
+	border-top: dotted 10px #DDD;
+	padding:20px;
+}
+/*
 	Override styles for messages
 */
 .alert {

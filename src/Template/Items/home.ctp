@@ -10,7 +10,6 @@ $this->assign('title', __("Accueil"));
 <div class="col-12 text-center">
 	<DIV class="paginator">
 		<UL>
-			<LI><?= $this->Paginator->counter(['format' => __('Il y a {{count}} annonces')]) ?></LI>
 			<?php
 				if ($this->Paginator->hasPrev()) 
 					echo $this->Paginator->prev('< ' . __('Annonces plus récentes'));
@@ -19,4 +18,9 @@ $this->assign('title', __("Accueil"));
 			?>
 		</UL>
 	</DIV>
+</div>
+<div class="col-12 text-center">
+	<div class="total-announces infinite-scroll-last">
+		<?= $this->Paginator->counter(['format' => __('Il y a {{count}} annonces')]) ?>
+	</div>
 </div>
