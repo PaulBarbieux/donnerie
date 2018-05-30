@@ -10,6 +10,12 @@ BODY {
 	margin-top:80px;
 }
 /*
+	Texts
+*/
+.h3, h3 {
+	font-size: 1.5rem;
+}
+/*
 	Header
 */
 NAV.navbar {

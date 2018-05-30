@@ -28,7 +28,7 @@ class StatsController extends AppController
 		$users = TableRegistry::get('Users');
 		$count = $users->find()->count();
 		$this->set('countAllUsers',$count);
-			$count = $users->find('all', array('conditions'=>array('status IS NOT NULL')))->count();
+		$count = $users->find('all', array('conditions'=>array('status IS NOT NULL')))->count();
 		$this->set('countUnregisteredUsers',$count);
 		// Current items
 		$items = TableRegistry::get('Items');
