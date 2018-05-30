@@ -1,7 +1,12 @@
 <DIV class="col-sm-12">
 	<DIV class="card">
 		<DIV class="card-body">
-			<h1><?= __('Users') ?></h1>
+			<DIV class="d-flex justify-content-between">
+				<h1><?= __('Users') ?></h1>
+				<DIV>
+					<?= $this->Html->link(__("Export emails en CSV"), ['controller'=>"users", 'action'=>"exportEmailsCsv"] , ['class'=>"btn btn-outline-primary"] ) ?>
+				</DIV>
+			</DIV>
 			<table class="table table-striped">
 				<thead>
 					<tr>

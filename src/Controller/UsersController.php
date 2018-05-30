@@ -24,13 +24,13 @@ class UsersController extends AppController
         // Allow users to login, register and logout.
         // You should not add the "login" action to allow list. Doing so would
         // cause problems with normal functioning of AuthComponent.
-        $this->Auth->allow(['register', 'activate', 'login', 'logout']);
+        $this->Auth->allow(['register', 'activate', 'login', 'logout', 'resetPassword']);
     }
 	
 	public function isAuthorized($user = null) {
 		parent::isAuthorized($user);
 		$action = $this->request->params['action'];
-		if (in_array($action, ['index', 'add', 'view', 'edit', 'delete' ])) {
+		if (in_array($action, ['index', 'exportEmailsCsv', 'add', 'view', 'edit', 'delete' ])) {
 			if ($user['role'] == "admin") {
 				return true;
 			} else {
@@ -58,6 +58,14 @@ class UsersController extends AppController
 		$this->set('_serialize', ['users']);
 		$this->viewBuilder()->setLayout("full-width");
     }
+	
+	public function exportEmailsCsv()
+	{
+		$users_fr = $this->Users->find('all', array('conditions'=>array('status IS NULL')))->where(array('language'=>"fr"))->select('username');
+		$this->set(compact('users_fr'));
+		$users_nl = $this->Users->find('all', array('conditions'=>array('status IS NULL')))->where(array('language'=>"nl"))->select('username');
+		$this->set(compact('users_nl'));
+	}
 
     /**
      * View method
@@ -107,7 +115,7 @@ class UsersController extends AppController
 								'site_url' => Router::url("/", true), 
 								'site_name' => SITE_NAME, 
 								'confirm_url' => Router::url("/users/activate/".$confirmCode, true)])
-							->subject(__("Donnerie : confirmez votre inscription"))
+							->subject(__("{0} : confirmez votre inscription", SITE_NAME))
 							->send();
 						$this->Flash->success(__("Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. Cela peut prendre quelques minutes - vérifiez votre dossier des spams.",$user->username));
 						return $this->redirect(['controller' => 'items', 'action' => 'home']);
@@ -270,6 +278,63 @@ class UsersController extends AppController
 				$this->Flash->error(__("Problème lors de la suppression de l'annonce {0}", $item->id));
 			}
 		}
+	}
+	
+	public function resetPassword() {
+        if ($this->request->is('post')) {
+			// Get data
+			$data = $this->request->getData();
+			// Find user
+			$user = $this->Users->find()->where([ 'username'=>$data['username'] , 'status IS'=>$null ])->first();
+			if (!isset($data['resetcode'])) {
+				// First pass : email and street
+				if ($this->isItHuman()) {
+					if ($user) {
+						if ($user->street != $data['street']) {
+							$this->Flash->error(__("Cette adresse email est inconnue ou ne correspond pas avec la rue."));
+						} else {
+							// Make a reset code and save it in session
+							$resetCode = md5($data['username'].$data['street'].rand(1,9999).time());
+							$this->request->session()->write('resetCode', $resetCode);
+							$email = new Email();
+							$email->to($user->username)
+								->setTemplate('reset_password_'.$user->language)
+								->viewVars([
+									'user' => $user->alias,
+									'site_url' => Router::url("/", true), 
+									'site_name' => SITE_NAME, 
+									'reset_code' => $resetCode])
+								->subject(__("{0} : code de renouvellement de mot de passe", SITE_NAME))
+								->send();
+							$this->Flash->success(__("Un code vient de vous être envoyé par email. Voyez les instructions plus bas."));
+							$this->set("inputCode", true);
+						}
+					} else {
+						$this->Flash->error(__("Cette adresse email est inconnue ou ne correspond pas avec la rue."));
+					}
+				}
+			} else {
+				// Second pass : reset code
+				if (trim($data['resetcode']) != $this->request->session()->read('resetCode')) {
+					$this->Flash->error(__("Votre code n'est pas correct."));
+				} elseif (strlen($data['password']) < 8) {
+					$this->Flash->error(__("Veuillez donner un mot de passe d'au moins 8 caractères."));
+				} elseif ($data['password'] != $data['password2']) {
+					$this->Flash->error(__("Vous n'avez pas rempli deux fois le même mot de passe."));
+				} else {
+					$user->password = $data['password'];
+					if ($this->Users->save($user)) {
+                		$this->Flash->success(__('Votre nouveau mot de passe est enregistré. Vous pouvez vous connecter avec ce nouveau mot de passe.'));
+                		return $this->redirect(['action' => 'login']);
+            		}
+				}
+				$this->set("inputCode", true);
+			}
+		}
+		$streetsTable = $this->loadModel('Streets');
+		$streets = $streetsTable->find('list', ['order'=>['Streets.name_'.LG=>"ASC"]]);
+        $this->set(compact('streets'));
+        $this->set('_serialize', 'streets');
 	}
 	
 }

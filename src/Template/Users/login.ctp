@@ -14,6 +14,7 @@
     <?= $this->Form->input('username', array('label'=>__("Email") , 'templateVars'=>$col)) ?>
     <?= $this->Form->input('password', array('label'=>__("Mot de passe") , 'templateVars'=>$col)) ?>
 	<?= $this->Form->submit(__('Se connecter'), ['templateVars'=> ['text'=>__('Se connecter'), 'icon'=>'<I class="fa fa-plug"></I>'] ]); ?>
+	<?= $this->Html->link(__("J'ai oublié mon mot de passe"), array('controller'=>"users", 'action'=>"resetPassword"), array('class'=>"btn btn-outline-primary")); ?>
 	<?= $this->element('robot-form-trap'); ?>
 	<?= $this->Form->end() ?>
 	&nbsp;
