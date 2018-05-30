@@ -5,7 +5,7 @@ $this->loadHelper('Form', [ 'templates' => 'app_form_inline', ]); 		// Set FORM 
 $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement between labels and inputs
 ?>
 
-<div class="col-lg-8 col-md-10 col-sm-12">
+<div class="col-sm-12">
 	<H1><?= __("Inscrivez-vous") ?></H1>
 	<P><?= __("L'inscription est nécessaire pour poster des annonces") ?><?php if (!PUBLIC_CONTACT) echo __(" et contacter les annonceurs") ?>.
 	   <?= __("Seul votre pseudonyme sera visible par les utilisateurs du site.") ?>
@@ -21,6 +21,11 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement
 							'options' => ['fr'=>__("Français"), 'nl'=>__("Nederlands")] ]);
 			echo $this->element('robot-form-trap');
         ?>
+	<DIV class="form-check form-check-inline">
+	  <INPUT class="form-check-input" type="checkbox" name="accept" id="accept" value="1" required>
+	  <LABEL class="form-check-label" for="accept">J’ai lu et accepte la <A href='<?= $this->Url->build("/pages/privacy") ?>' target="_blank">politique de confidentialité</A> de ce site</label>
+	</DIV>
+	<BR>
 	<IMG class="waiting-animation" src="<?= $this->Url->build("/img/loading.gif") ?>" style="display: none;">
 	<?= $this->Form->submit(__('Envoyer'), ['templateVars'=> ['text'=>__('Envoyer'), 'icon'=>'<I class="fa fa-paper-plane"></I>'] ]); ?>
     <?= $this->Form->end() ?>
