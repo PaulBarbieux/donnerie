@@ -257,8 +257,8 @@ function isItDate($input) {
 	Configuration du site
 */
 // Nom du site (dans les différentes langues)
-define ("SITE_NAME_FR","Donnerie");
-define ("SITE_NAME_NL","Weggeefplek");
+define ("SITE_NAME_FR","Donnerie Paper Jam");
+define ("SITE_NAME_NL","Weggeefplek Paper Jam");
 // Nom de domaine
 define ("DOMAIN_NAME", preg_replace('/www\./i', '', $_SERVER['SERVER_NAME']));
 // Nombre d'annonces pour la pagination de l'accueil

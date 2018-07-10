@@ -179,7 +179,7 @@ class ItemsController extends AppController
 							'item_link' => Router::url("/items/view/".$item->id, true), 
 							'message' => $message])
 						->to($item->user->username)
-						->subject(__("Donnerie : message pour votre annonce {0}" , $item->title ))
+						->subject(__("{0} : message pour votre annonce {1}" , SITE_NAME , $item->title ))
 						->send();
 					// Count stats
 					$stats = TableRegistry::get('Stats');
@@ -197,7 +197,7 @@ class ItemsController extends AppController
 							'message' => $message])
 						->to($applicantEmail)
 						->replyTo("noreply@".DOMAIN_NAME)
-						->subject(__("Donnerie : votre message pour l'annonce {0}" , $item->title ))
+						->subject(__("{0} : votre message pour l'annonce {1}" , SITE_NAME , $item->title ))
 						->send();
 					// Reset form
 					$this->request->data('message', "");
