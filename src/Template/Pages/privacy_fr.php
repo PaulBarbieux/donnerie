@@ -2,8 +2,8 @@
     <H1>Politique de confidentialité</H1>
     <P>En vertu du Règlement Général pour la Protection des Données (RGPD), nous vous expliquons qui g&egrave;re le site, quelles sont les donn&eacute;es que nous r&eacute;coltons, comment nous les g&eacute;rons, et quels sont vos droits. </P>
     <H2>Qui sommes-nous ?</H2>
-    <P>Le site <?= SITE_NAME ?> est géré par le <strong>Service développement durable - Environnement / Dienst duurzame ontwikkeling-leefmilieu</strong> de la commune de Jette, &eacute;tabli rue Léon Theodor straat 108, 1090 Jette. </P>
-    <P>Ce service est responsable de la s&eacute;curit&eacute; des donn&eacute;es (DPO), et peut &ecirc;tre contact&eacute; &agrave; l'adresse <A href="mailto:ddo@jette.irisnet">ddo@jette.irisnet</A>. </P>
+    <P>Le site <I><?= SITE_NAME ?></I>&nbsp; est géré par ###. </P>
+    <P>Ce service est responsable de la s&eacute;curit&eacute; des donn&eacute;es (DPO), et peut &ecirc;tre contact&eacute; &agrave; l'adresse ###. </P>
     <H2>Vos donn&eacute;es personnelles </H2>
 	<DIV class="row">
 		<DIV class="col-sm-6">

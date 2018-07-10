@@ -1,62 +1,87 @@
 <DIV class="col-sm-12">
-    <H1>Politique de confidentialité</H1>
-    <P>En vertu du Règlement Général pour la Protection des Données (RGPD), nous vous expliquons qui g&egrave;re le site, quelles sont les donn&eacute;es que nous r&eacute;coltons, comment nous les g&eacute;rons, et quels sont vos droits. </P>
-    <H2>Qui sommes-nous ?</H2>
-    <P>Le site <?= SITE_NAME ?> est géré par le <strong>Service développement durable - Environnement / Dienst duurzame ontwikkeling-leefmilieu</strong> de la commune de Jette, &eacute;tabli rue Léon Theodor straat 108, 1090 Jette. </P>
-    <P>Ce service est responsable de la s&eacute;curit&eacute; des donn&eacute;es (DPO), et peut &ecirc;tre contact&eacute; &agrave; l'adresse <A href="mailto:ddo@jette.irisnet">ddo@jette.irisnet</A>. </P>
-    <H2>Vos donn&eacute;es personnelles </H2>
+    <H1>Privacy beleid </H1>
+    <P>Met het oog op de GDPR (algemene verordening gegevensbescherming) geven we u mee wie deze site beheert, welke gegevens verzameld worden en hoe we deze beheren, net als de rechten waarover u beschikt. </P>
+    <H2>Wie zijn wij?</H2>
+    <P>De website <I><?= SITE_NAME ?></I>&nbsp;
+     wordt beheerd door ###. </P>
+    <P>Deze dienst is verantwoordelijk voor de gegevensbescherming en kan gecontacteerd worden via mail ###. </P>
+    <H2>Uw persoonlijke gegevens</H2>
 	<DIV class="row">
 		<DIV class="col-sm-6">
-			<H3>Les informations de votre profil </H3>
-			<P>Afin d'utiliser notre site il est n&eacute;cessaire de s'inscrire, avec les donn&eacute;es suivantes, que nous avons r&eacute;duites au minimum :</P>
+			<H3>Uw profiel</H3>
+			<P>Om onze website te gebruiken moet u zich inschrijven en de volgende gegevens vermelden :</P>
 			<UL>
-				<LI>votre adresse email;</LI>
-				<LI> un pseudonyme;</LI>
-				<LI>la rue o&ugrave; vous habitez ou travaillez;</LI>
-				<LI>votre langue; </LI>
-				<LI>un mot de passe.</LI>
+				<LI> Uw mailadres;</LI>
+				<LI>Een gebruikersnaam;</LI>
+			<LI>De straat waar u woont of werkt;</LI>
+			<LI>Uw taal; </LI>
+			<LI> Een paswoord.</LI>
 			</UL>
-			<H3>Acc&egrave;s &agrave; vos donn&eacute;es</H3>
-			<P>Vos donn&eacute;es personnelles sont accessibles en vous connectant, puis en cliquant sur &quot;Mon profil&quot; au d&eacute;part du menu sous votre pseudonyme.</P>
-			<P>Seul le mot de passe n'est pas montr&eacute;. </P>
-			<H3>Visibilit&eacute; publique </H3>
-			<P>Seul votre <STRONG>pseudonyme</STRONG>, et l'&eacute;ventuelle image Gravatar, est montr&eacute; aux visiteurs du site.</P>
-			<P>L'information sur votre <STRONG>rue</STRONG> permet de signaler vos annonces avec une &eacute;toile &agrave; une autre personne connect&eacute;e au site, et se trouvant dans la m&ecirc;me rue. </P>
+			<H3>Toegang tot uw gegevens</H3>
+			<P>Uw persoonlijke gegevens zijn toegankelijk als u zich aanlogt, vervolgens klikt op ‘mijn profiel’ onder uw gebruikersnaam.</P>
+			<P>Enkel het paswoord wordt niet getoond. </P>
+			<H3>Openbare zichtbaarheid</H3>
+			<P>Enkel uw <STRONG>gebruikersnaam</STRONG>, en eventueel uw Gravatar, wordt getoond aan de bezoekers van de website.</P>
+			<P> Via de informatie over uw <STRONG>straat</STRONG> kan uw advertentie met een sterretje aangeduid worden voor andere gebruikers van de website die in dezelfde straat wonen. </P>
+			<P> Uw <STRONG>mailadres</STRONG> zal zichtbaar zijn voor de personen die u contacteren over een advertentie, <STRONG>van zodra u hen antwoordt</STRONG>.</P>
 		</DIV>
 		<DIV class="col-sm-6">
-			<H3>Utilisation</H3>
-			<P>Vos informations ne servent qu'au bon fonctionnement du site, &agrave; savoir : s'identifier, poster des annonces, permettre au gens de vous contacter.</P>
-			<P>Nous constituons aussi des statistiques : nombre d'annonces par utilisateur et nombre de contacts pris par annonce.</P>
-			<H3>R&eacute;tention</H3>
-			<P>Nous conservons vos donn&eacute;es aussi longtemps que votre compte est actif. Votre activit&eacute; prend fin quand vous supprimez votre compte, effa&ccedil;ant ainsi toutes vos donn&eacute;es personnelles et les &eacute;ventuelles annonces en cours. </P>
-			<P>La suppression de votre compte anonymise nos statistiques : nous conservons un identifiant technique, sans savoir qui vous &eacute;tiez.</P>
-			<H3>Partage des donn&eacute;es</H3>
-			<P>Vos donn&eacute;es ne servent que pour le site : elles ne sont pas partag&eacute;es avec d'autres sites, soci&eacute;t&eacute;s ou institutions.</P>
-			<P>De m&ecirc;me, vos donn&eacute;es ne sont pas export&eacute;es pour d'autres usages internes, &agrave; l'exception d'un mailing qui serait envoy&eacute;. Celui-ci serait exceptionnel, afin de vous de communiquer sur notre site. </P>
+			<H3>Gebruik</H3>
+			<P>Uw informatie zal enkel dienen voor de goede werking van de website, dwz aanmelden, advertenties plaatsen, de geïnteresseerden toelaten om u te contacteren.</P>
+			<P> We maken ook statistieken: het aantal advertenties per gebruiker en het aantal contacten per advertentie..</P>
+			<H3>Bewaren</H3>
+			<P>We bewaren uw gegevens zolang uw account actief is. Uw activiteit stopt wanneer u uw account verwijdert (zie verder). </P>
+			<P> Door het verwijderen van uw account worden de statistieken geanonimiseerd. We behouden een technische identifier, zonder te weten wie u was..</P>
+			<H3>Delen van de gegevens</H3>
+			<P>De gegevens worden enkel gebruikt voor de website: ze worden niet gedeeld met andere websites, ondernemingen of instellingen.</P>
+			<P>Uw gegevens worden evenmin gebruikt voor ander intern gebruik, uitgezonderd voor een mailing die verstuurd kan worden. Dit zou slechts uitzonderlijk gebeuren, om te communiceren over de website. </P>
 		</DIV>
 	</DIV>
 </DIV>
 <DIV class="col-md-12">
-	<H2>Les donn&eacute;es d'annonce</H2>
-	<P>Les donn&eacute;es relatives aux annonces ne sont pas conserv&eacute;es : elles ont une dur&eacute;e de vie &eacute;gale &agrave; la publication de l'annonce.</P>
-	<P>De m&ecirc;me, aucunes donn&eacute;es envoy&eacute;es par le formulaire de l'annonce (pour contacter l'annonceur) ne sont enregistr&eacute;es : ni le nom, ni l'email, ni le message de l'exp&eacute;diteur. </P>
-	<H2>Fin d'activit&eacute;</H2>
-	<P>&Agrave; n'importe quel moment vous pouvez supprimer votre profile, comme suit :</P>
+	<H2>Uw advertenties</H2>
+	<P>De gegevens met betrekking tot de advertenties worden niet bewaard: deze blijven behouden zolang de advertentie online staat.</P>
+	<P>Ook de gegevens verstuurd via het contactformulier worden niet bewaard: noch de naam, het mailadres of het bericht van de verzender.</P>
+	<H2>Stopzetten</H2>
+	<P>U kan uw profiel op elk moment stopzetten:</P>
 	<OL>
-		<LI>connectez-vous;</LI>
-		<LI>clickez le bouton [Supprimer mon compte]. </LI>
+		<LI>Log aan;</LI>
+		<LI> Ga naar uw profiel (&quot;Mijn profiel&quot;, in het startmenu van uw gebruikersnaam);</LI>
+		<LI>Klik op [Mijn account verwijderen].</LI>
 	</OL>
+<P>Als u uw profiel verwijdert, verdwijnen ook uw advertenties.</P>
 </DIV>
 <DIV class="col-sm-12">
-    <H2>S&eacute;curit&eacute; des donn&eacute;es</H2>
+    <H2>Veiligheid gegevens</H2>
 	<DIV class="row">
 		<DIV class="col-md-6">
-			<H3>H&eacute;bergement</H3>
-			<P>Le site est h&eacute;berg&eacute; chez OVH et b&eacute;n&eacute;ficie de toute <A href="https://www.ovh.com/fr/protection-donnees-personnelles/" target="_blank">l'infrastructure r&eacute;pondant aux directives europ&eacute;ennes RGPD</A>. </P>
+			<H3>Hosting</H3>
+			<P>De site wordt gehost door OVH en geniet van alle <A href="https://www.ovh.com/fr/protection-donnees-personnelles/" target="_blank">infrastructuur die beantwoordt aan de Europese GDPR-voorschriften</A>.</P>
+			<H3>Fout</H3>
+			<P> Als er zich een veiligheidsprobleem voordoet, wordt u binnen de 72u hiervan op de hoogte gebracht. </P>
 		</DIV>
 		<DIV class="col-md-6">
-			<H3>Mots de passe </H3>
-			<P>L'acc&egrave;s &agrave; votre profil est s&eacute;curis&eacute; par un mot de passe choisi par vos soins. Celui-ci est encrypt&eacute; : son oubli n&eacute;cessite une proc&eacute;dure de renouvellement de passe assur&eacute; par vous-m&ecirc;me. </P>
+			<H3> Paswoord </H3>
+			<P> Uw profiel wordt beschermd door een paswoord van uw keuze. </P>
+			<P> Dit paswoord wordt geëncrypteerd. De beheerders van de website kunnen u uw paswoord niet geven als u dit vergeet. In dit geval kan u uw paswoord zelf vernieuwen.</P>
+		</DIV>
+	</DIV>
+</DIV>
+<DIV class="col-sm-12">
+	<H2>Cookies</H2>
+	<DIV class="row">
+		<DIV class="col-md-6">
+			<H3>Wat zijn cookies? </H3>
+			<P>Cookies zijn kleine informatiebestanden die door uw navigator bewaard worden. De meeste websites gebruiken cookies om u het surfen te vergemakkelijken en om uw gebruikerscomfort te verhogen.  </P>
+			<H3>Duur</H3>
+			<P>Er wordt een cookie gecreëerd als u naar onze website surft. Deze wordt behouden tijdens uw sessie, dwz uw bezoek op de website. Als u de site verlaat, wordt de cookie vernietigd. </P>
+		</DIV>
+		<DIV class="col-md-6">
+			<H3>Waarom maken wij er gebruik van?</H3>
+			<P>Wij maken zo weinig mogelijk gebruik van cookies en enkel tijdens de duur van uw bezoek aan de website: uw gekozen taal en uw gebruikersnaam als u zich aangelogd heeft.</P>
+			<P> We maken nooit gebruik van een &quot;tracker&quot;: weten of u onze site reeds bezocht, u herkennen, uw activiteiten bewaren, ... </P>
+			<H3>Weigering</H3>
+			<P>U kan via uw navigator het gebruik van cookies weigeren. In dit geval zal de website niet meer correct werken.</P>
 		</DIV>
 	</DIV>
 </DIV>

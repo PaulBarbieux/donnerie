@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-02-27 20:03+0100\n"
-"PO-Revision-Date: 2018-02-27 20:05+0100\n"
+"POT-Creation-Date: 2018-07-07 11:03+0200\n"
+"PO-Revision-Date: 2018-07-08 10:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -54,8 +54,8 @@ msgstr ""
 msgid "{0} : {1} ({2})"
 msgstr "{0} : {1} ({2})"
 
-#: Controller/CategoriesController.php:22 Controller/StreetsController.php:15
-#: Controller/UsersController.php:37
+#: Controller/CategoriesController.php:22 Controller/StatsController.php:16
+#: Controller/StreetsController.php:15 Controller/UsersController.php:37
 msgid "Action invalide."
 msgstr "Ongeldige bewerking."
 
@@ -83,27 +83,31 @@ msgstr "Onbekende gebruiker."
 msgid "Votre message est vide ou trop court."
 msgstr "Uw boodschap is leeg of te kort."
 
-#: Controller/ItemsController.php:159
+#: Controller/ItemsController.php:160
 msgid "Veuillez donner votre nom et votre email."
 msgstr "Gelieve uw naam en e-mail in te vullen."
 
-#: Controller/ItemsController.php:162
+#: Controller/ItemsController.php:163
 msgid "Votre adresse email n'est pas valide."
 msgstr "Uw e-mailadres is niet geldig."
 
-#: Controller/ItemsController.php:180
+#: Controller/ItemsController.php:182
 msgid "Donnerie : message pour votre annonce {0}"
 msgstr "Weggeefplek : bericht voor uw advertentie {0}"
 
-#: Controller/ItemsController.php:190
+#: Controller/ItemsController.php:200
+msgid "Donnerie : votre message pour l'annonce {0}"
+msgstr "Weggeefplek : bericht voor uw advertentie {0}"
+
+#: Controller/ItemsController.php:205
 msgid "Votre message a été envoyé à {0}."
 msgstr "Uw bericht is verzonden tot {0}."
 
-#: Controller/ItemsController.php:235
+#: Controller/ItemsController.php:250
 msgid "Votre annonce est en ligne."
 msgstr "Uw advertentie staat online."
 
-#: Controller/ItemsController.php:245
+#: Controller/ItemsController.php:260
 msgid ""
 "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème "
 "persiste contactez-nous (lien en bas à droite)."
@@ -112,31 +116,31 @@ msgstr ""
 "contacteer ons indien het probleem zich opnieuw voordoet (link rechts "
 "onderaan)."
 
-#: Controller/ItemsController.php:311
+#: Controller/ItemsController.php:326
 msgid "L'annonce est modifiée."
 msgstr "De advertentie is gewijzidg."
 
-#: Controller/ItemsController.php:318
+#: Controller/ItemsController.php:333
 msgid "The item could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:334
+#: Controller/ItemsController.php:349
 msgid "L'annonce est supprimée."
 msgstr "De advertentie is verwijderd."
 
-#: Controller/ItemsController.php:336
+#: Controller/ItemsController.php:351
 msgid "The item could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:342 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
 msgid "Comme neuf"
 msgstr "Zo goed als nieuw"
 
-#: Controller/ItemsController.php:342 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
 msgid "Usagé"
 msgstr "Gebruikt"
 
-#: Controller/ItemsController.php:342 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
 msgid "À réparer"
 msgstr "Te herstellen"
 
@@ -160,19 +164,19 @@ msgstr ""
 msgid "The street could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:92;182
+#: Controller/UsersController.php:100;190;321
 msgid "Veuillez donner un mot de passe d'au moins 8 caractères."
 msgstr "Gelieve een wachtwoord van ten minste 8 karakters geven."
 
-#: Controller/UsersController.php:94
+#: Controller/UsersController.php:102;323
 msgid "Vous n'avez pas rempli deux fois le même mot de passe."
 msgstr "U heeft niet tweemaal hetzelfde wachtwoord ingegeven."
 
-#: Controller/UsersController.php:110
-msgid "Donnerie : confirmez votre inscription"
-msgstr "Bevestig uw inschrijving."
+#: Controller/UsersController.php:118
+msgid "{0} : confirmez votre inscription"
+msgstr "{0} : bevestig uw inschrijving"
 
-#: Controller/UsersController.php:112
+#: Controller/UsersController.php:120
 msgid ""
 "Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. "
 "Cela peut prendre quelques minutes - vérifiez votre dossier des spams."
@@ -180,15 +184,15 @@ msgstr ""
 "U bent geregistreerd. U zal een bevestigingsmail ontvangen op {0}. Dit kan "
 "enkele minuten in beslag nemen. Controleer ook uw spamfolder."
 
-#: Controller/UsersController.php:117
+#: Controller/UsersController.php:125
 msgid "Cet email est déjà enregistré."
 msgstr "Dit mailadres is reeds geregistreerd."
 
-#: Controller/UsersController.php:119
+#: Controller/UsersController.php:127
 msgid "Ce pseudonyme est hélas déjà pris. Choisissez-en un autre."
 msgstr "Deze gebruikersnaam is reeds in gebruik. Kies een andere."
 
-#: Controller/UsersController.php:121
+#: Controller/UsersController.php:129
 msgid ""
 "Aïe, votre enregistrement a rencontré un problème. Vérifiez que vos données "
 "ne présentent pas d'erreur. Si le problème persiste, contactez-nous (lien en "
@@ -198,61 +202,61 @@ msgstr ""
 "contacteer ons indien het probleem zich opnieuw voordoet (link rechts "
 "onderaan)."
 
-#: Controller/UsersController.php:137
+#: Controller/UsersController.php:145
 msgid "Votre compte est activé : vous pouvez vous connecter."
 msgstr "Uw account is geactiveerd: u kan zich nu inloggen."
 
-#: Controller/UsersController.php:140
+#: Controller/UsersController.php:148
 msgid "Erreur technique"
-msgstr "Technische fout."
+msgstr "Technische fout"
 
-#: Controller/UsersController.php:143
+#: Controller/UsersController.php:151
 msgid "Votre code d'activation n'est pas valide."
 msgstr "Uw activeringscode is niet geldig."
 
-#: Controller/UsersController.php:163
+#: Controller/UsersController.php:171
 msgid "The user has been saved."
 msgstr ""
 
-#: Controller/UsersController.php:166
+#: Controller/UsersController.php:174
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:185
+#: Controller/UsersController.php:193
 msgid "Les deux encodages du mot de passe ne correspondent pas."
 msgstr "De twee paswoorden komen niet overeen."
 
-#: Controller/UsersController.php:191
+#: Controller/UsersController.php:199
 msgid "Modifications enregistrées."
 msgstr "Aanpassingen geregistreerd."
 
-#: Controller/UsersController.php:193
+#: Controller/UsersController.php:201
 msgid "The user could not be saved."
 msgstr ""
 
-#: Controller/UsersController.php:209
+#: Controller/UsersController.php:217
 msgid "Votre compte est supprimé."
 msgstr "Uw account is verwijderd."
 
-#: Controller/UsersController.php:212
+#: Controller/UsersController.php:220
 msgid ""
 "Un problème technique est survenu. Contactez-nous avec le formulaire en bas "
 "à droite."
 msgstr ""
 
-#: Controller/UsersController.php:215
+#: Controller/UsersController.php:223
 msgid "Le mot de passe ne correspond pas."
 msgstr "Het wachtwoord is niet correct."
 
-#: Controller/UsersController.php:229
+#: Controller/UsersController.php:237
 msgid "The user {0} has been deleted."
 msgstr ""
 
-#: Controller/UsersController.php:231
+#: Controller/UsersController.php:239
 msgid "The user could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:252
+#: Controller/UsersController.php:260
 msgid ""
 "L'email ou le mot de passe est invalide. Avez-vous bien créé un compte sur "
 "notre site ?"
@@ -260,11 +264,38 @@ msgstr ""
 "Het e-mailadres of het paswoord zijn niet geldig. Heeft u een account "
 "gecreëerd op onze website?"
 
-#: Controller/UsersController.php:270
+#: Controller/UsersController.php:278
 msgid "Problème lors de la suppression de l'annonce {0}"
 msgstr ""
 
-#: Template/Categories/index.ctp:2 Template/Element/header.ctp:46
+#: Controller/UsersController.php:294;313
+msgid "Cette adresse email est inconnue ou ne correspond pas avec la rue."
+msgstr "Dit e-mailadres is onbekend of komt niet overeen met de straat."
+
+#: Controller/UsersController.php:307
+msgid "{0} : code de renouvellement de mot de passe"
+msgstr "{0} : code voor wachtwoord vernieuwing"
+
+#: Controller/UsersController.php:309
+msgid ""
+"Un code vient de vous être envoyé par email. Voyez les instructions plus bas."
+msgstr ""
+"Een code is zojuist per e-mail naar u verzonden. Zie de onderstaande "
+"instructies."
+
+#: Controller/UsersController.php:319
+msgid "Votre code n'est pas correct."
+msgstr "Uw activeringscode is niet geldig."
+
+#: Controller/UsersController.php:327
+msgid ""
+"Votre nouveau mot de passe est enregistré. Vous pouvez vous connecter avec "
+"ce nouveau mot de passe."
+msgstr ""
+"Je nieuwe wachtwoord wordt opslaan. U kunt inloggen met dit nieuwe "
+"wachtwoord."
+
+#: Template/Categories/index.ctp:2 Template/Element/header.ctp:47
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -273,7 +304,7 @@ msgid "Items"
 msgstr ""
 
 #: Template/Categories/index.ctp:19 Template/Items/index.ctp:15
-#: Template/Streets/index.ctp:16 Template/Users/index.ctp:17
+#: Template/Streets/index.ctp:16 Template/Users/index.ctp:22
 #: Template/Users/view.ctp:8;61
 msgid "Actions"
 msgstr "Acties"
@@ -286,7 +317,7 @@ msgstr "Weet u zeker dat u de ctaegorie {0} wil verwijderen?"
 msgid "Suppression interdite : il y a des annonces pour cette catégorie."
 msgstr ""
 
-#: Template/Element/footer.ctp:9
+#: Template/Element/footer.ctp:10
 msgid "Site fait avec enthousiasme par {0}"
 msgstr "Website met enthousiasme gecreëerd door {0}"
 
@@ -330,43 +361,51 @@ msgstr "F.A.Q."
 msgid "Charte"
 msgstr "Charter"
 
-#: Template/Element/header.ctp:44
+#: Template/Element/header.ctp:35 Template/Pages/privacy.ctp:1
+msgid "Politique de confidentialité"
+msgstr "Privacy beleid"
+
+#: Template/Element/header.ctp:45
 msgid "Utilisateurs"
 msgstr "Gebruikers"
 
-#: Template/Element/header.ctp:45
+#: Template/Element/header.ctp:46
 msgid "Annonces"
 msgstr "Advertenties"
 
-#: Template/Element/header.ctp:47
+#: Template/Element/header.ctp:48
 msgid "Rues"
 msgstr "Straten"
 
-#: Template/Element/header.ctp:54
+#: Template/Element/header.ctp:49 Template/Stats/index.ctp:37
+msgid "Statistiques"
+msgstr ""
+
+#: Template/Element/header.ctp:56
 msgid "Bonjour"
 msgstr "Hallo"
 
-#: Template/Element/header.ctp:57 Template/Items/mines.ctp:1;4
+#: Template/Element/header.ctp:59 Template/Items/mines.ctp:1;4
 msgid "Mes annonces"
 msgstr "Mjin advertenties"
 
-#: Template/Element/header.ctp:58 Template/Users/me.ctp:2;9
+#: Template/Element/header.ctp:60 Template/Users/me.ctp:2;9
 msgid "Mon profil"
 msgstr "Mijn profiel"
 
-#: Template/Element/header.ctp:59
+#: Template/Element/header.ctp:61
 msgid "Se déconnecter"
 msgstr "Uitloggen"
 
-#: Template/Element/header.ctp:64 Template/Users/login.ctp:16
+#: Template/Element/header.ctp:66 Template/Users/login.ctp:16
 msgid "Se connecter"
 msgstr "Inloggen"
 
-#: Template/Element/header.ctp:83
+#: Template/Element/header.ctp:85
 msgid "Contact"
 msgstr "Contact"
 
-#: Template/Element/header.ctp:87
+#: Template/Element/header.ctp:89
 msgid ""
 "N'utilisez pas ce formulaire pour contacter un annonceur : utilisez le "
 "formulaire dans le détail de l'annonce."
@@ -374,36 +413,38 @@ msgstr ""
 "Gebruik dit formulier niet om de adverteerder te contacteren. Gebruik "
 "daarvoor het formulier in de advertentie."
 
-#: Template/Element/header.ctp:90 Template/Items/view.ctp:68
+#: Template/Element/header.ctp:92 Template/Items/view.ctp:68
 msgid "Votre nom"
 msgstr "Uw naam"
 
-#: Template/Element/header.ctp:91 Template/Items/view.ctp:69
+#: Template/Element/header.ctp:93 Template/Items/view.ctp:69
+#: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr "Uw e-mail"
 
-#: Template/Element/header.ctp:94
+#: Template/Element/header.ctp:96
 msgid "Problème technique"
 msgstr "Technisch probleem"
 
-#: Template/Element/header.ctp:95
+#: Template/Element/header.ctp:97
 msgid "Signaler une annonce ou un utilisateur"
 msgstr "Signaleer een advertentie of een gebruiker"
 
-#: Template/Element/header.ctp:96
+#: Template/Element/header.ctp:98
 msgid "Question sur le site"
 msgstr "Vraag over de website"
 
-#: Template/Element/header.ctp:97
+#: Template/Element/header.ctp:99
 msgid "Avoir ce site pour ma communauté"
 msgstr "Deze website hebben voor mijn gemeenschap"
 
-#: Template/Element/header.ctp:98
+#: Template/Element/header.ctp:100
 msgid "(Choisissez)"
 msgstr "(Kies)"
 
-#: Template/Element/header.ctp:100 Template/Items/add.ctp:63
-#: Template/Items/view.ctp:74 Template/Users/register.ctp:25
+#: Template/Element/header.ctp:102 Template/Items/add.ctp:63
+#: Template/Items/view.ctp:74 Template/Users/register.ctp:30
+#: Template/Users/reset_password.ctp:36
 msgid "Envoyer"
 msgstr "Verzenden"
 
@@ -427,6 +468,10 @@ msgstr ""
 msgid ""
 "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
 "total"
+msgstr ""
+
+#: Template/Error/error400.ctp:2
+msgid "Erreur"
 msgstr ""
 
 #: Template/Items/add.ctp:3 Template/Items/mines.ctp:6
@@ -549,17 +594,17 @@ msgstr "Annuleren"
 msgid "Accueil"
 msgstr "Home"
 
-#: Template/Items/home.ctp:13
-msgid "Il y a {{count}} annonces"
-msgstr "Er zijn {{count}} advertenties"
-
-#: Template/Items/home.ctp:16
+#: Template/Items/home.ctp:15
 msgid "Annonces plus récentes"
 msgstr "Meest recente advertenties"
 
-#: Template/Items/home.ctp:18
+#: Template/Items/home.ctp:17
 msgid "Annonces plus anciennes"
 msgstr "Oudste advertenties"
+
+#: Template/Items/home.ctp:24
+msgid "Il y a {{count}} annonces"
+msgstr "Er zijn {{count}} advertenties"
 
 #: Template/Items/index.ctp:35
 msgid "Êtes vous sûr de supprimer {0}?"
@@ -581,7 +626,7 @@ msgstr "Geplaatst op"
 msgid "Pas d'image : image par défaut utilisée"
 msgstr "Geen afbeelding: er zal een standaardafbeelding gebruikt worden"
 
-#: Template/Items/mines.ctp:42 Template/Users/index.ctp:44
+#: Template/Items/mines.ctp:42 Template/Users/index.ctp:49
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr "Weet u zeker dat u {0} wil verwijderen?"
 
@@ -589,7 +634,7 @@ msgstr "Weet u zeker dat u {0} wil verwijderen?"
 msgid "Les annonces de {0}"
 msgstr "De advertentie van {0}"
 
-#: Template/Items/view.ctp:54
+#: Template/Items/view.ctp:54 Template/Stats/index.ctp:134
 msgid "Voir ses annonces"
 msgstr "Mjin advertenties zien"
 
@@ -603,18 +648,17 @@ msgstr "Uw bericht betreffende deze advertentie"
 
 #: Template/Items/view.ctp:77
 msgid "Vous devez"
-msgstr ""
+msgstr "U moet"
 
 #: Template/Items/view.ctp:77
 msgid "vous connecter"
-msgstr ""
+msgstr "inloggen"
 
 #: Template/Items/view.ctp:77
 msgid "pour pouvoir contacter {0}"
-msgstr ""
+msgstr "om {0} te contacteren"
 
-#: Template/Layout/error.ctp:35 Template/Error/error400.ctp:36
-#: Template/Error/error500 old.ctp:41
+#: Template/Layout/error.ctp:35 Template/Error/error500.ctp:41
 msgid "Error"
 msgstr ""
 
@@ -646,11 +690,11 @@ msgstr "Straten"
 msgid "Êtes-vous sûr de supprimer la rue {0} ?"
 msgstr "Weet u zeker dat u de straat {0} wil verwijderen?"
 
-#: Template/Users/delete_me.ctp:2 Template/Users/me.ctp:30
+#: Template/Users/delete_me.ctp:2;6 Template/Users/me.ctp:30
 msgid "Supprimer mon compte"
 msgstr "Mijn account verwijderen"
 
-#: Template/Users/delete_me.ctp:5
+#: Template/Users/delete_me.ctp:9
 msgid ""
 "Toutes vos annonces seront supprimées en même temps que votre compte : cette "
 "action est irreversible."
@@ -658,16 +702,16 @@ msgstr ""
 "Al uw advertenties zullen samen met uw account verwijderd worden. Deze actie "
 "is onomkeerbaar."
 
-#: Template/Users/delete_me.ctp:9
+#: Template/Users/delete_me.ctp:13
 msgid "Donnez votre mot de passe et confirmez la suppression de votre compte."
 msgstr "Geef uw wachtwoord in en bevestig de verwijdering van uw account."
 
-#: Template/Users/delete_me.ctp:13
+#: Template/Users/delete_me.ctp:17
 msgid "Confirmer"
 msgstr "Bevestigen"
 
 #: Template/Users/edit.ctp:11 Template/Users/me.ctp:18
-#: Template/Users/register.ctp:19
+#: Template/Users/register.ctp:19 Template/Users/reset_password.ctp:24
 msgid "(choisissez)"
 msgstr "(kies)"
 
@@ -675,7 +719,23 @@ msgstr "(kies)"
 msgid "Donner un mot de passe pour écraser l'ancien"
 msgstr "Geef een nieuw paswoord om het oude te vervangen"
 
-#: Template/Users/index.ctp:4
+#: Template/Users/export_emails_csv.ctp:3 Template/Users/index.ctp:7
+msgid "Export emails en CSV"
+msgstr ""
+
+#: Template/Users/export_emails_csv.ctp:5
+msgid "Retour à la liste des utilisateurs"
+msgstr ""
+
+#: Template/Users/export_emails_csv.ctp:12
+msgid "Francophones"
+msgstr ""
+
+#: Template/Users/export_emails_csv.ctp:26
+msgid "Néerlandophones"
+msgstr ""
+
+#: Template/Users/index.ctp:5
 msgid "Users"
 msgstr "Gebruikers"
 
@@ -698,11 +758,15 @@ msgstr "E-mail"
 msgid "Mot de passe"
 msgstr "Wachtwoord"
 
-#: Template/Users/login.ctp:22
+#: Template/Users/login.ctp:17
+msgid "J'ai oublié mon mot de passe"
+msgstr "Ik heb mijn wachtwoord vergeten"
+
+#: Template/Users/login.ctp:23
 msgid "Vous n'avez pas de compte ?"
 msgstr "Heeft u nog geen account?"
 
-#: Template/Users/login.ctp:23
+#: Template/Users/login.ctp:24
 msgid "Créer votre compte"
 msgstr "Creëer uw account"
 
@@ -792,6 +856,26 @@ msgstr "Openbare naam"
 #: Template/Users/register.ctp:19 Template/Users/view.ctp:33
 msgid "Rue"
 msgstr "Straat"
+
+#: Template/Users/reset_password.ctp:2;13
+msgid "Mot de passe oublié"
+msgstr "Wachtwoord vergeten"
+
+#: Template/Users/reset_password.ctp:24
+msgid "Votre rue"
+msgstr "Uw straat"
+
+#: Template/Users/reset_password.ctp:29
+msgid "Code reçu par email"
+msgstr "Code per e-mail ontvangen"
+
+#: Template/Users/reset_password.ctp:30
+msgid "Nouveau mot de passe"
+msgstr "Nieuw wachtwoord"
+
+#: Template/Users/reset_password.ctp:31
+msgid "Confirmez le nouveau mot de passe"
+msgstr "Bevestig uw wachtwoord"
 
 #: Template/Users/view.ctp:9
 msgid "Edit User"
@@ -889,11 +973,7 @@ msgstr ""
 msgid "Are you sure you want to delete # {0}?"
 msgstr ""
 
-#: Template/Error/error400.ctp:37
-msgid "The requested address {0} was not found on this server."
-msgstr ""
-
-#: Template/Error/error500 old.ctp:39
+#: Template/Error/error500.ctp:39
 msgid "An Internal Error Has Occurred"
 msgstr ""
 
