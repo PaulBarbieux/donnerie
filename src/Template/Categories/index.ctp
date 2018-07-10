@@ -4,9 +4,9 @@
 <div class="col-sm-4 text-right">
 	<A href="<?= $this->Url->build(['controller'=>"Categories", 'action'=>"add"]) ?>" class="btn btn-primary"><I class="fa fa-plus"></I> Ajouter</A>
 </div>
-<div class="col-sm-12">
+<div class="col-12">
 	<DIV class="card">
-		<DIV class="card-block">
+		<DIV class="card-body">
 			<TABLE class="table table-striped">
 				<THEAD>
 					<TR>
@@ -29,14 +29,12 @@
 						<TD><?= h($category->description_nl) ?></TD>
 						<TD><?= $this->Html->link(h(count($category->items)), ['controller' => 'Items', 'action' => 'category', $category->id]) ?></TD>
 						<TD class="actions">
-							<DIV class="btn-group">
-								<?= $this->Html->link("", ['action' => 'edit', $category->id] , ['class'=>"btn btn-sm btn-primary fa fa-pencil"]) ?>
-								<?php if (count($category->items) == 0) { ?>
-								<?= $this->Form->postLink("", ['action' => 'delete', $category->id], ['confirm' => __("Êtes-vous sûr de supprimer la catégorie {0} ?", $category->title_fr) , 'class'=>"btn btn-sm btn-danger fa fa-trash"]) ?>
-								<?php } else { ?>
-								<A class="btn btn-sm btn-danger disabled" title="<?= __("Suppression interdite : il y a des annonces pour cette catégorie.") ?>"><I class="fa fa-trash"></I></A>
-								<?php } ?>
-							</DIV>
+							<?= $this->Html->link("", ['action' => 'edit', $category->id] , ['class'=>"fa fa-pencil"]) ?>
+							<?php if (count($category->items) == 0) { ?>
+							<?= $this->Form->postLink("", ['action' => 'delete', $category->id], ['confirm' => __("Êtes-vous sûr de supprimer la catégorie {0} ?", $category->title_fr) , 'class'=>"fa fa-trash"]) ?>
+							<?php } else { ?>
+							<A class="disabled" title="<?= __("Suppression interdite : il y a des annonces pour cette catégorie.") ?>"><I class="fa fa-trash"></I></A>
+							<?php } ?>
 						</TD>
 					</tr>
 					<?php endforeach; ?>
