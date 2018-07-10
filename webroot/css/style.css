@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Ruda');
 /*
 	Main styles
 */
@@ -51,7 +50,7 @@ FOOTER .extrapaul {
 	font-size: 0.8rem;
 }
 #footer-gap {
-	height:80px;
+	height:100px;
 }
 /*
 	Card
@@ -382,5 +381,5 @@ NAV .gravatar {
 	More classes
 */
 .disabled {
-	color: #888;
+	color: #888 !important;
 }
