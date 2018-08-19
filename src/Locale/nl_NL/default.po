@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-07 11:03+0200\n"
-"PO-Revision-Date: 2018-07-08 10:48+0200\n"
+"POT-Creation-Date: 2018-07-14 12:35+0200\n"
+"PO-Revision-Date: 2018-07-14 12:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -92,12 +92,12 @@ msgid "Votre adresse email n'est pas valide."
 msgstr "Uw e-mailadres is niet geldig."
 
 #: Controller/ItemsController.php:182
-msgid "Donnerie : message pour votre annonce {0}"
-msgstr "Weggeefplek : bericht voor uw advertentie {0}"
+msgid "{0} : message pour votre annonce {1}"
+msgstr "{0} : bericht voor uw advertentie {1}"
 
 #: Controller/ItemsController.php:200
-msgid "Donnerie : votre message pour l'annonce {0}"
-msgstr "Weggeefplek : bericht voor uw advertentie {0}"
+msgid "{0} : votre message pour l'annonce {1}"
+msgstr "{0} : uw bericht voor uw advertentie {1}"
 
 #: Controller/ItemsController.php:205
 msgid "Votre message a été envoyé à {0}."
@@ -303,17 +303,17 @@ msgstr "Categorieën"
 msgid "Items"
 msgstr ""
 
-#: Template/Categories/index.ctp:19 Template/Items/index.ctp:15
-#: Template/Streets/index.ctp:16 Template/Users/index.ctp:22
+#: Template/Categories/index.ctp:19 Template/Items/index.ctp:19
+#: Template/Streets/index.ctp:16 Template/Users/index.ctp:24
 #: Template/Users/view.ctp:8;61
 msgid "Actions"
 msgstr "Acties"
 
-#: Template/Categories/index.ctp:35
+#: Template/Categories/index.ctp:34
 msgid "Êtes-vous sûr de supprimer la catégorie {0} ?"
 msgstr "Weet u zeker dat u de ctaegorie {0} wil verwijderen?"
 
-#: Template/Categories/index.ctp:37
+#: Template/Categories/index.ctp:36
 msgid "Suppression interdite : il y a des annonces pour cette catégorie."
 msgstr ""
 
@@ -443,8 +443,8 @@ msgid "(Choisissez)"
 msgstr "(Kies)"
 
 #: Template/Element/header.ctp:102 Template/Items/add.ctp:63
-#: Template/Items/view.ctp:74 Template/Users/register.ctp:30
-#: Template/Users/reset_password.ctp:36
+#: Template/Items/view.ctp:74 Template/Users/register.ctp:36
+#: Template/Users/reset_password.ctp:39
 msgid "Envoyer"
 msgstr "Verzenden"
 
@@ -591,8 +591,8 @@ msgid "Annuler"
 msgstr "Annuleren"
 
 #: Template/Items/home.ctp:2
-msgid "Accueil"
-msgstr "Home"
+msgid "{{count}} annonces"
+msgstr "{{count}} advertenties"
 
 #: Template/Items/home.ctp:15
 msgid "Annonces plus récentes"
@@ -606,7 +606,7 @@ msgstr "Oudste advertenties"
 msgid "Il y a {{count}} annonces"
 msgstr "Er zijn {{count}} advertenties"
 
-#: Template/Items/index.ctp:35
+#: Template/Items/index.ctp:39
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr "Bent u zeker dat uw {0} wenst te verwijderen?"
 
@@ -626,7 +626,7 @@ msgstr "Geplaatst op"
 msgid "Pas d'image : image par défaut utilisée"
 msgstr "Geen afbeelding: er zal een standaardafbeelding gebruikt worden"
 
-#: Template/Items/mines.ctp:42 Template/Users/index.ctp:49
+#: Template/Items/mines.ctp:42 Template/Users/index.ctp:51
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr "Weet u zeker dat u {0} wil verwijderen?"
 
@@ -719,7 +719,7 @@ msgstr "(kies)"
 msgid "Donner un mot de passe pour écraser l'ancien"
 msgstr "Geef een nieuw paswoord om het oude te vervangen"
 
-#: Template/Users/export_emails_csv.ctp:3 Template/Users/index.ctp:7
+#: Template/Users/export_emails_csv.ctp:3 Template/Users/index.ctp:5
 msgid "Export emails en CSV"
 msgstr ""
 
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Néerlandophones"
 msgstr ""
 
-#: Template/Users/index.ctp:5
+#: Template/Users/index.ctp:3
 msgid "Users"
 msgstr "Gebruikers"
 
@@ -831,7 +831,7 @@ msgstr "U moet zich inschrijven om advertenties te kunnen plaatsen"
 
 #: Template/Users/register.ctp:10
 msgid " et contacter les annonceurs"
-msgstr "en om adverteerders te kunnen contacteren."
+msgstr " en om adverteerders te kunnen contacteren"
 
 #: Template/Users/register.ctp:11
 msgid "Seul votre pseudonyme sera visible par les utilisateurs du site."
@@ -865,17 +865,17 @@ msgstr "Wachtwoord vergeten"
 msgid "Votre rue"
 msgstr "Uw straat"
 
-#: Template/Users/reset_password.ctp:29
+#: Template/Users/reset_password.ctp:32
 msgid "Code reçu par email"
 msgstr "Code per e-mail ontvangen"
 
-#: Template/Users/reset_password.ctp:30
+#: Template/Users/reset_password.ctp:33
 msgid "Nouveau mot de passe"
 msgstr "Nieuw wachtwoord"
 
-#: Template/Users/reset_password.ctp:31
+#: Template/Users/reset_password.ctp:34
 msgid "Confirmez le nouveau mot de passe"
-msgstr "Bevestig uw wachtwoord"
+msgstr "Bevestig uw nieuw wachtwoord"
 
 #: Template/Users/view.ctp:9
 msgid "Edit User"
@@ -977,6 +977,14 @@ msgstr ""
 msgid "An Internal Error Has Occurred"
 msgstr ""
 
+#, fuzzy
+#~| msgid "À propos de ce site"
+#~ msgid "de ce site"
+#~ msgstr "Over deze site"
+
+#~ msgid "Accueil"
+#~ msgstr "Home"
+
 #~ msgid "Donnerie"
 #~ msgstr "Weggeefplek"
 
@@ -995,6 +1003,3 @@ msgstr ""
 #~ msgstr ""
 #~ "Weet u zeker dat u de categorie {0} wil verwijderen? De advertenties in "
 #~ "deze categorie zullen niet langer zichtbaar zijn."
-
-#~ msgid "À propos de ce site"
-#~ msgstr "Over deze site"

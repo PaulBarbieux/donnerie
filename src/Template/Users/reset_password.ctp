@@ -24,7 +24,10 @@ if (!isset($inputCode)) {
 			echo $this->Form->control('street' , [ 'label'=>__("Votre rue") , 'empty'=>__("(choisissez)") , 'templateVars'=>$col , 'readonly'=>$inputCode ]);
 			if ($inputCode) {
 		?>
-			<P class="alert alert-info">Veuillez copier-coller le code reçu par email et encoder un nouveau de passe.</P>
+			<P class="alert alert-info">
+				<?php if (LG == "fr") { ?>Veuillez copier-coller le code reçu par email et encoder un nouveau de passe.<?php } else { ?>
+				Veuillez copier-coller le code reçu par email et encoder un nouveau de passe.<?php } ?>
+			</P>
 		<?php
 				echo $this->Form->control('resetcode' , [ 'label'=>__("Code reçu par email") ,'templateVars'=>$col ]);
 				echo $this->Form->control('password' , [ 'label'=>__("Nouveau mot de passe") , 'templateVars'=>$col ]);

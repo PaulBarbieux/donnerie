@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2018-07-07 11:00+0200\n"
+"POT-Creation-Date: 2018-07-14 12:35+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -93,11 +93,11 @@ msgid "Votre adresse email n'est pas valide."
 msgstr ""
 
 #: Controller/ItemsController.php:182
-msgid "Donnerie : message pour votre annonce {0}"
+msgid "{0} : message pour votre annonce {1}"
 msgstr ""
 
 #: Controller/ItemsController.php:200
-msgid "Donnerie : votre message pour l'annonce {0}"
+msgid "{0} : votre message pour l'annonce {1}"
 msgstr ""
 
 #: Controller/ItemsController.php:205
@@ -278,18 +278,18 @@ msgid "Items"
 msgstr ""
 
 #: Template/Categories/index.ctp:19
-#: Template/Items/index.ctp:15
+#: Template/Items/index.ctp:19
 #: Template/Streets/index.ctp:16
-#: Template/Users/index.ctp:22
+#: Template/Users/index.ctp:24
 #: Template/Users/view.ctp:8;61
 msgid "Actions"
 msgstr ""
 
-#: Template/Categories/index.ctp:35
+#: Template/Categories/index.ctp:34
 msgid "Êtes-vous sûr de supprimer la catégorie {0} ?"
 msgstr ""
 
-#: Template/Categories/index.ctp:37
+#: Template/Categories/index.ctp:36
 msgid "Suppression interdite : il y a des annonces pour cette catégorie."
 msgstr ""
 
@@ -425,8 +425,8 @@ msgstr ""
 #: Template/Element/header.ctp:102
 #: Template/Items/add.ctp:63
 #: Template/Items/view.ctp:74
-#: Template/Users/register.ctp:30
-#: Template/Users/reset_password.ctp:36
+#: Template/Users/register.ctp:36
+#: Template/Users/reset_password.ctp:39
 msgid "Envoyer"
 msgstr ""
 
@@ -563,7 +563,7 @@ msgid "Annuler"
 msgstr ""
 
 #: Template/Items/home.ctp:2
-msgid "Accueil"
+msgid "{{count}} annonces"
 msgstr ""
 
 #: Template/Items/home.ctp:15
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Il y a {{count}} annonces"
 msgstr ""
 
-#: Template/Items/index.ctp:35
+#: Template/Items/index.ctp:39
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr ""
 
@@ -595,7 +595,7 @@ msgid "Pas d'image : image par défaut utilisée"
 msgstr ""
 
 #: Template/Items/mines.ctp:42
-#: Template/Users/index.ctp:49
+#: Template/Users/index.ctp:51
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr ""
 
@@ -690,7 +690,7 @@ msgid "Donner un mot de passe pour écraser l'ancien"
 msgstr ""
 
 #: Template/Users/export_emails_csv.ctp:3
-#: Template/Users/index.ctp:7
+#: Template/Users/index.ctp:5
 msgid "Export emails en CSV"
 msgstr ""
 
@@ -706,7 +706,7 @@ msgstr ""
 msgid "Néerlandophones"
 msgstr ""
 
-#: Template/Users/index.ctp:5
+#: Template/Users/index.ctp:3
 msgid "Users"
 msgstr ""
 
@@ -827,15 +827,15 @@ msgstr ""
 msgid "Votre rue"
 msgstr ""
 
-#: Template/Users/reset_password.ctp:29
+#: Template/Users/reset_password.ctp:32
 msgid "Code reçu par email"
 msgstr ""
 
-#: Template/Users/reset_password.ctp:30
+#: Template/Users/reset_password.ctp:33
 msgid "Nouveau mot de passe"
 msgstr ""
 
-#: Template/Users/reset_password.ctp:31
+#: Template/Users/reset_password.ctp:34
 msgid "Confirmez le nouveau mot de passe"
 msgstr ""
 

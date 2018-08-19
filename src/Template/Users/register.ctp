@@ -23,7 +23,13 @@ $col = array('collabel' => "col-sm-4", 'colinput' => "col-sm-8");		// Alignement
         ?>
 	<DIV class="form-check form-check-inline">
 	  <INPUT class="form-check-input" type="checkbox" name="accept" id="accept" value="1" required>
-	  <LABEL class="form-check-label" for="accept">J’ai lu et accepte la <A href='<?= $this->Url->build("/pages/privacy") ?>' target="_blank">politique de confidentialité</A> de ce site</label>
+	  <LABEL class="form-check-label" for="accept">
+	  	<?php if (LG == "fr") { ?>
+	  	J’ai lu et accepte la <A href='<?= $this->Url->build("/pages/privacy") ?>' target="_blank">politique de confidentialité</A> de ce site.
+		<?php } else { ?>
+		Ik heb het <A href='<?= $this->Url->build("/pages/privacy") ?>' target="_blank">privacy beleid</A> van deze site gelezen en goedgekeurd.
+		<?php } ?>
+	  </LABEL>
 	</DIV>
 	<BR>
 	<IMG class="waiting-animation" src="<?= $this->Url->build("/img/loading.gif") ?>" style="display: none;">
