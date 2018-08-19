@@ -1,5 +1,5 @@
 <?php
-$this->assign('title', __("Accueil"));
+$this->assign('title', $this->Paginator->counter(['format' => __('{{count}} annonces')]));
 ?>
 
 <div class="col-sm-12 grid">
@@ -19,8 +19,11 @@ $this->assign('title', __("Accueil"));
 		</UL>
 	</DIV>
 </div>
-<div class="col-12 text-center">
-	<div class="total-announces infinite-scroll-last">
-		<?= $this->Paginator->counter(['format' => __('Il y a {{count}} annonces')]) ?>
+<div class="col-12 text-center page-load-status">
+	<div class="infinite-scroll-request"><img src="<?= $this->Url->build("/img/infinite-scroll-loading.gif") ?>"></div>
+	<div class="infinite-scroll-last">
+		<div class="total-announces">
+			<?= $this->Paginator->counter(['format' => __('Il y a {{count}} annonces')]) ?>
+		</div>
 	</div>
 </div>

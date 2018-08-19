@@ -8,11 +8,7 @@ jQuery(document).ready(function(){
 		append: ".grid-item",
 		prefill: true,
 		outlayer: pckr,
+		status: '.page-load-status',
 		hideNav: ".paginator"
-	});
-	// Last page hit
-	$(".infinite-scroll-last").hide();
-	$gridPackery.on( 'last.infiniteScroll', function() {
-		$(".infinite-scroll-last").show();
 	});
 });
