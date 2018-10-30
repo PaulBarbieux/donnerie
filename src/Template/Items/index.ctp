@@ -33,9 +33,9 @@
 						<td><?= $item->has('user') ? $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id]) : '' ?></td>
 						<td><?= h($item->created) ?></td>
 						<td><?= h($item->modified) ?></td>
-						<td><?= h($item->stat->contacts) ?></td>
+						<td><?= isset($item->stat) ? h($item->stat->contacts) : "?" ?></td>
 						<td class="actions">
-							<?= $this->Html->link("", ['action' => 'edit', $item->id, $item->user->alias] , ['class'=>"fa fa-pencil"]) ?>
+							<?= $this->Html->link("", ['action' => 'edit', $item->id, $item->user->alias] , ['class'=>"fas fa-pencil-alt"]) ?>
 							<?= $this->Form->postLink("", ['action' => 'delete', $item->id], ['confirm' => __('Êtes vous sûr de supprimer {0}?', $item->title) , 'class'=>"fa fa-trash"]) ?>
 						</td>
 					</tr>
@@ -43,7 +43,7 @@
 				</tbody>
 				<TFOOT>
 					<TR>
-						<TD colspan="11"><?= $this->element('paginator') ?></TD>
+						<TD colspan="10"><?= $this->element('paginator') ?></TD>
 					</TR>
 				</TFOOT>
 			</table>

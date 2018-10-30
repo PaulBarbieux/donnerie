@@ -34,7 +34,7 @@
 				<?= $this->Html->link(
 					"", 
 					['action' => 'edit', $item->id],
-					['class' => 'btn btn-primary btn-sm fa fa-pencil']
+					['class' => 'btn btn-primary btn-sm fas fa-pencil-alt']
 				) ?>
 				<?= $this->Form->postLink(
 					"", 

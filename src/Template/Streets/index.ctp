@@ -23,7 +23,7 @@
 						<TD><?= h($street->name_fr) ?></TD>
 						<TD><?= h($street->name_nl) ?></TD>
 						<TD class="actions">
-							<?= $this->Html->link("", ['action' => 'edit', $street->id] , ['class'=>"fa fa-pencil"]) ?>
+							<?= $this->Html->link("", ['action' => 'edit', $street->id] , ['class'=>"fas fa-pencil-alt"]) ?>
 							<?= $this->Form->postLink("", ['action' => 'delete', $street->id], ['confirm' => __("Êtes-vous sûr de supprimer la rue {0} ?", $street->name_fr) , 'class'=>"fa fa-trash"]) ?>
 						</TD>
 					</tr>

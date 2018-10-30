@@ -47,7 +47,7 @@
 						<td><?= h($user->modified) ?></td>
 						<td><?= count(h($user->items)) ?></td>
 						<td class="actions">
-							<?= $this->Html->link("", ['action' => 'edit', $user->id] , ['class'=>"fa fa-pencil"]) ?>
+							<?= $this->Html->link("", ['action' => 'edit', $user->id] , ['class'=>"fas fa-pencil-alt"]) ?>
 							<?= $this->Form->postLink("", ['action' => 'delete', $user->id], ['confirm' => __('Êtes-vous sûr de supprimer {0} ?', $user->username) , 'class'=>"fa fa-trash"]) ?>
 						</td>
 					</tr>
@@ -55,7 +55,7 @@
 				</tbody>
 				<TFOOT>
 					<TR>
-						<TD colspan="9"><?= $this->element('paginator') ?></TD>
+						<TD colspan="10"><?= $this->element('paginator') ?></TD>
 					</TR>
 				</TFOOT>
 			</table>

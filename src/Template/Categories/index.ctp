@@ -29,7 +29,7 @@
 						<TD><?= h($category->description_nl) ?></TD>
 						<TD><?= $this->Html->link(h(count($category->items)), ['controller' => 'Items', 'action' => 'category', $category->id]) ?></TD>
 						<TD class="actions">
-							<?= $this->Html->link("", ['action' => 'edit', $category->id] , ['class'=>"fa fa-pencil"]) ?>
+							<?= $this->Html->link("", ['action' => 'edit', $category->id] , ['class'=>"fas fa-pencil-alt"]) ?>
 							<?php if (count($category->items) == 0) { ?>
 							<?= $this->Form->postLink("", ['action' => 'delete', $category->id], ['confirm' => __("Êtes-vous sûr de supprimer la catégorie {0} ?", $category->title_fr) , 'class'=>"fa fa-trash"]) ?>
 							<?php } else { ?>
@@ -41,7 +41,7 @@
 				</TBODY>
 				<TFOOT>
 					<TR>
-						<TD colspan="6"><?= $this->element('paginator') ?></TD>
+						<TD colspan="7"><?= $this->element('paginator') ?></TD>
 					</TR>
 				</TFOOT>
 			</TABLE>

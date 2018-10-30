@@ -197,6 +197,10 @@ A.grid-item .item-state {
 	top:2px;
 	right:2px;
 }
+/* Share links */
+.share-links A I {
+	font-size: 20px;
+}
 /*
 	Link card
 */
@@ -217,7 +221,6 @@ A.card:focus {
     text-align: center;
 	padding-top:10px;
 	margin-top:10px;
-	border-top: dotted 2px #DDD;
 }
 .paginator UL LI {
     float: none;
