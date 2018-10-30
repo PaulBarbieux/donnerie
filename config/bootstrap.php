@@ -262,7 +262,7 @@ define ("SITE_NAME_NL","Weggeefplek Paper Jam");
 // Nom de domaine
 define ("DOMAIN_NAME", preg_replace('/www\./i', '', $_SERVER['SERVER_NAME']));
 // Nombre d'annonces pour la pagination de l'accueil
-define ("HOME_LIMIT_ITEMS",16);
+define ("HOME_LIMIT_ITEMS",12);
 // Remplacer la pagination de page d'accueil par un infinite scroll
 define ("HOME_INFINITE_SCROLL",true);
 // Troncation des textes d'annonces en page d'accueil

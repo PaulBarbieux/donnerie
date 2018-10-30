@@ -177,7 +177,8 @@ class ItemsController extends AppController
 							'email' => $applicantEmail,
 							'item_title' => $item->title, 
 							'item_link' => Router::url("/items/view/".$item->id, true), 
-							'message' => $message])
+							'message' => nl2br($message)
+						])
 						->to($item->user->username)
 						->subject(__("{0} : message pour votre annonce {1}" , SITE_NAME , $item->title ))
 						->send();
@@ -194,7 +195,8 @@ class ItemsController extends AppController
 							'applicant' => $applicant,
 							'item_title' => $item->title, 
 							'item_link' => Router::url("/items/view/".$item->id, true), 
-							'message' => $message])
+							'message' => nl2br($message)
+						])
 						->to($applicantEmail)
 						->replyTo("noreply@".DOMAIN_NAME)
 						->subject(__("{0} : votre message pour l'annonce {1}" , SITE_NAME , $item->title ))

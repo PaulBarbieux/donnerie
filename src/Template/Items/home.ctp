@@ -20,7 +20,9 @@ $this->assign('title', $this->Paginator->counter(['format' => __('{{count}} anno
 	</DIV>
 </div>
 <div class="col-12 text-center page-load-status">
+	<?php if (HOME_INFINITE_SCROLL) { ?>
 	<div class="infinite-scroll-request"><img src="<?= $this->Url->build("/img/infinite-scroll-loading.gif") ?>"></div>
+	<?php } ?>
 	<div class="infinite-scroll-last">
 		<div class="total-announces">
 			<?= $this->Paginator->counter(['format' => __('Il y a {{count}} annonces')]) ?>
