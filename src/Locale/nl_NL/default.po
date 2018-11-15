@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-14 12:35+0200\n"
-"PO-Revision-Date: 2018-07-14 12:39+0200\n"
+"POT-Creation-Date: 2018-11-15 11:52+0100\n"
+"PO-Revision-Date: 2018-11-15 11:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -75,39 +75,65 @@ msgstr "De categorie {0} is verwijderd."
 msgid "The category could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:89
+#: Controller/ItemsController.php:77;85 Template/Items/add.ctp:22
+#: Template/Items/edit.ctp:8
+msgid "Je donne"
+msgstr "Ik geef"
+
+#: Controller/ItemsController.php:78;86 Template/Items/add.ctp:22
+#: Template/Items/edit.ctp:8 Template/Items/view.ctp:22;71
+msgid "Je cherche"
+msgstr "Ik zoek"
+
+#: Controller/ItemsController.php:79;87;390 Template/Items/edit.ctp:22
+msgid "Comme neuf"
+msgstr "Zo goed als nieuw"
+
+#: Controller/ItemsController.php:80;88;390 Template/Items/edit.ctp:22
+msgid "Usagé"
+msgstr "Gebruikt"
+
+#: Controller/ItemsController.php:81;89;390 Template/Items/edit.ctp:22
+msgid "À réparer"
+msgstr "Te herstellen"
+
+#: Controller/ItemsController.php:82;90
+msgid "Rendez-vous sur {0} pour répondre à ces annonces..."
+msgstr "Bezoek {0} om deze advertenties te beantwoorden..."
+
+#: Controller/ItemsController.php:120
 msgid "Utilisateur inconnu."
 msgstr "Onbekende gebruiker."
 
-#: Controller/ItemsController.php:145
+#: Controller/ItemsController.php:176
 msgid "Votre message est vide ou trop court."
 msgstr "Uw boodschap is leeg of te kort."
 
-#: Controller/ItemsController.php:160
+#: Controller/ItemsController.php:191
 msgid "Veuillez donner votre nom et votre email."
 msgstr "Gelieve uw naam en e-mail in te vullen."
 
-#: Controller/ItemsController.php:163
+#: Controller/ItemsController.php:194
 msgid "Votre adresse email n'est pas valide."
 msgstr "Uw e-mailadres is niet geldig."
 
-#: Controller/ItemsController.php:182
+#: Controller/ItemsController.php:214
 msgid "{0} : message pour votre annonce {1}"
 msgstr "{0} : bericht voor uw advertentie {1}"
 
-#: Controller/ItemsController.php:200
+#: Controller/ItemsController.php:233
 msgid "{0} : votre message pour l'annonce {1}"
 msgstr "{0} : uw bericht voor uw advertentie {1}"
 
-#: Controller/ItemsController.php:205
+#: Controller/ItemsController.php:238
 msgid "Votre message a été envoyé à {0}."
 msgstr "Uw bericht is verzonden tot {0}."
 
-#: Controller/ItemsController.php:250
+#: Controller/ItemsController.php:283
 msgid "Votre annonce est en ligne."
 msgstr "Uw advertentie staat online."
 
-#: Controller/ItemsController.php:260
+#: Controller/ItemsController.php:293
 msgid ""
 "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème "
 "persiste contactez-nous (lien en bas à droite)."
@@ -116,33 +142,21 @@ msgstr ""
 "contacteer ons indien het probleem zich opnieuw voordoet (link rechts "
 "onderaan)."
 
-#: Controller/ItemsController.php:326
+#: Controller/ItemsController.php:359
 msgid "L'annonce est modifiée."
 msgstr "De advertentie is gewijzidg."
 
-#: Controller/ItemsController.php:333
+#: Controller/ItemsController.php:366
 msgid "The item could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:349
+#: Controller/ItemsController.php:382
 msgid "L'annonce est supprimée."
 msgstr "De advertentie is verwijderd."
 
-#: Controller/ItemsController.php:351
+#: Controller/ItemsController.php:384
 msgid "The item could not be deleted. Please, try again."
 msgstr ""
-
-#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
-msgid "Comme neuf"
-msgstr "Zo goed als nieuw"
-
-#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
-msgid "Usagé"
-msgstr "Gebruikt"
-
-#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
-msgid "À réparer"
-msgstr "Te herstellen"
 
 #: Controller/StreetsController.php:45;61
 msgid "The street has been saved."
@@ -413,11 +427,11 @@ msgstr ""
 "Gebruik dit formulier niet om de adverteerder te contacteren. Gebruik "
 "daarvoor het formulier in de advertentie."
 
-#: Template/Element/header.ctp:92 Template/Items/view.ctp:68
+#: Template/Element/header.ctp:92 Template/Items/view.ctp:108
 msgid "Votre nom"
 msgstr "Uw naam"
 
-#: Template/Element/header.ctp:93 Template/Items/view.ctp:69
+#: Template/Element/header.ctp:93 Template/Items/view.ctp:109
 #: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr "Uw e-mail"
@@ -443,7 +457,7 @@ msgid "(Choisissez)"
 msgstr "(Kies)"
 
 #: Template/Element/header.ctp:102 Template/Items/add.ctp:63
-#: Template/Items/view.ctp:74 Template/Users/register.ctp:36
+#: Template/Items/view.ctp:114 Template/Users/register.ctp:36
 #: Template/Users/reset_password.ctp:39
 msgid "Envoyer"
 msgstr "Verzenden"
@@ -481,15 +495,6 @@ msgstr "Nieuwe advertentie"
 #: Template/Items/add.ctp:8
 msgid "Créer une annonce"
 msgstr "Maak een advertentie"
-
-#: Template/Items/add.ctp:22 Template/Items/edit.ctp:8
-msgid "Je donne"
-msgstr "Ik geef"
-
-#: Template/Items/add.ctp:22 Template/Items/edit.ctp:8
-#: Template/Items/view.ctp:39
-msgid "Je cherche"
-msgstr "Ik zoek"
 
 #: Template/Items/add.ctp:27 Template/Items/edit.ctp:18
 msgid "Dénomination"
@@ -602,7 +607,7 @@ msgstr "Meest recente advertenties"
 msgid "Annonces plus anciennes"
 msgstr "Oudste advertenties"
 
-#: Template/Items/home.ctp:24
+#: Template/Items/home.ctp:28
 msgid "Il y a {{count}} annonces"
 msgstr "Er zijn {{count}} advertenties"
 
@@ -634,27 +639,27 @@ msgstr "Weet u zeker dat u {0} wil verwijderen?"
 msgid "Les annonces de {0}"
 msgstr "De advertentie van {0}"
 
-#: Template/Items/view.ctp:54 Template/Stats/index.ctp:134
+#: Template/Items/view.ctp:95 Template/Stats/index.ctp:134
 msgid "Voir ses annonces"
 msgstr "Mjin advertenties zien"
 
-#: Template/Items/view.ctp:62
+#: Template/Items/view.ctp:102
 msgid "Prendre contact pour cette annonce"
 msgstr "Contact opnemen voor deze advertentie"
 
-#: Template/Items/view.ctp:66
+#: Template/Items/view.ctp:106
 msgid "Votre message concernant cette annonce"
 msgstr "Uw bericht betreffende deze advertentie"
 
-#: Template/Items/view.ctp:77
+#: Template/Items/view.ctp:117
 msgid "Vous devez"
 msgstr "U moet"
 
-#: Template/Items/view.ctp:77
+#: Template/Items/view.ctp:117
 msgid "vous connecter"
 msgstr "inloggen"
 
-#: Template/Items/view.ctp:77
+#: Template/Items/view.ctp:117
 msgid "pour pouvoir contacter {0}"
 msgstr "om {0} te contacteren"
 
@@ -665,10 +670,6 @@ msgstr ""
 #: Template/Layout/error.ctp:43
 msgid "Back"
 msgstr ""
-
-#: Template/Pages/advices.ctp:1
-msgid "Bonnes pratiques"
-msgstr "Best practices"
 
 #: Template/Pages/charter.ctp:1
 msgid "Charte de bon usage"
@@ -976,6 +977,9 @@ msgstr ""
 #: Template/Error/error500.ctp:39
 msgid "An Internal Error Has Occurred"
 msgstr ""
+
+#~ msgid "Bonnes pratiques"
+#~ msgstr "Best practices"
 
 #, fuzzy
 #~| msgid "À propos de ce site"

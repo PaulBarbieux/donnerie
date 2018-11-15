@@ -6,6 +6,7 @@ use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\Mailer\Email;
 use Cake\Routing\Router;
+use Cake\I18n\I18n;
 
 /**
  * Items Controller
@@ -20,7 +21,7 @@ class ItemsController extends AppController
 	public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['home', 'view', 'user', 'category']);
+        $this->Auth->allow(['home', 'view', 'user', 'category', 'diaporama']);
     }
 	
 	public function isAuthorized($user = null)
@@ -63,6 +64,36 @@ class ItemsController extends AppController
 		$this->set('root',WWW_ROOT);
         $this->set('_serialize', ['items']);
 		$this->viewBuilder()->setLayout("packery");
+	}
+	
+	/*
+		Diaporama of items
+	*/
+	public function diaporama()
+	{
+		// Get translations for labels
+		I18n::locale('fr_FR');
+		$labels = array(
+			'd' => array(__("Je donne")),
+			'r' => array(__("Je cherche")),
+			'new' => array(__("Comme neuf")),
+			'used' => array(__("Usagé")),
+			'broken' => array(__("À réparer")),
+			'title' => array(__("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='#'>".DOMAIN_NAME."</A>"))
+		);
+		I18n::locale('nl_NL');
+		$labels['d'][] = __("Je donne");
+		$labels['r'][] = __("Je cherche");
+		$labels['new'][] = __("Comme neuf");
+		$labels['used'][] = __("Usagé");
+		$labels['broken'][] = __("À réparer");
+		$labels['title'][] = __("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='#'>".DOMAIN_NAME."</A>");
+		// Get items with featured image
+		$items = $this->Items->find('all' , [ 'conditions'=>[ 'image_1_url IS NOT '=>"NULL" ] ] );
+		$this->set(compact("items"));
+		$this->set('labels',$labels);
+        $this->set('_serialize', ['items']);
+		$this->viewBuilder()->setLayout("virgin");
 	}
 	
 	/*

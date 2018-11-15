@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2018-07-07 11:02+0200\n"
-"PO-Revision-Date: 2018-07-07 11:02+0200\n"
+"POT-Creation-Date: 2018-11-15 11:53+0100\n"
+"PO-Revision-Date: 2018-11-15 11:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -73,71 +73,85 @@ msgstr ""
 msgid "The category could not be deleted. Please, try again."
 msgstr "La catégorie n'a pas pu être supprimée."
 
-#: Controller/ItemsController.php:89
+#: Controller/ItemsController.php:77;85 Template/Items/add.ctp:22
+#: Template/Items/edit.ctp:8
+msgid "Je donne"
+msgstr ""
+
+#: Controller/ItemsController.php:78;86 Template/Items/add.ctp:22
+#: Template/Items/edit.ctp:8 Template/Items/view.ctp:22;71
+msgid "Je cherche"
+msgstr ""
+
+#: Controller/ItemsController.php:79;87;390 Template/Items/edit.ctp:22
+msgid "Comme neuf"
+msgstr ""
+
+#: Controller/ItemsController.php:80;88;390 Template/Items/edit.ctp:22
+msgid "Usagé"
+msgstr ""
+
+#: Controller/ItemsController.php:81;89;390 Template/Items/edit.ctp:22
+msgid "À réparer"
+msgstr ""
+
+#: Controller/ItemsController.php:82;90
+msgid "Rendez-vous sur {0} pour répondre à ces annonces..."
+msgstr ""
+
+#: Controller/ItemsController.php:120
 msgid "Utilisateur inconnu."
 msgstr ""
 
-#: Controller/ItemsController.php:145
+#: Controller/ItemsController.php:176
 msgid "Votre message est vide ou trop court."
 msgstr ""
 
-#: Controller/ItemsController.php:160
+#: Controller/ItemsController.php:191
 msgid "Veuillez donner votre nom et votre email."
 msgstr ""
 
-#: Controller/ItemsController.php:163
+#: Controller/ItemsController.php:194
 msgid "Votre adresse email n'est pas valide."
 msgstr ""
 
-#: Controller/ItemsController.php:182
-msgid "Donnerie : message pour votre annonce {0}"
+#: Controller/ItemsController.php:214
+msgid "{0} : message pour votre annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:200
-msgid "Donnerie : votre message pour l'annonce {0}"
+#: Controller/ItemsController.php:233
+msgid "{0} : votre message pour l'annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:205
+#: Controller/ItemsController.php:238
 msgid "Votre message a été envoyé à {0}."
 msgstr ""
 
-#: Controller/ItemsController.php:250
+#: Controller/ItemsController.php:283
 msgid "Votre annonce est en ligne."
 msgstr ""
 
-#: Controller/ItemsController.php:260
+#: Controller/ItemsController.php:293
 msgid ""
 "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème "
 "persiste contactez-nous (lien en bas à droite)."
 msgstr ""
 
-#: Controller/ItemsController.php:326
+#: Controller/ItemsController.php:359
 msgid "L'annonce est modifiée."
 msgstr ""
 
-#: Controller/ItemsController.php:333
+#: Controller/ItemsController.php:366
 msgid "The item could not be saved. Please, try again."
 msgstr "L'annonce ne peut pas être enregistrée."
 
-#: Controller/ItemsController.php:349
+#: Controller/ItemsController.php:382
 msgid "L'annonce est supprimée."
 msgstr ""
 
-#: Controller/ItemsController.php:351
+#: Controller/ItemsController.php:384
 msgid "The item could not be deleted. Please, try again."
 msgstr "L'annonce n'a pas pu être supprimée."
-
-#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
-msgid "Comme neuf"
-msgstr ""
-
-#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
-msgid "Usagé"
-msgstr ""
-
-#: Controller/ItemsController.php:357 Template/Items/edit.ctp:22
-msgid "À réparer"
-msgstr ""
 
 #: Controller/StreetsController.php:45;61
 msgid "The street has been saved."
@@ -285,17 +299,17 @@ msgstr "Catégories"
 msgid "Items"
 msgstr ""
 
-#: Template/Categories/index.ctp:19 Template/Items/index.ctp:15
-#: Template/Streets/index.ctp:16 Template/Users/index.ctp:22
+#: Template/Categories/index.ctp:19 Template/Items/index.ctp:19
+#: Template/Streets/index.ctp:16 Template/Users/index.ctp:24
 #: Template/Users/view.ctp:8;61
 msgid "Actions"
 msgstr ""
 
-#: Template/Categories/index.ctp:35
+#: Template/Categories/index.ctp:34
 msgid "Êtes-vous sûr de supprimer la catégorie {0} ?"
 msgstr "Êtes-vous sûr de supprimer la catégorie {0} ?"
 
-#: Template/Categories/index.ctp:37
+#: Template/Categories/index.ctp:36
 msgid "Suppression interdite : il y a des annonces pour cette catégorie."
 msgstr ""
 
@@ -393,11 +407,11 @@ msgid ""
 "formulaire dans le détail de l'annonce."
 msgstr ""
 
-#: Template/Element/header.ctp:92 Template/Items/view.ctp:68
+#: Template/Element/header.ctp:92 Template/Items/view.ctp:108
 msgid "Votre nom"
 msgstr ""
 
-#: Template/Element/header.ctp:93 Template/Items/view.ctp:69
+#: Template/Element/header.ctp:93 Template/Items/view.ctp:109
 #: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr ""
@@ -423,8 +437,8 @@ msgid "(Choisissez)"
 msgstr ""
 
 #: Template/Element/header.ctp:102 Template/Items/add.ctp:63
-#: Template/Items/view.ctp:74 Template/Users/register.ctp:30
-#: Template/Users/reset_password.ctp:36
+#: Template/Items/view.ctp:114 Template/Users/register.ctp:36
+#: Template/Users/reset_password.ctp:39
 msgid "Envoyer"
 msgstr ""
 
@@ -461,15 +475,6 @@ msgstr ""
 
 #: Template/Items/add.ctp:8
 msgid "Créer une annonce"
-msgstr ""
-
-#: Template/Items/add.ctp:22 Template/Items/edit.ctp:8
-msgid "Je donne"
-msgstr ""
-
-#: Template/Items/add.ctp:22 Template/Items/edit.ctp:8
-#: Template/Items/view.ctp:39
-msgid "Je cherche"
 msgstr ""
 
 #: Template/Items/add.ctp:27 Template/Items/edit.ctp:18
@@ -561,7 +566,7 @@ msgid "Annuler"
 msgstr ""
 
 #: Template/Items/home.ctp:2
-msgid "Accueil"
+msgid "{{count}} annonces"
 msgstr ""
 
 #: Template/Items/home.ctp:15
@@ -572,11 +577,11 @@ msgstr ""
 msgid "Annonces plus anciennes"
 msgstr ""
 
-#: Template/Items/home.ctp:24
+#: Template/Items/home.ctp:28
 msgid "Il y a {{count}} annonces"
 msgstr ""
 
-#: Template/Items/index.ctp:35
+#: Template/Items/index.ctp:39
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr ""
 
@@ -594,7 +599,7 @@ msgstr ""
 msgid "Pas d'image : image par défaut utilisée"
 msgstr ""
 
-#: Template/Items/mines.ctp:42 Template/Users/index.ctp:49
+#: Template/Items/mines.ctp:42 Template/Users/index.ctp:51
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr ""
 
@@ -602,27 +607,27 @@ msgstr ""
 msgid "Les annonces de {0}"
 msgstr ""
 
-#: Template/Items/view.ctp:54 Template/Stats/index.ctp:134
+#: Template/Items/view.ctp:95 Template/Stats/index.ctp:134
 msgid "Voir ses annonces"
 msgstr ""
 
-#: Template/Items/view.ctp:62
+#: Template/Items/view.ctp:102
 msgid "Prendre contact pour cette annonce"
 msgstr ""
 
-#: Template/Items/view.ctp:66
+#: Template/Items/view.ctp:106
 msgid "Votre message concernant cette annonce"
 msgstr ""
 
-#: Template/Items/view.ctp:77
+#: Template/Items/view.ctp:117
 msgid "Vous devez"
 msgstr ""
 
-#: Template/Items/view.ctp:77
+#: Template/Items/view.ctp:117
 msgid "vous connecter"
 msgstr ""
 
-#: Template/Items/view.ctp:77
+#: Template/Items/view.ctp:117
 msgid "pour pouvoir contacter {0}"
 msgstr ""
 
@@ -633,10 +638,6 @@ msgstr "Erreur"
 #: Template/Layout/error.ctp:43
 msgid "Back"
 msgstr "Retour"
-
-#: Template/Pages/advices.ctp:1
-msgid "Bonnes pratiques"
-msgstr ""
 
 #: Template/Pages/charter.ctp:1
 msgid "Charte de bon usage"
@@ -685,7 +686,7 @@ msgstr ""
 msgid "Donner un mot de passe pour écraser l'ancien"
 msgstr ""
 
-#: Template/Users/export_emails_csv.ctp:3 Template/Users/index.ctp:7
+#: Template/Users/export_emails_csv.ctp:3 Template/Users/index.ctp:5
 msgid "Export emails en CSV"
 msgstr ""
 
@@ -701,7 +702,7 @@ msgstr ""
 msgid "Néerlandophones"
 msgstr ""
 
-#: Template/Users/index.ctp:5
+#: Template/Users/index.ctp:3
 msgid "Users"
 msgstr ""
 
@@ -823,15 +824,15 @@ msgstr ""
 msgid "Votre rue"
 msgstr ""
 
-#: Template/Users/reset_password.ctp:29
+#: Template/Users/reset_password.ctp:32
 msgid "Code reçu par email"
 msgstr ""
 
-#: Template/Users/reset_password.ctp:30
+#: Template/Users/reset_password.ctp:33
 msgid "Nouveau mot de passe"
 msgstr ""
 
-#: Template/Users/reset_password.ctp:31
+#: Template/Users/reset_password.ctp:34
 msgid "Confirmez le nouveau mot de passe"
 msgstr ""
 
