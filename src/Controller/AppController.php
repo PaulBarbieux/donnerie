@@ -278,6 +278,7 @@ class AppController extends Controller
 		// Current size
 		list($widthSrc,$heightSrc) = getimagesize($rootFileName);
 		if (($widthSrc > $maxLongSize) or ($heightSrc > $maxLongSize)) {
+			// Image too big : resize it
 			if ($widthSrc > $heightSrc) {
 				// Landscape
 				$widthNew = $maxLongSize;
@@ -287,11 +288,15 @@ class AppController extends Controller
 				$heightNew = $maxLongSize;
 				$widthNew = round($widthSrc * $maxLongSize / $heightSrc);
 			}
-			$imgObj = imagecreatefromjpeg($rootFileName) or die ("Error imagecreatefromjpeg from ".$rootFileName);
-			$imgResized = imagecreatetruecolor($widthNew,$heightNew) or die ("Error imagecreatetruecolor");
-			if (!imagecopyresampled($imgResized,$imgObj,0,0,0,0,$widthNew,$heightNew,$widthSrc,$heightSrc)) die ("Error imagecopyreresampled");
-			if (!imagejpeg($imgResized,$rootFileName,100)) die ("Error imagejpeg");
+		} else {
+			// Not too big but copy to clean the file (virus)
+			$heightNew = $heightSrc;
+			$widthNew = $widthSrc;
 		}
+		$imgObj = imagecreatefromjpeg($rootFileName) or die ("Error imagecreatefromjpeg from ".$rootFileName);
+		$imgResized = imagecreatetruecolor($widthNew,$heightNew) or die ("Error imagecreatetruecolor");
+		if (!imagecopyresampled($imgResized,$imgObj,0,0,0,0,$widthNew,$heightNew,$widthSrc,$heightSrc)) die ("Error imagecopyreresampled");
+		if (!imagejpeg($imgResized,$rootFileName,100)) die ("Error imagejpeg");
 		return true;
 	}
 
