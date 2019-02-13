@@ -79,7 +79,7 @@ class ItemsController extends AppController
 			'new' => array(__("Comme neuf")),
 			'used' => array(__("Usagé")),
 			'broken' => array(__("À réparer")),
-			'title' => array(__("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='#'>".DOMAIN_NAME."</A>"))
+			'title' => array(__("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='http://".DOMAIN_NAME."'>".DOMAIN_NAME."</A>"))
 		);
 		I18n::locale('nl_NL');
 		$labels['d'][] = __("Je donne");
@@ -87,9 +87,9 @@ class ItemsController extends AppController
 		$labels['new'][] = __("Comme neuf");
 		$labels['used'][] = __("Usagé");
 		$labels['broken'][] = __("À réparer");
-		$labels['title'][] = __("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='#'>".DOMAIN_NAME."</A>");
+		$labels['title'][] = __("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='http://".DOMAIN_NAME."'>".DOMAIN_NAME."</A>");
 		// Get items with featured image
-		$items = $this->Items->find('all' , [ 'conditions'=>[ 'image_1_url IS NOT '=>"NULL" ] ] );
+		$items = $this->Items->find('all')->where([ 'modified <' => new \DateTime('-1 day') ]);
 		$this->set(compact("items"));
 		$this->set('labels',$labels);
         $this->set('_serialize', ['items']);
