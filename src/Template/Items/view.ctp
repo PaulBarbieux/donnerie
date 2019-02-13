@@ -36,6 +36,12 @@ if ($item->image_1_url) {
 $this->Html->meta('og:image', $featured_image, ['block' => true]);
 $this->Html->meta('twitter:image', $featured_image, ['block' => true]);
 $this->Html->meta(['link'=>$featured_image, 'rel'=>"image_src", 'block'=>true]);
+/*
+	Lightbox
+*/
+$this->Html->script('lightbox.js', ['block' => true]);
+$this->Html->css('lightbox', ['block' => true]);
+
 ?>
 <DIV class="col-sm-12">
 	<DIV class="card">
@@ -45,7 +51,9 @@ $this->Html->meta(['link'=>$featured_image, 'rel'=>"image_src", 'block'=>true]);
 					<DIV class="row">
 						<DIV class="col-sm-12">
 							<?php if ($item->image_1_url) { ?>
-							<IMG class="img-fluid img-border" src="<?= $this->Url->build("/".$item->image_1_url) ?>">
+							<A href="<?= $this->Url->build("/".$item->image_1_url) ?>" data-lightbox="item-images">
+								<IMG class="img-fluid img-border" src="<?= $this->Url->build("/".$item->image_1_url) ?>">
+							</A>
 							<?php } else { ?>
 							<IMG class="img-fluid img-border" src="<?= $this->Url->build("/img/item-".$item->type."-no-image.jpg") ?>">
 							<?php } ?>
@@ -53,12 +61,16 @@ $this->Html->meta(['link'=>$featured_image, 'rel'=>"image_src", 'block'=>true]);
 						</DIV>
 						<?php if ($item->image_2_url) { ?>
 						<DIV class="<?= ($item->image_3_url ? "col-sm-6" : "col-sm-12") ?>">
-							<IMG class="img-fluid img-border" src="<?= $this->Url->build("/".$item->image_2_url) ?>">
+							<A href="<?= $this->Url->build("/".$item->image_2_url) ?>" data-lightbox="item-images">
+								<IMG class="img-fluid img-border" data-lightbox="item-images" src="<?= $this->Url->build("/".$item->image_2_url) ?>">
+							</A>
 						</DIV>
 						<?php } ?>
 						<?php if ($item->image_3_url) { ?>
 						<DIV class="col-sm-6">
-							<IMG class="img-fluid img-border" src="<?= $this->Url->build("/".$item->image_3_url) ?>">
+							<A href="<?= $this->Url->build("/".$item->image_3_url) ?>" data-lightbox="item-images">
+								<IMG class="img-fluid img-border" data-lightbox="item-images" src="<?= $this->Url->build("/".$item->image_3_url) ?>">
+							</A>
 						</DIV>
 						<?php } ?>
 					</DIV>
