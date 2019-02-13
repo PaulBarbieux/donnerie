@@ -99,6 +99,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 		"Avoir ce site pour ma communauté"=>__("Avoir ce site pour ma communauté")
 		] , ['empty' => __('(Choisissez)') , 'class'=>"form-control" , 'required'=>"required" ] );
 	echo $this->Form->textarea('message', [ 'rows'=>"5" , 'class'=>"form-control" , 'required'=>"required" ] );
+	echo $this->element('robot-form-trap');
 	echo $this->Form->submit(__('Envoyer'), ['templateVars'=> ['text'=>__('Envoyer'), 'icon'=>'<I class="fa fa-send"></I>'] ]);
 	echo $this->Form->end();
 	?>

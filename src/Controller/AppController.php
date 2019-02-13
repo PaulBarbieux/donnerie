@@ -130,26 +130,28 @@ class AppController extends Controller
 	
 	public function contact() {
         if ($this->request->is('post')) {
-			$data = $this->request->getData();
-			if (!isset($data['email'])) {
-				$data['email'] = $this->Auth->user('username');
-				$data['name'] = $this->Auth->user('alias');
+			if ($this->isItHuman(2)) {
+				$data = $this->request->getData();
+				if (!isset($data['email'])) {
+					$data['email'] = $this->Auth->user('username');
+					$data['name'] = $this->Auth->user('alias');
+				}
+				$data['message'] = strip_tags(trim($data['message']));
+				$data['url'] = $this->referer();
+				$template = "contact_".LG;
+				$email = new Email();
+				$email->replyTo([$data['email'] => $data['name']])
+					->setTemplate($template)
+					->viewVars([
+						'email' => $data['email'], 
+						'name' => $data['name'], 
+						'url' => $data['url'], 
+						'message' => nl2br($data['message'])])
+					->setTo($this->getAdminEmails())
+					->subject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']))
+					->send();
+				$this->Flash->success(__("Votre message a été envoyé. Merci."));
 			}
-			$data['message'] = strip_tags(trim($data['message']));
-			$data['url'] = $this->referer();
-			$template = "contact_".LG;
-			$email = new Email();
-			$email->replyTo([$data['email'] => $data['name']])
-				->setTemplate($template)
-				->viewVars([
-					'email' => $data['email'], 
-					'name' => $data['name'], 
-					'url' => $data['url'], 
-					'message' => nl2br($data['message'])])
-				->setTo($this->getAdminEmails())
-				->subject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']))
-				->send();
-			$this->Flash->success(__("Votre message a été envoyé. Merci."));
 			$this->redirect($this->referer());
 		}
 	}
