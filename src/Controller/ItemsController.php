@@ -193,6 +193,9 @@ class ItemsController extends AppController
 						} elseif (!isItEmail($applicantEmail)) {
 							$this->Flash->error(__("Votre adresse email n'est pas valide."));
 							$error = true;
+						} elseif ($this->isBlacklisted($applicantEmail)) {
+							$this->Flash->error(__("Vous n'avez plus le droit d'utiliser ce site."));
+							$error = true;
 						} else {
 							$email->replyTo([$applicantEmail => $applicant]);
 						}

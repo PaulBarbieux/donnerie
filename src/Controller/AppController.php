@@ -315,4 +315,17 @@ class AppController extends Controller
 		return $adminEmails;
 	}
 	
+	/*
+		Cet email est-il sur liste noire ?
+	*/
+	public function isBlacklisted($email) {
+		$users = TableRegistry::get('Users');
+		$count = $users->find('all',['conditions'=>["status IS NOT NULL","status NOT LIKE 'waitForConfirm%'"]])->where(['username'=>$email])->count();
+		if ($count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
 }
