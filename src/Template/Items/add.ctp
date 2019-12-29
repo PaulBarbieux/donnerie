@@ -53,7 +53,7 @@
 					<DIV class="col-md-12" id="input-state">
 						<?= $this->Form->control('state' , ['type' => 'select', 'label'=>__("Etat") , 
 							'empty'=>__("(indiquez l'état du don)") ,
-							'options' => ['new'=>__("Comme neuf, jamais ou peu utilisé, pas de trace d'usure. Précisez dans la description s'il y a l'amballage d'origine, une garantie en cours..."), 
+							'options' => ['new'=>__("Comme neuf, jamais ou peu utilisé, pas de trace d'usure. Précisez dans la description s'il y a l'emballage d'origine, une garantie en cours..."), 
 										  'used'=>__("Usagé, mais ne nécessite pas de réparation."), 
 										  'broken'=>__("À réparer, ou pour récupérer des pièces. Ne remplit pas correctement sa fonction en l'état.")] ]);
 						?>

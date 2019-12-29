@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2018-11-15 11:53+0100\n"
-"PO-Revision-Date: 2018-11-15 11:53+0100\n"
+"POT-Creation-Date: 2019-12-29 17:17+0100\n"
+"PO-Revision-Date: 2019-12-29 17:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -25,30 +25,30 @@ msgid "{0} : message de {1}"
 msgstr ""
 
 #: Controller/AppController - no ssl.php:152 ssl.php:169
-#: Controller/AppController.php:152
+#: Controller/AppController.php:153
 msgid "Votre message a été envoyé. Merci."
 msgstr ""
 
 #: Controller/AppController - no ssl.php:226 ssl.php:243
-#: Controller/AppController.php:226
+#: Controller/AppController.php:228
 msgid ""
 "{0} est trop grande. Choisissez une autre image ou réduisez celle-ci avec un "
 "programme d'image."
 msgstr ""
 
 #: Controller/AppController - no ssl.php:229 ssl.php:246
-#: Controller/AppController.php:229
+#: Controller/AppController.php:231
 msgid "{0} ({1}) n'est pas un format accepté : gif, jpg, png."
 msgstr ""
 
 #: Controller/AppController - no ssl.php:234 ssl.php:251
-#: Controller/AppController.php:234
+#: Controller/AppController.php:236
 msgid ""
 "{0} est trop en largeur ou trop en hauteur : {1}px / {2}px. Veuillez choisir "
 "une image avec des proportions standard."
 msgstr ""
 
-#: Controller/AppController.php:150
+#: Controller/AppController.php:151
 msgid "{0} : {1} ({2})"
 msgstr ""
 
@@ -79,19 +79,19 @@ msgid "Je donne"
 msgstr ""
 
 #: Controller/ItemsController.php:78;86 Template/Items/add.ctp:22
-#: Template/Items/edit.ctp:8 Template/Items/view.ctp:22;71
+#: Template/Items/edit.ctp:8 Template/Items/view.ctp:22;83
 msgid "Je cherche"
 msgstr ""
 
-#: Controller/ItemsController.php:79;87;390 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:79;87;411 Template/Items/edit.ctp:22
 msgid "Comme neuf"
 msgstr ""
 
-#: Controller/ItemsController.php:80;88;390 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:80;88;411 Template/Items/edit.ctp:22
 msgid "Usagé"
 msgstr ""
 
-#: Controller/ItemsController.php:81;89;390 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:81;89;411 Template/Items/edit.ctp:22
 msgid "À réparer"
 msgstr ""
 
@@ -99,57 +99,61 @@ msgstr ""
 msgid "Rendez-vous sur {0} pour répondre à ces annonces..."
 msgstr ""
 
-#: Controller/ItemsController.php:120
+#: Controller/ItemsController.php:138
 msgid "Utilisateur inconnu."
 msgstr ""
 
-#: Controller/ItemsController.php:176
+#: Controller/ItemsController.php:194
 msgid "Votre message est vide ou trop court."
 msgstr ""
 
-#: Controller/ItemsController.php:191
+#: Controller/ItemsController.php:209
 msgid "Veuillez donner votre nom et votre email."
 msgstr ""
 
-#: Controller/ItemsController.php:194
+#: Controller/ItemsController.php:212
 msgid "Votre adresse email n'est pas valide."
 msgstr ""
 
-#: Controller/ItemsController.php:214
+#: Controller/ItemsController.php:215
+msgid "Vous n'avez plus le droit d'utiliser ce site."
+msgstr ""
+
+#: Controller/ItemsController.php:235
 msgid "{0} : message pour votre annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:233
+#: Controller/ItemsController.php:254
 msgid "{0} : votre message pour l'annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:238
+#: Controller/ItemsController.php:259
 msgid "Votre message a été envoyé à {0}."
 msgstr ""
 
-#: Controller/ItemsController.php:283
+#: Controller/ItemsController.php:304
 msgid "Votre annonce est en ligne."
 msgstr ""
 
-#: Controller/ItemsController.php:293
+#: Controller/ItemsController.php:314
 msgid ""
 "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème "
 "persiste contactez-nous (lien en bas à droite)."
 msgstr ""
 
-#: Controller/ItemsController.php:359
+#: Controller/ItemsController.php:380
 msgid "L'annonce est modifiée."
 msgstr ""
 
-#: Controller/ItemsController.php:366
+#: Controller/ItemsController.php:387
 msgid "The item could not be saved. Please, try again."
 msgstr "L'annonce ne peut pas être enregistrée."
 
-#: Controller/ItemsController.php:382
+#: Controller/ItemsController.php:403
 msgid "L'annonce est supprimée."
 msgstr ""
 
-#: Controller/ItemsController.php:384
+#: Controller/ItemsController.php:405
 msgid "The item could not be deleted. Please, try again."
 msgstr "L'annonce n'a pas pu être supprimée."
 
@@ -407,11 +411,11 @@ msgid ""
 "formulaire dans le détail de l'annonce."
 msgstr ""
 
-#: Template/Element/header.ctp:92 Template/Items/view.ctp:108
+#: Template/Element/header.ctp:92 Template/Items/view.ctp:120
 msgid "Votre nom"
 msgstr ""
 
-#: Template/Element/header.ctp:93 Template/Items/view.ctp:109
+#: Template/Element/header.ctp:93 Template/Items/view.ctp:121
 #: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr ""
@@ -436,8 +440,8 @@ msgstr ""
 msgid "(Choisissez)"
 msgstr ""
 
-#: Template/Element/header.ctp:102 Template/Items/add.ctp:63
-#: Template/Items/view.ctp:114 Template/Users/register.ctp:36
+#: Template/Element/header.ctp:103 Template/Items/add.ctp:63
+#: Template/Items/view.ctp:126 Template/Users/register.ctp:36
 #: Template/Users/reset_password.ctp:39
 msgid "Envoyer"
 msgstr ""
@@ -519,7 +523,7 @@ msgstr ""
 #: Template/Items/add.ctp:56
 msgid ""
 "Comme neuf, jamais ou peu utilisé, pas de trace d'usure. Précisez dans la "
-"description s'il y a l'amballage d'origine, une garantie en cours..."
+"description s'il y a l'emballage d'origine, une garantie en cours..."
 msgstr ""
 
 #: Template/Items/add.ctp:57
@@ -607,27 +611,27 @@ msgstr ""
 msgid "Les annonces de {0}"
 msgstr ""
 
-#: Template/Items/view.ctp:95 Template/Stats/index.ctp:134
+#: Template/Items/view.ctp:107 Template/Stats/index.ctp:134
 msgid "Voir ses annonces"
 msgstr ""
 
-#: Template/Items/view.ctp:102
+#: Template/Items/view.ctp:114
 msgid "Prendre contact pour cette annonce"
 msgstr ""
 
-#: Template/Items/view.ctp:106
+#: Template/Items/view.ctp:118
 msgid "Votre message concernant cette annonce"
 msgstr ""
 
-#: Template/Items/view.ctp:117
+#: Template/Items/view.ctp:129
 msgid "Vous devez"
 msgstr ""
 
-#: Template/Items/view.ctp:117
+#: Template/Items/view.ctp:129
 msgid "vous connecter"
 msgstr ""
 
-#: Template/Items/view.ctp:117
+#: Template/Items/view.ctp:129
 msgid "pour pouvoir contacter {0}"
 msgstr ""
 
