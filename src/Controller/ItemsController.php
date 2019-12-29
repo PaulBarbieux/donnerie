@@ -21,7 +21,7 @@ class ItemsController extends AppController
 	public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['home', 'view', 'user', 'category', 'diaporama']);
+        $this->Auth->allow(['home', 'view', 'user', 'category', 'diaporama', 'counters']);
     }
 	
 	public function isAuthorized($user = null)
@@ -94,6 +94,24 @@ class ItemsController extends AppController
 		$this->set('labels',$labels);
         $this->set('_serialize', ['items']);
 		$this->viewBuilder()->setLayout("virgin");
+	}
+	
+	/*
+		The counter
+	*/
+	public function counters()
+	{
+		$count = $this->Items->find('all')->count();
+		$this->response = $this->response->cors($this->request)
+			->allowOrigin(['*'])
+			->allowMethods(['GET'])
+			->allowHeaders(['X-CSRF-Token'])
+			->exposeHeaders(['Link'])
+			->maxAge(300)
+			->build();
+		$this->autoRender = false;
+		$this->response->type('json');
+		$this->response->body(json_encode(array('items'=>$count)));
 	}
 	
 	/*
