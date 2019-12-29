@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-12-29 17:17+0100\n"
-"PO-Revision-Date: 2019-12-29 17:18+0100\n"
+"POT-Creation-Date: 2019-12-29 17:54+0100\n"
+"PO-Revision-Date: 2019-12-29 17:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -295,7 +295,7 @@ msgid ""
 "ce nouveau mot de passe."
 msgstr ""
 
-#: Template/Categories/index.ctp:2 Template/Element/header.ctp:47
+#: Template/Categories/index.ctp:2 Template/Element/header.ctp:48
 msgid "Categories"
 msgstr "Catégories"
 
@@ -318,7 +318,11 @@ msgid "Suppression interdite : il y a des annonces pour cette catégorie."
 msgstr ""
 
 #: Template/Element/footer.ctp:10
-msgid "Site fait avec enthousiasme par {0}"
+msgid "Site fait avec enthousiasme par ExtraPaul"
+msgstr ""
+
+#: Template/Element/footer.ctp:12 Template/Element/header.ctp:36
+msgid "En savoir plus sur ce site"
 msgstr ""
 
 #: Template/Element/grid-item.ctp:14
@@ -365,82 +369,82 @@ msgstr ""
 msgid "Politique de confidentialité"
 msgstr ""
 
-#: Template/Element/header.ctp:45
+#: Template/Element/header.ctp:46
 msgid "Utilisateurs"
 msgstr ""
 
-#: Template/Element/header.ctp:46
+#: Template/Element/header.ctp:47
 msgid "Annonces"
 msgstr ""
 
-#: Template/Element/header.ctp:48
+#: Template/Element/header.ctp:49
 msgid "Rues"
 msgstr ""
 
-#: Template/Element/header.ctp:49 Template/Stats/index.ctp:37
+#: Template/Element/header.ctp:50 Template/Stats/index.ctp:37
 msgid "Statistiques"
 msgstr ""
 
-#: Template/Element/header.ctp:56
+#: Template/Element/header.ctp:57
 msgid "Bonjour"
 msgstr ""
 
-#: Template/Element/header.ctp:59 Template/Items/mines.ctp:1;4
+#: Template/Element/header.ctp:60 Template/Items/mines.ctp:1;4
 msgid "Mes annonces"
 msgstr ""
 
-#: Template/Element/header.ctp:60 Template/Users/me.ctp:2;9
+#: Template/Element/header.ctp:61 Template/Users/me.ctp:2;9
 msgid "Mon profil"
 msgstr ""
 
-#: Template/Element/header.ctp:61
+#: Template/Element/header.ctp:62
 msgid "Se déconnecter"
 msgstr ""
 
-#: Template/Element/header.ctp:66 Template/Users/login.ctp:16
+#: Template/Element/header.ctp:67 Template/Users/login.ctp:16
 msgid "Se connecter"
 msgstr ""
 
-#: Template/Element/header.ctp:85
+#: Template/Element/header.ctp:86
 msgid "Contact"
 msgstr ""
 
-#: Template/Element/header.ctp:89
+#: Template/Element/header.ctp:90
 msgid ""
 "N'utilisez pas ce formulaire pour contacter un annonceur : utilisez le "
 "formulaire dans le détail de l'annonce."
 msgstr ""
 
-#: Template/Element/header.ctp:92 Template/Items/view.ctp:120
+#: Template/Element/header.ctp:93 Template/Items/view.ctp:120
 msgid "Votre nom"
 msgstr ""
 
-#: Template/Element/header.ctp:93 Template/Items/view.ctp:121
+#: Template/Element/header.ctp:94 Template/Items/view.ctp:121
 #: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr ""
 
-#: Template/Element/header.ctp:96
+#: Template/Element/header.ctp:97
 msgid "Problème technique"
 msgstr ""
 
-#: Template/Element/header.ctp:97
+#: Template/Element/header.ctp:98
 msgid "Signaler une annonce ou un utilisateur"
 msgstr ""
 
-#: Template/Element/header.ctp:98
+#: Template/Element/header.ctp:99
 msgid "Question sur le site"
 msgstr ""
 
-#: Template/Element/header.ctp:99
+#: Template/Element/header.ctp:100
 msgid "Avoir ce site pour ma communauté"
 msgstr ""
 
-#: Template/Element/header.ctp:100
+#: Template/Element/header.ctp:101
 msgid "(Choisissez)"
 msgstr ""
 
-#: Template/Element/header.ctp:103 Template/Items/add.ctp:63
+#: Template/Element/header.ctp:104 Template/Items/add.ctp:63
 #: Template/Items/view.ctp:126 Template/Users/register.ctp:36
 #: Template/Users/reset_password.ctp:39
 msgid "Envoyer"

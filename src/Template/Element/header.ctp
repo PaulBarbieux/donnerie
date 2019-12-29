@@ -33,6 +33,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 					<?= $this->Html->link(__("F.A.Q."), array('controller'=>"pages", 'action'=>"faq"), array('class'=>"dropdown-item")) ?>
 					<?= $this->Html->link(__("Charte"), array('controller'=>"pages", 'action'=>"charter"), array('class'=>"dropdown-item")) ?>
 					<?= $this->Html->link(__("Politique de confidentialité"), array('controller'=>"pages", 'action'=>"privacy"), array('class'=>"dropdown-item")) ?>
+					<?= $this->Html->link(__("En savoir plus sur ce site"), "http://donneries.brussels", array('class'=>"dropdown-item", 'target' => "_blank")) ?>
 				</DIV>
 			</LI>
 			<?php if ($connected) { ?>

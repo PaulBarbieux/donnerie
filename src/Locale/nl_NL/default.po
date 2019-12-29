@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-29 17:20+0100\n"
-"PO-Revision-Date: 2019-12-29 17:22+0100\n"
+"POT-Creation-Date: 2019-12-29 17:55+0100\n"
+"PO-Revision-Date: 2019-12-29 18:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -313,7 +313,7 @@ msgstr ""
 "Je nieuwe wachtwoord wordt opslaan. U kunt inloggen met dit nieuwe "
 "wachtwoord."
 
-#: Template/Categories/index.ctp:2 Template/Element/header.ctp:47
+#: Template/Categories/index.ctp:2 Template/Element/header.ctp:48
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -336,8 +336,12 @@ msgid "Suppression interdite : il y a des annonces pour cette catégorie."
 msgstr ""
 
 #: Template/Element/footer.ctp:10
-msgid "Site fait avec enthousiasme par {0}"
-msgstr "Website met enthousiasme gecreëerd door {0}"
+msgid "Site fait avec enthousiasme par ExtraPaul"
+msgstr "Website met enthousiasme gecreëerd door ExtraPaul"
+
+#: Template/Element/footer.ctp:12 Template/Element/header.ctp:36
+msgid "En savoir plus sur ce site"
+msgstr "Meer informatie over deze website"
 
 #: Template/Element/grid-item.ctp:14
 msgid "aujourd'hui"
@@ -383,47 +387,47 @@ msgstr "Charter"
 msgid "Politique de confidentialité"
 msgstr "Privacy beleid"
 
-#: Template/Element/header.ctp:45
+#: Template/Element/header.ctp:46
 msgid "Utilisateurs"
 msgstr "Gebruikers"
 
-#: Template/Element/header.ctp:46
+#: Template/Element/header.ctp:47
 msgid "Annonces"
 msgstr "Advertenties"
 
-#: Template/Element/header.ctp:48
+#: Template/Element/header.ctp:49
 msgid "Rues"
 msgstr "Straten"
 
-#: Template/Element/header.ctp:49 Template/Stats/index.ctp:37
+#: Template/Element/header.ctp:50 Template/Stats/index.ctp:37
 msgid "Statistiques"
 msgstr ""
 
-#: Template/Element/header.ctp:56
+#: Template/Element/header.ctp:57
 msgid "Bonjour"
 msgstr "Hallo"
 
-#: Template/Element/header.ctp:59 Template/Items/mines.ctp:1;4
+#: Template/Element/header.ctp:60 Template/Items/mines.ctp:1;4
 msgid "Mes annonces"
 msgstr "Mjin advertenties"
 
-#: Template/Element/header.ctp:60 Template/Users/me.ctp:2;9
+#: Template/Element/header.ctp:61 Template/Users/me.ctp:2;9
 msgid "Mon profil"
 msgstr "Mijn profiel"
 
-#: Template/Element/header.ctp:61
+#: Template/Element/header.ctp:62
 msgid "Se déconnecter"
 msgstr "Uitloggen"
 
-#: Template/Element/header.ctp:66 Template/Users/login.ctp:16
+#: Template/Element/header.ctp:67 Template/Users/login.ctp:16
 msgid "Se connecter"
 msgstr "Inloggen"
 
-#: Template/Element/header.ctp:85
+#: Template/Element/header.ctp:86
 msgid "Contact"
 msgstr "Contact"
 
-#: Template/Element/header.ctp:89
+#: Template/Element/header.ctp:90
 msgid ""
 "N'utilisez pas ce formulaire pour contacter un annonceur : utilisez le "
 "formulaire dans le détail de l'annonce."
@@ -431,36 +435,36 @@ msgstr ""
 "Gebruik dit formulier niet om de adverteerder te contacteren. Gebruik "
 "daarvoor het formulier in de advertentie."
 
-#: Template/Element/header.ctp:92 Template/Items/view.ctp:120
+#: Template/Element/header.ctp:93 Template/Items/view.ctp:120
 msgid "Votre nom"
 msgstr "Uw naam"
 
-#: Template/Element/header.ctp:93 Template/Items/view.ctp:121
+#: Template/Element/header.ctp:94 Template/Items/view.ctp:121
 #: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr "Uw e-mail"
 
-#: Template/Element/header.ctp:96
+#: Template/Element/header.ctp:97
 msgid "Problème technique"
 msgstr "Technisch probleem"
 
-#: Template/Element/header.ctp:97
+#: Template/Element/header.ctp:98
 msgid "Signaler une annonce ou un utilisateur"
 msgstr "Signaleer een advertentie of een gebruiker"
 
-#: Template/Element/header.ctp:98
+#: Template/Element/header.ctp:99
 msgid "Question sur le site"
 msgstr "Vraag over de website"
 
-#: Template/Element/header.ctp:99
+#: Template/Element/header.ctp:100
 msgid "Avoir ce site pour ma communauté"
 msgstr "Deze website hebben voor mijn gemeenschap"
 
-#: Template/Element/header.ctp:100
+#: Template/Element/header.ctp:101
 msgid "(Choisissez)"
 msgstr "(Kies)"
 
-#: Template/Element/header.ctp:103 Template/Items/add.ctp:63
+#: Template/Element/header.ctp:104 Template/Items/add.ctp:63
 #: Template/Items/view.ctp:126 Template/Users/register.ctp:36
 #: Template/Users/reset_password.ctp:39
 msgid "Envoyer"
