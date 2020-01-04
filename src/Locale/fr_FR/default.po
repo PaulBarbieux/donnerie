@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-12-29 17:54+0100\n"
-"PO-Revision-Date: 2019-12-29 17:54+0100\n"
+"POT-Creation-Date: 2020-01-04 17:13+0100\n"
+"PO-Revision-Date: 2020-01-04 17:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: fr_FR\n"
@@ -617,6 +617,10 @@ msgstr ""
 
 #: Template/Items/view.ctp:107 Template/Stats/index.ctp:134
 msgid "Voir ses annonces"
+msgstr ""
+
+#: Template/Items/view.ctp:108
+msgid "le {0}"
 msgstr ""
 
 #: Template/Items/view.ctp:114

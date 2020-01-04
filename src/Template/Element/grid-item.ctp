@@ -9,7 +9,7 @@
 		<?php } ?>
 		<?php
 		$dateNow = new DateTime();
-		$diff = $dateNow->diff(new DateTime($item->created->i18nFormat("YYYY-MM-d")));
+		$diff = $dateNow->diff(new DateTime($item->created->i18nFormat("yyyy-MM-d")));
 		switch ($diff->days) {
 			case 0 : $createdString = __("aujourd'hui"); break;
 			case 1 : $createdString = __("hier"); break;

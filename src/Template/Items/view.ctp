@@ -105,7 +105,7 @@ $this->Html->css('lightbox', ['block' => true]);
 									<TR>
 										<TD></TD>
 										<TD class="item-date"><?= $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id] , ['title' => __("Voir ses annonces")]) ?>
-											le <?= h($item->created->i18nFormat("d MMMM YYYY")) ?></TD>
+											<?= __("le {0}", h($item->created->i18nFormat("d MMMM yyyy"))) ?></TD>
 									</TR>
 								</TABLE>
 							</TD>

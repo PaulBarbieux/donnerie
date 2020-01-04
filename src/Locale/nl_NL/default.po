@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-29 17:55+0100\n"
-"PO-Revision-Date: 2019-12-29 18:00+0100\n"
+"POT-Creation-Date: 2020-01-04 17:11+0100\n"
+"PO-Revision-Date: 2020-01-04 17:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -650,6 +650,10 @@ msgstr "De advertentie van {0}"
 #: Template/Items/view.ctp:107 Template/Stats/index.ctp:134
 msgid "Voir ses annonces"
 msgstr "Mjin advertenties zien"
+
+#: Template/Items/view.ctp:108
+msgid "le {0}"
+msgstr "op {0}"
 
 #: Template/Items/view.ctp:114
 msgid "Prendre contact pour cette annonce"
