@@ -165,6 +165,9 @@ class AppController extends Controller
 		} elseif ($this->request->getData('last_name') != "") {
 			// Hidden input filled -> robot !
 			$human = false;
+		} elseif ($this->referer() == "" or $this->referer() == "/") {
+			// No domain -> robot !
+			$human = false;
 		}
 		if (!$human and EMAIL_REDIRECT_SPAM !== false) {
 			// Alert an administrator
