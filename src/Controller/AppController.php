@@ -168,6 +168,9 @@ class AppController extends Controller
 		} elseif ($this->referer() == "" or $this->referer() == "/") {
 			// No domain -> robot !
 			$human = false;
+		} elseif (strpos($this->request->getData('message'),"http://") !== false or strpos($this->request->getData('message'),"https://") !== false) {
+			// Site url in the message -> spam !
+			$human = false;
 		}
 		if (!$human and EMAIL_REDIRECT_SPAM !== false) {
 			// Alert an administrator
@@ -176,8 +179,8 @@ class AppController extends Controller
 			if (isset($postedData['password2'])) $postedData['password2'] = "(password2)";
 			Email::deliver(
 				EMAIL_REDIRECT_SPAM, 
-				SITE_NAME.' : suspicion de spam', 
-				"La fonction isItHuman() suspecte un robot derrière cet envoi (".$this->referer().") :<br><br>
+				SITE_NAME.' : suspicion de spam ('.$postedData['name'].')', 
+				"La fonction isItHuman() suspecte un robot ou un spammer derrière cet envoi (".$this->referer().") :<br><br>
 				".implode("<br>",$postedData)."<br><br>
 				Temps d'encodage : ". (time() - $postedData['start'] . " sec")
 			);
