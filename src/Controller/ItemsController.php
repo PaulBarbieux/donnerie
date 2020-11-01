@@ -45,7 +45,7 @@ class ItemsController extends AppController
 				// Missing item id
 				return false;
 			}
-		} elseif ($action == "index") {
+		} elseif ($action == "index" or $action == "excel") {
 			$this->Auth->config('authError', "Cette action n'est pas autorisée.");
 			return false;
 		} else {
@@ -115,6 +115,16 @@ class ItemsController extends AppController
 	}
 	
 	/*
+		Export to Excel
+	*/
+	public function excel()
+	{
+		$items = $this->Items->find('all', ['order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Users', 'Stats' ]]);
+		$this->set(compact('items'));
+		$this->viewBuilder()->setLayout("excel");
+	}
+	
+	/*
 		Show items of the connected user
 	*/
 	public function mines()
@@ -163,7 +173,7 @@ class ItemsController extends AppController
 
     public function index()
     {
-		// No fusion with categories because a categorie can no more exist
+		// No fusion with categories because a category can no more exist
         $this->paginate = [
             'contain' => ['Users','Stats'],
 			'order'=>['Items.created'=>'DESC']
