@@ -271,3 +271,5 @@ define ("HOME_TRUNCATE_TEXT",100);
 define ("PUBLIC_CONTACT",true);
 // Renvoyer les tentatives de robots vers un email (vérifier qu'il s'agit bien de spams)
 define ("EMAIL_REDIRECT_SPAM","paul.barbieux@gmail.com"); // Mettre false pour aucun envoi
+// Langue(s) du site : fr;nl / fr / nl
+define ("LANGUAGES", "fr;nl");

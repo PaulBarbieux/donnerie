@@ -63,31 +63,44 @@ class AppController extends Controller
 		
 		/*
 			Language
-			LG vaut "fr" ou "nl", à utiliser pour les noms de colonnes ou variables. Exemple : "title_".LG
+			LG is "fr" or "nl", ti use for name of variables. Exemple : "title_".LG
 		*/
-		if ($this->request->session()->check('Config.language')) {
-			// Get language from user profile
-			I18n::locale($this->request->session()->read('Config.language'));
-			define('LG',substr($this->request->session()->read('Config.language'),0,2));
-        } else {
-			// Set language based on browser, first fr or nl found
-			$firstLg = false;
-			$acceptLanguages = explode(",",$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-			foreach ($acceptLanguages as $browserLg) {
-				if (strpos($browserLg,"nl") !== false) {
-					$firstLg = "nl";
-					break;
-				} elseif (strpos($browserLg,"fr") !== false) {
-					$firstLg = "fr";
-					break;
-				}
-			}
-			if ($firstLg == "nl") {
-				I18n::locale("nl_NL");
-				define('LG','nl');
-			} else {
+		if (LANGUAGES == "fr" or LANGUAGES == "nl") {
+			// Only one language set for the site
+			define ('MULTI_LG', false);
+			if (LANGUAGES == "fr") {
 				I18n::locale("fr_FR");
 				define('LG','fr');
+			} else {
+				I18n::locale("nl_NL");
+				define('LG','nl');
+			}
+		} else {
+			define ('MULTI_LG', true);
+			if ($this->request->session()->check('Config.language')) {
+				// Get language from user profile (set by language switch)
+				I18n::locale($this->request->session()->read('Config.language'));
+				define('LG',substr($this->request->session()->read('Config.language'),0,2));
+			} else {
+				// Set language based on browser, first fr or nl found (language switch neer clicked)
+				$firstLg = false;
+				$acceptLanguages = explode(",",$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+				foreach ($acceptLanguages as $browserLg) {
+					if (strpos($browserLg,"nl") !== false) {
+						$firstLg = "nl";
+						break;
+					} elseif (strpos($browserLg,"fr") !== false) {
+						$firstLg = "fr";
+						break;
+					}
+				}
+				if ($firstLg == "nl") {
+					I18n::locale("nl_NL");
+					define('LG','nl');
+				} else {
+					I18n::locale("fr_FR");
+					define('LG','fr');
+				}
 			}
 		}
 		if (LG == "nl") {
