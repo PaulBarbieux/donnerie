@@ -285,43 +285,48 @@ class ItemsController extends AppController
         $item = $this->Items->newEntity();
         if ($this->request->is('post')) {
             $item = $this->Items->patchEntity($item, $this->request->getData());
-			$item->user_id = $this->Auth->user('id');
-			$filesResults = $this->uploadFiles('clientFiles', $this->request->getData('image'));
-			if (isset($filesResults['urls'][0])) {
-				$item->image_1_url = $filesResults['urls'][0];
-				if (isset($filesResults['urls'][1])) {
-					$item->image_2_url = $filesResults['urls'][1];
-					if (isset($filesResults['urls'][2])) {
-						$item->image_3_url = $filesResults['urls'][2];
+			$item->description = trim($item->description);
+			if (strlen($item->description) < 10) {
+				$this->Flash->error(__("Veuillez écrire une description de minimum 10 caractères."));
+			} else {
+				$item->user_id = $this->Auth->user('id');
+				$filesResults = $this->uploadFiles('clientFiles', $this->request->getData('image'));
+				if (isset($filesResults['urls'][0])) {
+					$item->image_1_url = $filesResults['urls'][0];
+					if (isset($filesResults['urls'][1])) {
+						$item->image_2_url = $filesResults['urls'][1];
+						if (isset($filesResults['urls'][2])) {
+							$item->image_3_url = $filesResults['urls'][2];
+						}
 					}
 				}
-			}
-			if (isset($filesResults['errors'])) {
-				$this->Flash->error($filesResults['errors'][0]);
-			} elseif ($this->Items->save($item)) {
-				// Send email to admin
-				$email = new Email();
-				$email
-					->setTo($this->getAdminEmails())
-					->setTemplate('item_added_'.LG)
-					->viewVars([
-						'alias' => $this->Auth->user('alias'), 
-						'title' => $item->title, 
-						'description' => $item->description,
-						'url' => Router::url("/items/view/".$item->id, true)])
-					->subject(SITE_NAME." : nouvelle annonce ".$item->title)
-					->send();
-                $this->Flash->success(__('Votre annonce est en ligne.'));
-				// Create stats line
-				$stats = TableRegistry::get('Stats');
-				$stat = $stats->newEntity();
-				$stat->user_id = $this->Auth->user('id');
-				$stat->item_id = $item->id;
-				$stats->save($stat);
-				// Completed
-                return $this->redirect(['action' => 'mines']);
-            } else {
-            	$this->Flash->error(__("Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème persiste contactez-nous (lien en bas à droite)."));
+				if (isset($filesResults['errors'])) {
+					$this->Flash->error($filesResults['errors'][0]);
+				} elseif ($this->Items->save($item)) {
+					// Send email to admin
+					$email = new Email();
+					$email
+						->setTo($this->getAdminEmails())
+						->setTemplate('item_added_'.LG)
+						->viewVars([
+							'alias' => $this->Auth->user('alias'), 
+							'title' => $item->title, 
+							'description' => $item->description,
+							'url' => Router::url("/items/view/".$item->id, true)])
+						->subject(SITE_NAME." : nouvelle annonce ".$item->title)
+						->send();
+					$this->Flash->success(__('Votre annonce est en ligne.'));
+					// Create stats line
+					$stats = TableRegistry::get('Stats');
+					$stat = $stats->newEntity();
+					$stat->user_id = $this->Auth->user('id');
+					$stat->item_id = $item->id;
+					$stats->save($stat);
+					// Completed
+					return $this->redirect(['action' => 'mines']);
+				} else {
+					$this->Flash->error(__("Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème persiste contactez-nous (lien en bas à droite)."));
+				}
 			}
         }
         $categories = $this->Items->Categories->find('list', ['valueField'=> function($category) { return $category->title." (".lcfirst($category->description).")"; } ]);
@@ -345,56 +350,61 @@ class ItemsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
 			// Get new data
             $item = $this->Items->patchEntity($item, $this->request->getData());	
-			$filesResults = $this->uploadFiles('clientFiles', $this->request->getData('image'));
-			// Messages
-			if (isset($filesResults['errors'])) {
-				$this->Flash->error($filesResults['errors'][0]);
+			$item->description = trim($item->description);
+			if (strlen($item->description) < 10) {
+				$this->Flash->error(__("Veuillez écrire une description de minimum 10 caractères."));
 			} else {
-				// 1) $filesResults contains 0 to 3 files : fill its in empty file-x-url
-				if ($filesResults and !isset($filesResults['errors'])) {
-					foreach ($filesResults['urls'] as $fileUrl) {
-						if (!$item->image_1_url) {
-							$item->image_1_url = $fileUrl;
-						} elseif (!$item->image_2_url) {
-							$item->image_2_url = $fileUrl;
-						} elseif (!$item->image_3_url) {
-							$item->image_3_url = $fileUrl;
-						}
-						if (isset($imagesToDelete[$fileUrl])) {
-							unset($imagesToDelete[$fileUrl]); // Keep this file
+				$filesResults = $this->uploadFiles('clientFiles', $this->request->getData('image'));
+				// Messages
+				if (isset($filesResults['errors'])) {
+					$this->Flash->error($filesResults['errors'][0]);
+				} else {
+					// 1) $filesResults contains 0 to 3 files : fill its in empty file-x-url
+					if ($filesResults and !isset($filesResults['errors'])) {
+						foreach ($filesResults['urls'] as $fileUrl) {
+							if (!$item->image_1_url) {
+								$item->image_1_url = $fileUrl;
+							} elseif (!$item->image_2_url) {
+								$item->image_2_url = $fileUrl;
+							} elseif (!$item->image_3_url) {
+								$item->image_3_url = $fileUrl;
+							}
+							if (isset($imagesToDelete[$fileUrl])) {
+								unset($imagesToDelete[$fileUrl]); // Keep this file
+							}
 						}
 					}
-				}
-				// 2) Old files, to delete
-				$filesToDelete = $item->extractOriginalChanged(['image_1_url','image_2_url','image_3_url']);
-				// 3) Shift files if necessary
-				if (!$item->image_1_url) {
-					if ($item->image_2_url) {
-						$item->image_1_url = $item->image_2_url;
-						$item->image_2_url = false;
-					} elseif ($item->image_3_url) {
-						$item->image_1_url = $item->image_3_url;
+					// 2) Old files, to delete
+					$filesToDelete = $item->extractOriginalChanged(['image_1_url','image_2_url','image_3_url']);
+					// 3) Shift files if necessary
+					if (!$item->image_1_url) {
+						if ($item->image_2_url) {
+							$item->image_1_url = $item->image_2_url;
+							$item->image_2_url = false;
+						} elseif ($item->image_3_url) {
+							$item->image_1_url = $item->image_3_url;
+							$item->image_3_url = false;
+						}
+					}
+					if (!$item->image_2_url and $item->image_3_url) {
+						$item->image_2_url = $item->image_3_url;
 						$item->image_3_url = false;
 					}
-				}
-				if (!$item->image_2_url and $item->image_3_url) {
-					$item->image_2_url = $item->image_3_url;
-					$item->image_3_url = false;
-				}
-            	if ($this->Items->save($item)) {
-					// 4) Delete old files
-					foreach ($filesToDelete as $fileToDelete) {
-						if ($fileToDelete != "") unlink (WWW_ROOT.$fileToDelete);
+					if ($this->Items->save($item)) {
+						// 4) Delete old files
+						foreach ($filesToDelete as $fileToDelete) {
+							if ($fileToDelete != "") unlink (WWW_ROOT.$fileToDelete);
+						}
+						// Message
+						$this->Flash->success(__("L'annonce est modifiée."));
+						if ($admin) {
+							return $this->redirect(['action' => 'index']);
+						} else {
+							return $this->redirect(['action' => 'mines']);
+						}
 					}
-					// Message
-					$this->Flash->success(__("L'annonce est modifiée."));
-					if ($admin) {
-						return $this->redirect(['action' => 'index']);
-					} else {
-						return $this->redirect(['action' => 'mines']);
-					}
-            	}
-            	$this->Flash->error(__('The item could not be saved. Please, try again.'));
+					$this->Flash->error(__('The item could not be saved. Please, try again.'));
+				}
 			}
         }
         $categories = $this->Items->Categories->find('list');
