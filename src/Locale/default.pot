@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-01-04 17:09+0100\n"
+"POT-Creation-Date: 2021-03-06 12:22+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: Controller/AppController - no ssl.php:60
 #: Controller/AppController - ssl.php:65
-#: Controller/AppController.php:60
+#: Controller/AppController.php:61
 msgid "Veuillez vous connecter pour pouvoir faire cette action."
 msgstr ""
 
@@ -27,29 +27,29 @@ msgstr ""
 
 #: Controller/AppController - no ssl.php:152
 #: Controller/AppController - ssl.php:169
-#: Controller/AppController.php:153
+#: Controller/AppController.php:177
 msgid "Votre message a été envoyé. Merci."
 msgstr ""
 
 #: Controller/AppController - no ssl.php:226
 #: Controller/AppController - ssl.php:243
-#: Controller/AppController.php:228
+#: Controller/AppController.php:258
 msgid "{0} est trop grande. Choisissez une autre image ou réduisez celle-ci avec un programme d'image."
 msgstr ""
 
 #: Controller/AppController - no ssl.php:229
 #: Controller/AppController - ssl.php:246
-#: Controller/AppController.php:231
+#: Controller/AppController.php:261
 msgid "{0} ({1}) n'est pas un format accepté : gif, jpg, png."
 msgstr ""
 
 #: Controller/AppController - no ssl.php:234
 #: Controller/AppController - ssl.php:251
-#: Controller/AppController.php:236
+#: Controller/AppController.php:266
 msgid "{0} est trop en largeur ou trop en hauteur : {1}px / {2}px. Veuillez choisir une image avec des proportions standard."
 msgstr ""
 
-#: Controller/AppController.php:151
+#: Controller/AppController.php:175
 msgid "{0} : {1} ({2})"
 msgstr ""
 
@@ -89,17 +89,17 @@ msgstr ""
 msgid "Je cherche"
 msgstr ""
 
-#: Controller/ItemsController.php:79;87;411
+#: Controller/ItemsController.php:79;87;431
 #: Template/Items/edit.ctp:22
 msgid "Comme neuf"
 msgstr ""
 
-#: Controller/ItemsController.php:80;88;411
+#: Controller/ItemsController.php:80;88;431
 #: Template/Items/edit.ctp:22
 msgid "Usagé"
 msgstr ""
 
-#: Controller/ItemsController.php:81;89;411
+#: Controller/ItemsController.php:81;89;431
 #: Template/Items/edit.ctp:22
 msgid "À réparer"
 msgstr ""
@@ -108,59 +108,63 @@ msgstr ""
 msgid "Rendez-vous sur {0} pour répondre à ces annonces..."
 msgstr ""
 
-#: Controller/ItemsController.php:138
+#: Controller/ItemsController.php:148
 msgid "Utilisateur inconnu."
 msgstr ""
 
-#: Controller/ItemsController.php:194
+#: Controller/ItemsController.php:204
 msgid "Votre message est vide ou trop court."
 msgstr ""
 
-#: Controller/ItemsController.php:209
+#: Controller/ItemsController.php:219
 msgid "Veuillez donner votre nom et votre email."
 msgstr ""
 
-#: Controller/ItemsController.php:212
+#: Controller/ItemsController.php:222
 msgid "Votre adresse email n'est pas valide."
 msgstr ""
 
-#: Controller/ItemsController.php:215
+#: Controller/ItemsController.php:225
 msgid "Vous n'avez plus le droit d'utiliser ce site."
 msgstr ""
 
-#: Controller/ItemsController.php:235
+#: Controller/ItemsController.php:245
 msgid "{0} : message pour votre annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:254
+#: Controller/ItemsController.php:264
 msgid "{0} : votre message pour l'annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:259
+#: Controller/ItemsController.php:269
 msgid "Votre message a été envoyé à {0}."
 msgstr ""
 
-#: Controller/ItemsController.php:304
+#: Controller/ItemsController.php:290;355
+msgid "Veuillez écrire une description de minimum 10 caractères."
+msgstr ""
+
+#: Controller/ItemsController.php:318
 msgid "Votre annonce est en ligne."
 msgstr ""
 
-#: Controller/ItemsController.php:314
+#: Controller/ItemsController.php:328
 msgid "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème persiste contactez-nous (lien en bas à droite)."
 msgstr ""
 
-#: Controller/ItemsController.php:380
+#: Controller/ItemsController.php:399
 msgid "L'annonce est modifiée."
 msgstr ""
 
-#: Controller/ItemsController.php:387
+#: Controller/ItemsController.php:406
 msgid "The item could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:403
+#: Controller/ItemsController.php:423
 msgid "L'annonce est supprimée."
 msgstr ""
 
-#: Controller/ItemsController.php:405
+#: Controller/ItemsController.php:425
 msgid "The item could not be deleted. Please, try again."
 msgstr ""
 
@@ -289,17 +293,17 @@ msgid "Votre nouveau mot de passe est enregistré. Vous pouvez vous connecter av
 msgstr ""
 
 #: Template/Categories/index.ctp:2
-#: Template/Element/header.ctp:48
+#: Template/Element/header.ctp:61
 msgid "Categories"
 msgstr ""
 
 #: Template/Categories/index.ctp:18
-#: Template/Items/index.ctp:2
+#: Template/Items/index.ctp:3
 msgid "Items"
 msgstr ""
 
 #: Template/Categories/index.ctp:19
-#: Template/Items/index.ctp:19
+#: Template/Items/index.ctp:24
 #: Template/Streets/index.ctp:16
 #: Template/Users/index.ctp:24
 #: Template/Users/view.ctp:8;61
@@ -319,7 +323,7 @@ msgid "Site fait avec enthousiasme par ExtraPaul"
 msgstr ""
 
 #: Template/Element/footer.ctp:12
-#: Template/Element/header.ctp:36
+#: Template/Element/header.ctp:49
 msgid "En savoir plus sur ce site"
 msgstr ""
 
@@ -348,107 +352,111 @@ msgid "Ajouter votre annonce"
 msgstr ""
 
 #: Template/Element/header.ctp:29
+msgid "Catégories"
+msgstr ""
+
+#: Template/Element/header.ctp:42
 msgid "Infos"
 msgstr ""
 
-#: Template/Element/header.ctp:32
+#: Template/Element/header.ctp:45
 #: Template/Pages/intro.ctp:1
 msgid "Introduction"
 msgstr ""
 
-#: Template/Element/header.ctp:33
+#: Template/Element/header.ctp:46
 msgid "F.A.Q."
 msgstr ""
 
-#: Template/Element/header.ctp:34
+#: Template/Element/header.ctp:47
 msgid "Charte"
 msgstr ""
 
-#: Template/Element/header.ctp:35
+#: Template/Element/header.ctp:48
 #: Template/Pages/privacy.ctp:1
 msgid "Politique de confidentialité"
 msgstr ""
 
-#: Template/Element/header.ctp:46
+#: Template/Element/header.ctp:59
 msgid "Utilisateurs"
 msgstr ""
 
-#: Template/Element/header.ctp:47
+#: Template/Element/header.ctp:60
 msgid "Annonces"
 msgstr ""
 
-#: Template/Element/header.ctp:49
+#: Template/Element/header.ctp:62
 msgid "Rues"
 msgstr ""
 
-#: Template/Element/header.ctp:50
+#: Template/Element/header.ctp:63
 #: Template/Stats/index.ctp:37
 msgid "Statistiques"
 msgstr ""
 
-#: Template/Element/header.ctp:57
+#: Template/Element/header.ctp:70
 msgid "Bonjour"
 msgstr ""
 
-#: Template/Element/header.ctp:60
+#: Template/Element/header.ctp:73
 #: Template/Items/mines.ctp:1;4
 msgid "Mes annonces"
 msgstr ""
 
-#: Template/Element/header.ctp:61
+#: Template/Element/header.ctp:74
 #: Template/Users/me.ctp:2;9
 msgid "Mon profil"
 msgstr ""
 
-#: Template/Element/header.ctp:62
+#: Template/Element/header.ctp:75
 msgid "Se déconnecter"
 msgstr ""
 
-#: Template/Element/header.ctp:67
+#: Template/Element/header.ctp:80
 #: Template/Users/login.ctp:16
 msgid "Se connecter"
 msgstr ""
 
-#: Template/Element/header.ctp:86
+#: Template/Element/header.ctp:101
 msgid "Contact"
 msgstr ""
 
-#: Template/Element/header.ctp:90
+#: Template/Element/header.ctp:105
 msgid "N'utilisez pas ce formulaire pour contacter un annonceur : utilisez le formulaire dans le détail de l'annonce."
 msgstr ""
 
-#: Template/Element/header.ctp:93
+#: Template/Element/header.ctp:108
 #: Template/Items/view.ctp:120
 msgid "Votre nom"
 msgstr ""
 
-#: Template/Element/header.ctp:94
+#: Template/Element/header.ctp:109
 #: Template/Items/view.ctp:121
 #: Template/Users/reset_password.ctp:23
 msgid "Votre email"
 msgstr ""
 
-#: Template/Element/header.ctp:97
+#: Template/Element/header.ctp:112
 msgid "Problème technique"
 msgstr ""
 
-#: Template/Element/header.ctp:98
+#: Template/Element/header.ctp:113
 msgid "Signaler une annonce ou un utilisateur"
 msgstr ""
 
-#: Template/Element/header.ctp:99
+#: Template/Element/header.ctp:114
 msgid "Question sur le site"
 msgstr ""
 
-#: Template/Element/header.ctp:100
+#: Template/Element/header.ctp:115
 msgid "Avoir ce site pour ma communauté"
 msgstr ""
 
-#: Template/Element/header.ctp:101
+#: Template/Element/header.ctp:116
 msgid "(Choisissez)"
 msgstr ""
 
-#: Template/Element/header.ctp:104
+#: Template/Element/header.ctp:119
 #: Template/Items/add.ctp:63
 #: Template/Items/view.ctp:126
 #: Template/Users/register.ctp:36
@@ -593,7 +601,11 @@ msgstr ""
 msgid "Il y a {{count}} annonces"
 msgstr ""
 
-#: Template/Items/index.ctp:39
+#: Template/Items/index.ctp:5
+msgid "Export Excel"
+msgstr ""
+
+#: Template/Items/index.ctp:44
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr ""
 

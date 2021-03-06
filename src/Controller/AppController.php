@@ -20,6 +20,7 @@ use Cake\I18n\I18n;
 use Cake\Core\Configure;
 use Cake\Mailer\Email;
 use Cake\ORM\TableRegistry;
+use Cake\Datasource\ConnectionManager;
 	
 /**
  * Application Controller
@@ -63,7 +64,7 @@ class AppController extends Controller
 		
 		/*
 			Language
-			LG is "fr" or "nl", ti use for name of variables. Exemple : "title_".LG
+			LG is "fr" or "nl", to use for the name of variables. Exemple : "title_".LG
 		*/
 		if (LANGUAGES == "fr" or LANGUAGES == "nl") {
 			// Only one language set for the site
@@ -109,6 +110,15 @@ class AppController extends Controller
 			define ('SITE_NAME',SITE_NAME_FR);
 		}
 		
+		/*
+			Categories
+		*/
+		if (!$this->request->session()->check('Categories')) {
+			$connection = ConnectionManager::get('default');
+			$categories = $connection->execute('SELECT id, title_'.LG.' title FROM categories ORDER BY title_'.LG)->fetchAll('assoc');
+			$this->request->session()->write('Categories',$categories);
+		}
+		
         /*
          * Enable the following components for recommended CakePHP security settings.
          * see http://book.cakephp.org/3.0/en/controllers/components/security.html
@@ -138,6 +148,7 @@ class AppController extends Controller
 	
 	public function changeLanguage($language) {
 		$this->request->session()->write('Config.language', $language);
+		$this->request->session()->delete('Categories'); // Force reload categories in session
 		$this->redirect($this->referer());
 	}
 	

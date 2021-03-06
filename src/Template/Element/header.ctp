@@ -22,7 +22,20 @@ if ($this->request->session()->read("Auth.User.id")) {
 	<DIV class="collapse navbar-collapse" id="navbarSupportedContent">
 		<UL class="navbar-nav mr-auto">
 			<LI class="nav-item">
-				<A class="nav-link" href="<?= $this->Url->build("/items/add") ?>"><I class="fa fa-thumb-tack"></I> <?= __("Ajouter votre annonce") ?></A>
+				<A class="nav-link" href="<?= $this->Url->build("/items/add") ?>"><I class="fas fa-thumbtack"></I> <?= __("Ajouter votre annonce") ?></A>
+			</LI>
+			<LI class="nav-item dropdown">
+				<A class="nav-link dropdown-toggle" href="#" id="categoryLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-tags"></i> <?= __("Catégories") ?>
+				</A>
+				<DIV class="dropdown-menu" aria-labelledby="categoryLinks">
+					<?php 
+					$categories = $this->request->session()->read('Categories');
+					foreach ($categories as $category) {
+						print $this->Html->link($category['title'], array('controller'=>"items", 'action'=>"category", $category['id']), array('class'=>"dropdown-item"));
+					}
+					?>
+				</DIV>
 			</LI>
 			<LI class="nav-item dropdown">
 				<A class="nav-link dropdown-toggle" href="#" id="infoLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -68,7 +81,8 @@ if ($this->request->session()->read("Auth.User.id")) {
 			</LI>
 			<?php } ?>
 		</UL>
-		<DIV class="btn-group btn-group-sm">
+		<?php if (MULTI_LG) { ?>
+		<DIV class="btn-group btn-group-sm" id="switch-lg">
 			<?php
 			if ($this->request->session()->read('Config.language')) {
 				$lang = $this->request->session()->read('Config.language');
@@ -79,6 +93,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 			<A class="btn <?= (LG == "fr" ? "active" : "") ?>" href="<?= $this->Url->build(['controller'=>"app", 'action'=>"changeLanguage", "fr_FR"]) ?>">FR</A>
 			<A class="btn <?= (LG == "nl" ? "active" : "") ?>" href="<?= $this->Url->build(['controller'=>"app", 'action'=>"changeLanguage", "nl_NL"]) ?>">NL</A>
 		</DIV>
+		<?php } ?>
 	</DIV>
 </NAV>
 
