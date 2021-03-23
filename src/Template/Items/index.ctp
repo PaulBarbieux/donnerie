@@ -18,6 +18,7 @@
 						<th scope="col"><?= $this->Paginator->sort('state') ?></th>
 						<th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
 						<th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+						<th scope="col"><?= $this->Paginator->sort('booked') ?></th>
 						<th scope="col"><?= $this->Paginator->sort('created') ?></th>
 						<th scope="col"><?= $this->Paginator->sort('modified') ?></th>
 						<th scope="col">Contacts</th>
@@ -36,6 +37,7 @@
 									: "Unknown!" )
 							?></td>
 						<td><?= $item->has('user') ? $this->Html->link($item->user->alias, ['controller' => 'Items', 'action' => 'user', $item->user->id]) : '' ?></td>
+						<td><?= h($item->isBooked()) ?></td>
 						<td><?= h($item->created) ?></td>
 						<td><?= h($item->modified) ?></td>
 						<td><?= isset($item->stat) ? h($item->stat->contacts) : "?" ?></td>

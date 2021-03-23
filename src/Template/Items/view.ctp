@@ -44,7 +44,7 @@ $this->Html->css('lightbox', ['block' => true]);
 
 ?>
 <DIV class="col-sm-12">
-	<DIV class="card">
+	<DIV class="card card-view-item">
 		<DIV class="card-body">
 			<DIV class="row">
 				<DIV class="col-md-5">
@@ -85,7 +85,6 @@ $this->Html->css('lightbox', ['block' => true]);
 						<SPAN class="share-links">
 							<A href="https://www.facebook.com/sharer.php?u=<?= $full_url ?>" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></A>
 							<A href="https://twitter.com/intent/tweet?text=<?= $meta_title ?>&amp;url=<?= $full_url ?>" target="_blank" title="Twitter"><i class="fab fa-twitter-square"></i></A>
-							<A href="https://plus.google.com/share?app=110&url=<?= $full_url ?>" target="_blank" title="Google+"><i class="fab fa-google-plus-square"></i></A>
 							<A href="http://pinterest.com/pin/create/button/?url=<?= $full_url ?>&amp;media=<?= $featured_image ?>&amp;description=<?= $meta_title ?>" target="_blank" title="Pinterest"><i class="fab fa-pinterest-square"></i></A>
 							<A href="mailto:?subject=<?= $meta_title ?> (<?= SITE_NAME ?>)&body=<?= $meta_description."   ".$full_url ?>" title="E-mail"><i class="fas fa-envelope-square"></i></A>
 						</SPAN>
@@ -131,6 +130,10 @@ $this->Html->css('lightbox', ['block' => true]);
 				</DIV>			
 			</DIV>
 		</DIV>
+		<?php if ($item->isBooked()) { ?>
+		<DIV class="banner-booked">
+			<?= __("Réservé") ?>
+		</DIV>
+		<?php } ?>
 	</DIV>
 </DIV>
-

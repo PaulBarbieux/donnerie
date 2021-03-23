@@ -1,4 +1,4 @@
-<A href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"view",$item->id]) ?>" class="card grid-item item-<?= $item->type ?>">
+<A href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"view",$item->id]) ?>" class="card grid-item item-<?= $item->type ?> <?php if ($item->isBooked()) { ?>item-booked<?php } ?>">
 	<DIV class="card-header">
 		<h2 class="card-title"><?= h($item->title) ?></h2>
 	</DIV>
@@ -44,4 +44,9 @@
 	<DIV class="card-body">
 		<P><?= nl2br(h($this->Text->truncate($item->description,HOME_TRUNCATE_TEXT))) ?></P>
 	</DIV>
+	<?php if ($item->isBooked()) { ?>
+	<DIV class="banner-booked">
+		<?= __("Réservé") ?>
+	</DIV>
+	<?php } ?>
 </A>

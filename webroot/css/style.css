@@ -194,12 +194,37 @@ A.grid-item .item-state {
 /* Actions placed in a block */
 .block-actions {
 	position:absolute;
-	top:2px;
-	right:2px;
+	top:-5px;
+	right:-5px;
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 /* Share links */
 .share-links A I {
 	font-size: 20px;
+}
+/* Booked banner */
+.banner-booked {
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	transform: rotate(-5deg);
+	transform-origin: left bottom;
+	background-color: #FFC107;
+	color: #6A5000;
+	text-transform:uppercase;
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+.grid-item .banner-booked {
+	padding: 0 5px;
+	font-size: .8rem;
+}
+.card-view-item .banner-booked {
+	padding: 5px 10px;
+	font-size: 1rem;
 }
 /*
 	Link card

@@ -121,6 +121,7 @@ class ItemsController extends AppController
 	{
 		$items = $this->Items->find('all', ['order'=>['Items.created'=>'DESC'] , 'contain'=>[ 'Users', 'Stats' ]]);
 		$this->set(compact('items'));
+		$this->set('fileName',DOMAIN_NAME."_items_".date("Ymd"));
 		$this->viewBuilder()->setLayout("excel");
 	}
 	
@@ -239,6 +240,8 @@ class ItemsController extends AppController
 							'email' => $applicantEmail,
 							'item_title' => $item->title, 
 							'item_link' => Router::url("/items/view/".$item->id, true), 
+							'item_book' => Router::url("/items/book/".$item->id."/1", true), 
+							'item_delete' => Router::url("/items/mines/", true), 
 							'message' => nl2br($message)
 						])
 						->to($item->user->username)
@@ -269,6 +272,7 @@ class ItemsController extends AppController
 					$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
 				}
 			}
+			return $this->redirect($this->referer());
 		}
 		$item->state_label = $this->getStateLabel($item->state);
         $this->set('item', $item);
@@ -403,7 +407,7 @@ class ItemsController extends AppController
 							return $this->redirect(['action' => 'mines']);
 						}
 					}
-					$this->Flash->error(__('The item could not be saved. Please, try again.'));
+					$this->Flash->error(__('Technical error.'));
 				}
 			}
         }
@@ -426,6 +430,24 @@ class ItemsController extends AppController
         }
         return $this->redirect($this->referer());
     }
+	
+	/*
+		Book or unbook an item
+	*/
+	public function book($id, $book) {
+		$item = $this->Items->get($id);
+		$item->book($book);
+		if ($this->Items->save($item)) {
+			if ($item->isBooked()) {
+				$this->Flash->success(__("Votre annonce apparaît maintenant comme étant réservée."));
+			} else {
+				$this->Flash->success(__("Votre annonce n'apparaît plus comme étant réservée."));
+			}
+		} else {
+			$this->Flash->error(__('Technical error.'));
+		}
+		return $this->redirect(['action' => 'mines']);;
+	}
 		
 	private function getStateLabel($state_id) {
 		$stateLabels = array('new'=>__('Comme neuf'), 'used'=>__('Usagé'), 'broken'=>__('À réparer'));

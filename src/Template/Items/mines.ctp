@@ -31,17 +31,31 @@
 		</DIV>
 		<DIV class="block-actions">
 			<DIV class="btn-group">
-				<?= $this->Html->link(
-					"", 
-					['action' => 'edit', $item->id],
-					['class' => 'btn btn-primary btn-sm fas fa-pencil-alt']
-				) ?>
-				<?= $this->Form->postLink(
-					"", 
-					['action' => 'delete', $item->id], 
-					['confirm' => __('Êtes-vous sûr de supprimer {0} ?', $item->title) , 'class' => 'btn btn-danger btn-sm fa fa-trash']
-				) ?>
+				<?php
+				// debug($item); exit;
+				if ($item->isDonate()) {
+					if ($item->isBooked()) {
+						print $this->Html->link("", 
+							['action'=>'book', $item->id, 0], 
+							['class'=>'btn btn-warning btn-sm fas fa-lock', 'title'=>__("Retirer l'étiquette de réservation")]);
+					} else {
+						print $this->Html->link("", 
+							['action'=>'book', $item->id, 1], 
+							['class'=>'btn btn-warning btn-sm fas fa-unlock', 'title'=>__("Montrer que l'annonce est réservée")]);
+					}
+				}
+				print $this->Html->link("", 
+					['action'=>'edit',$item->id], 
+					['class'=>'btn btn-primary btn-sm fas fa-pencil-alt', 'title'=>__("Modifier l'annonce")]);
+				print $this->Form->postLink( "", ['action' => 'delete', $item->id], 
+					['confirm'=>__('Êtes-vous sûr de supprimer {0} ?', $item->title), 'class'=>'btn btn-danger btn-sm fa fa-trash', 'title'=>__("Supprimer l'annonce")]);
+				?>
 			</DIV>
 		</DIV>
+		<?php if ($item->isBooked()) { ?>
+		<DIV class="banner-booked">
+			<?= __("Réservé") ?>
+		</DIV>
+		<?php } ?>
 	</DIV>
 <?php endforeach; ?></div>

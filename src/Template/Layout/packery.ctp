@@ -7,7 +7,7 @@
 	<link rel="shortcut icon" href="<?= $this->Url->build("/favicon.ico") ?>">
     <title><?= $this->fetch('title')." | ".SITE_NAME ?></title>
 
-    <?= $this->Html->css(['bootstrap.min.css','style.css?20181028','branding.css']) ?>
+    <?= $this->Html->css(['bootstrap.min.css','style.css?20210322','branding.css']) ?>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 	<?= $this->Html->script(['jquery-3.2.1.min.js', 'tether.min.js', 'bootstrap.min.js?20180220', 'imagesloaded.pkgd.min.js', 'packery.pkgd.min.js', 'init.js']); ?>
 	<!-- Packery -->
