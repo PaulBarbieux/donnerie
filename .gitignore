@@ -27,4 +27,10 @@
 
 app - local.php
 app - paperjam.php
+app - ovh.php
+app ovh.php
 /webroot/clientFiles/*
+
+# Dreamweaver
+
+*.mno
