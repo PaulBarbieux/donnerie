@@ -1,6 +1,6 @@
 ﻿<?php
 header('Content-type: application/excel; charset=UTF-8');
-header('Content-Disposition: attachment; filename='.$_GET['fileName'].".xls");
+header('Content-Disposition: attachment; filename='.$fileName.".xls");
 ?>
 <html xmlns:x="urn:schemas-microsoft-com:office:excel">
 <head>
