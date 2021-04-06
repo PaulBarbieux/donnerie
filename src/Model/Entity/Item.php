@@ -47,12 +47,32 @@ class Item extends Entity
 	}
 	
 	public function book($book) {
-		if ($book) {
-			if (!$this->isBooked()) {
-				$this->status += 1;
+		if ($this->isDonate()) {
+			if ($book) {
+				if (!$this->isBooked()) {
+					$this->status += 1;
+				}
+			} elseif ($this->isBooked()) {
+				$this->status -=1;
 			}
-		} elseif ($this->isBooked()) {
-			$this->status -=1;
+		}
+	}
+	
+	public function isOutdated() {
+		return ($this->status == 2 or $this->status == 3);
+	}
+	
+	protected function _getOutdated() {
+		return ($this->status == 2 or $this->status == 3);
+	}
+	
+	public function outdate($outdate) {
+		if ($outdate) {
+			if (!$this->isOutdated()) {
+				$this->status += 2;
+			}
+		} elseif ($this->isOutdated()) {
+			$this->status -= 2;
 		}
 	}
 }

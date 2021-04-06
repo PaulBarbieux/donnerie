@@ -23,10 +23,22 @@
 						<th scope="col"><?= $this->Paginator->sort('modified') ?></th>
 						<th scope="col">Contacts</th>
 						<th scope="col" class="actions"><?= __('Actions') ?></th>
+						<th scope="col">Maintenance</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($items as $item): ?>
+					<?php
+					$toDay = new DateTime();
+					foreach ($items as $item):
+						// Number of days old
+						$diff = $item->modified->diff($toDay);
+						$nbDays = $diff->format('%a');
+						if ($nbDays >= 100) {
+							$opacity = 1;
+						} else {
+							$opacity = "." . sprintf("%02d",$nbDays);
+						} 
+					?>
 					<tr>
 						<td><?= $this->Number->format($item->id) ?></td>
 						<td><?= h($item->type) ?></td>
@@ -43,7 +55,21 @@
 						<td><?= isset($item->stat) ? h($item->stat->contacts) : "?" ?></td>
 						<td class="actions">
 							<?= $this->Html->link("", ['action' => 'edit', $item->id, $item->user->alias] , ['class'=>"fas fa-pencil-alt"]) ?>
-							<?= $this->Form->postLink("", ['action' => 'delete', $item->id], ['confirm' => __('Êtes vous sûr de supprimer {0}?', $item->title) , 'class'=>"fa fa-trash"]) ?>
+							<?= $this->Form->postLink("", ['action' => 'delete', $item->id], 
+								['confirm' => __('Êtes vous sûr de supprimer {0}?', $item->title) , 
+								 'class'=>"text-danger fa fa-trash"]) ?>
+						</td>
+						<td><?php if ($item->isOutdated()) { ?>
+								<a class="disabled" title="<?= __("Un avertissement a déjà été envoyé.") ?>"><i class="fas fa-paper-plane"></i></a>
+								<span class="text-danger"><?= $nbDays ?></span>
+							<?php } else {
+								print $this->Html->link("", ['action' => 'outdate', $item->id, $item->user->alias] ,
+									['confirm'=>__("Envoyer un email d'avertissement à l'annonceur ?"),
+									 'class'=>"text-warning fas fa-paper-plane", 
+									 'style'=>"opacity:".$opacity.";",
+									 'title'=>__("Envoyer un avertissement à l'annonceur")]);
+								print " ".$nbDays;
+								} ?>
 						</td>
 					</tr>
 					<?php endforeach; ?>

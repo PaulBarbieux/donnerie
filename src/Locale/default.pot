@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-03-22 16:41+0100\n"
+"POT-Creation-Date: 2021-04-03 09:59+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -76,103 +76,115 @@ msgstr ""
 msgid "The category could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:77;85
+#: Controller/ItemsController.php:78;86
 #: Template/Items/add.ctp:22
 #: Template/Items/edit.ctp:8
 msgid "Je donne"
 msgstr ""
 
-#: Controller/ItemsController.php:78;86
+#: Controller/ItemsController.php:79;87
 #: Template/Items/add.ctp:22
 #: Template/Items/edit.ctp:8
 #: Template/Items/view.ctp:22;83
 msgid "Je cherche"
 msgstr ""
 
-#: Controller/ItemsController.php:79;87;453
+#: Controller/ItemsController.php:80;88;506
 #: Template/Items/edit.ctp:22
 msgid "Comme neuf"
 msgstr ""
 
-#: Controller/ItemsController.php:80;88;453
+#: Controller/ItemsController.php:81;89;506
 #: Template/Items/edit.ctp:22
 msgid "Usagé"
 msgstr ""
 
-#: Controller/ItemsController.php:81;89;453
+#: Controller/ItemsController.php:82;90;506
 #: Template/Items/edit.ctp:22
 msgid "À réparer"
 msgstr ""
 
-#: Controller/ItemsController.php:82;90
+#: Controller/ItemsController.php:83;91
 msgid "Rendez-vous sur {0} pour répondre à ces annonces..."
 msgstr ""
 
-#: Controller/ItemsController.php:149
+#: Controller/ItemsController.php:150
 msgid "Utilisateur inconnu."
 msgstr ""
 
-#: Controller/ItemsController.php:205
+#: Controller/ItemsController.php:206
 msgid "Votre message est vide ou trop court."
 msgstr ""
 
-#: Controller/ItemsController.php:220
+#: Controller/ItemsController.php:221
 msgid "Veuillez donner votre nom et votre email."
 msgstr ""
 
-#: Controller/ItemsController.php:223
+#: Controller/ItemsController.php:224
 msgid "Votre adresse email n'est pas valide."
 msgstr ""
 
-#: Controller/ItemsController.php:226
+#: Controller/ItemsController.php:227
 msgid "Vous n'avez plus le droit d'utiliser ce site."
 msgstr ""
 
-#: Controller/ItemsController.php:248
+#: Controller/ItemsController.php:249
 msgid "{0} : message pour votre annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:267
+#: Controller/ItemsController.php:268
 msgid "{0} : votre message pour l'annonce {1}"
 msgstr ""
 
-#: Controller/ItemsController.php:272
+#: Controller/ItemsController.php:273
 msgid "Votre message a été envoyé à {0}."
 msgstr ""
 
-#: Controller/ItemsController.php:294;359
+#: Controller/ItemsController.php:295;360
 msgid "Veuillez écrire une description de minimum 10 caractères."
 msgstr ""
 
-#: Controller/ItemsController.php:322
+#: Controller/ItemsController.php:329
 msgid "Votre annonce est en ligne."
 msgstr ""
 
-#: Controller/ItemsController.php:332
+#: Controller/ItemsController.php:333
 msgid "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème persiste contactez-nous (lien en bas à droite)."
 msgstr ""
 
-#: Controller/ItemsController.php:403
+#: Controller/ItemsController.php:405
 msgid "L'annonce est modifiée."
 msgstr ""
 
-#: Controller/ItemsController.php:410;447
+#: Controller/ItemsController.php:412;463;480;500
 msgid "Technical error."
 msgstr ""
 
-#: Controller/ItemsController.php:427
+#: Controller/ItemsController.php:429
 msgid "L'annonce est supprimée."
 msgstr ""
 
-#: Controller/ItemsController.php:429
+#: Controller/ItemsController.php:431
 msgid "The item could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:442
+#: Controller/ItemsController.php:459
+msgid "traitez votre ancienne annonce {0}"
+msgstr ""
+
+#: Controller/ItemsController.php:461
+msgid "Un email d'avertissement a été envoyé à l'annonceur, concernant son annonce {0}."
+msgstr ""
+
+#: Controller/ItemsController.php:478
+msgid "Votre annonce est renouvellée : elle est à nouveau visible en haut de la page d'accueil."
+msgstr ""
+
+#: Controller/ItemsController.php:495
 msgid "Votre annonce apparaît maintenant comme étant réservée."
 msgstr ""
 
-#: Controller/ItemsController.php:444
+#: Controller/ItemsController.php:497
 msgid "Votre annonce n'apparaît plus comme étant réservée."
 msgstr ""
 
@@ -356,7 +368,7 @@ msgid "C'est dans votre rue"
 msgstr ""
 
 #: Template/Element/grid-item.ctp:49
-#: Template/Items/mines.ctp:57
+#: Template/Items/mines.ctp:73
 #: Template/Items/view.ctp:135
 msgid "Réservé"
 msgstr ""
@@ -413,7 +425,7 @@ msgid "Bonjour"
 msgstr ""
 
 #: Template/Element/header.ctp:73
-#: Template/Items/mines.ctp:1;4
+#: Template/Items/mines.ctp:2;13
 msgid "Mes annonces"
 msgstr ""
 
@@ -503,7 +515,7 @@ msgid "Erreur"
 msgstr ""
 
 #: Template/Items/add.ctp:3
-#: Template/Items/mines.ctp:6
+#: Template/Items/mines.ctp:18
 msgid "Nouvelle annonce"
 msgstr ""
 
@@ -619,40 +631,60 @@ msgstr ""
 msgid "Export Excel"
 msgstr ""
 
-#: Template/Items/index.ctp:46
+#: Template/Items/index.ctp:59
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr ""
 
-#: Template/Items/mines.ctp:5
+#: Template/Items/index.ctp:63
+msgid "Un avertissement a déjà été envoyé."
+msgstr ""
+
+#: Template/Items/index.ctp:66
+msgid "Envoyer un email d'avertissement à l'annonceur ?"
+msgstr ""
+
+#: Template/Items/index.ctp:69
+msgid "Envoyer un avertissement à l'annonceur"
+msgstr ""
+
+#: Template/Items/mines.ctp:14
 msgid "Voici vos annonces. Pensez à les supprimer quand elles ne sont plus d'actualité."
 msgstr ""
 
-#: Template/Items/mines.ctp:17
+#: Template/Items/mines.ctp:16
+msgid "Il existe au moins une annonce signalée comme trop ancienne par les administrateurs du site : veuillez la {0} renouveler ou la {1} supprimer."
+msgstr ""
+
+#: Template/Items/mines.ctp:28
 msgid "Posté le"
 msgstr ""
 
-#: Template/Items/mines.ctp:24
+#: Template/Items/mines.ctp:35
 msgid "Pas d'image : image par défaut utilisée"
 msgstr ""
 
-#: Template/Items/mines.ctp:40
+#: Template/Items/mines.ctp:49
+msgid "Renouveler l'annonce"
+msgstr ""
+
+#: Template/Items/mines.ctp:55
 msgid "Retirer l'étiquette de réservation"
 msgstr ""
 
-#: Template/Items/mines.ctp:44
+#: Template/Items/mines.ctp:59
 msgid "Montrer que l'annonce est réservée"
 msgstr ""
 
-#: Template/Items/mines.ctp:49
+#: Template/Items/mines.ctp:64
 msgid "Modifier l'annonce"
 msgstr ""
 
-#: Template/Items/mines.ctp:51
+#: Template/Items/mines.ctp:67
 #: Template/Users/index.ctp:51
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr ""
 
-#: Template/Items/mines.ctp:51
+#: Template/Items/mines.ctp:67
 msgid "Supprimer l'annonce"
 msgstr ""
 
@@ -690,6 +722,7 @@ msgid "pour pouvoir contacter {0}"
 msgstr ""
 
 #: Template/Layout/error.ctp:35
+#: Template/Error/error500.ctp:41
 msgid "Error"
 msgstr ""
 
@@ -989,5 +1022,9 @@ msgstr ""
 
 #: Template/Users/view.ctp:79
 msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
 msgstr ""
 

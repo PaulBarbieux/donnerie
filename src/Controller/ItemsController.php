@@ -7,6 +7,7 @@ use Cake\ORM\TableRegistry;
 use Cake\Mailer\Email;
 use Cake\Routing\Router;
 use Cake\I18n\I18n;
+use Cake\I18n\FrozenTime;
 
 /**
  * Items Controller
@@ -231,9 +232,9 @@ class ItemsController extends AppController
 					}
 				}
 				if (!$error) {
-					// Send email
+					// Send email to the owner
 					$email
-						->setTemplate('contact_item_'.LG)
+						->setTemplate('contact_item_'.$item->user->language)
 						->viewVars([
 							'owner' => $item->user->alias, 
 							'applicant' => $applicant,
@@ -307,6 +308,12 @@ class ItemsController extends AppController
 				if (isset($filesResults['errors'])) {
 					$this->Flash->error($filesResults['errors'][0]);
 				} elseif ($this->Items->save($item)) {
+					// Create stats line
+					$stats = TableRegistry::get('Stats');
+					$stat = $stats->newEntity();
+					$stat->user_id = $this->Auth->user('id');
+					$stat->item_id = $item->id;
+					$stats->save($stat);
 					// Send email to admin
 					$email = new Email();
 					$email
@@ -320,12 +327,6 @@ class ItemsController extends AppController
 						->subject(SITE_NAME." : nouvelle annonce ".$item->title)
 						->send();
 					$this->Flash->success(__('Votre annonce est en ligne.'));
-					// Create stats line
-					$stats = TableRegistry::get('Stats');
-					$stat = $stats->newEntity();
-					$stat->user_id = $this->Auth->user('id');
-					$stat->item_id = $item->id;
-					$stats->save($stat);
 					// Completed
 					return $this->redirect(['action' => 'mines']);
 				} else {
@@ -394,6 +395,7 @@ class ItemsController extends AppController
 						$item->image_2_url = $item->image_3_url;
 						$item->image_3_url = false;
 					}
+					$item->outdate(false); // Remove outdate status if exists
 					if ($this->Items->save($item)) {
 						// 4) Delete old files
 						foreach ($filesToDelete as $fileToDelete) {
@@ -430,6 +432,56 @@ class ItemsController extends AppController
         }
         return $this->redirect($this->referer());
     }
+
+	/*
+		Send a warning the the user about his old item
+	*/
+    public function outdate($id = null)
+    {
+        $this->request->allowMethod(['get', 'outdate']);
+        $item = $this->Items->get($id);
+		$item = $this->Items->get($id, ['contain'=>'Users']);
+		$item->outdate(true);
+		$item->book(false);
+        if ($this->Items->save($item)) {
+			// Send email to the owner
+			$email = new Email();
+			$email
+				->to($item->user->username)
+				->setTemplate('outdate_item_'.$item->user->language)
+				->viewVars([
+					'owner' => $item->user->alias, 
+					'item_title' => $item->title, 
+					'item_link' => Router::url("/items/view/".$item->id, true),
+					'mines_link' => Router::url("/items/mines/", true),
+					'site_name' => SITE_NAME
+					])
+				->subject(SITE_NAME." : ".__("traitez votre ancienne annonce {0}",$item->title))
+				->send();
+            $this->Flash->success(__("Un email d'avertissement a été envoyé à l'annonceur, concernant son annonce {0}.", $item->title));
+        } else {
+            $this->Flash->error(__('Technical error.'));
+        }
+        return $this->redirect($this->referer());
+    }
+	
+	/*
+		Renew an announce
+	*/
+	public function renew($id) {
+		$this->request->allowMethod(['get', 'renew']);
+        $item = $this->Items->get($id);
+		if ($item->isOutdated()) {
+			$item->outdate(false);
+			$item->created = new FrozenTime('now');
+			if ($this->Items->save($item)) {
+				$this->Flash->success(__("Votre annonce est renouvellée : elle est à nouveau visible en haut de la page d'accueil."));
+			} else {
+				$this->Flash->error(__('Technical error.'));
+			}
+		}
+		return $this->redirect($this->referer());
+	}
 	
 	/*
 		Book or unbook an item
@@ -437,6 +489,7 @@ class ItemsController extends AppController
 	public function book($id, $book) {
 		$item = $this->Items->get($id);
 		$item->book($book);
+		$item->outdate(false); // Remove outdate status if exists
 		if ($this->Items->save($item)) {
 			if ($item->isBooked()) {
 				$this->Flash->success(__("Votre annonce apparaît maintenant comme étant réservée."));

@@ -117,6 +117,10 @@ FOOTER .extrapaul {
 .card.grid-item.item-r .card-title {
 	color:#FFF !important;
 }
+/* Outdated */
+.grid-item.item-outdated {
+	border-color: #FF0000;
+}
 /*
 	For items
 */

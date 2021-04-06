@@ -61,6 +61,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 						<?= $this->Html->link(__("Categories"), array('controller'=>"categories", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
 						<?= $this->Html->link(__("Rues"), array('controller'=>"streets", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
 						<?= $this->Html->link(__("Statistiques"), array('controller'=>"stats", 'action'=>"index"), array('class'=>"dropdown-item")) ?>
+						<a href="http://donneries.brussels/help.php?site=<?= SITE_NAME ?>" target="_blank" class="dropdown-item"><?= __("Aide") ?></a>
 					</DIV>
 				</LI>
 				<?php } ?>

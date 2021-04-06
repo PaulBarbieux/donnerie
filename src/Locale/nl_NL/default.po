@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-22 16:41+0100\n"
-"PO-Revision-Date: 2021-03-22 16:48+0100\n"
+"POT-Creation-Date: 2021-04-03 09:59+0200\n"
+"PO-Revision-Date: 2021-04-03 10:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -75,73 +75,73 @@ msgstr "De categorie {0} is verwijderd."
 msgid "The category could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:77;85 Template/Items/add.ctp:22
+#: Controller/ItemsController.php:78;86 Template/Items/add.ctp:22
 #: Template/Items/edit.ctp:8
 msgid "Je donne"
 msgstr "Ik geef"
 
-#: Controller/ItemsController.php:78;86 Template/Items/add.ctp:22
+#: Controller/ItemsController.php:79;87 Template/Items/add.ctp:22
 #: Template/Items/edit.ctp:8 Template/Items/view.ctp:22;83
 msgid "Je cherche"
 msgstr "Ik zoek"
 
-#: Controller/ItemsController.php:79;87;453 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:80;88;506 Template/Items/edit.ctp:22
 msgid "Comme neuf"
 msgstr "Zo goed als nieuw"
 
-#: Controller/ItemsController.php:80;88;453 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:81;89;506 Template/Items/edit.ctp:22
 msgid "Usagé"
 msgstr "Gebruikt"
 
-#: Controller/ItemsController.php:81;89;453 Template/Items/edit.ctp:22
+#: Controller/ItemsController.php:82;90;506 Template/Items/edit.ctp:22
 msgid "À réparer"
 msgstr "Te herstellen"
 
-#: Controller/ItemsController.php:82;90
+#: Controller/ItemsController.php:83;91
 msgid "Rendez-vous sur {0} pour répondre à ces annonces..."
 msgstr "Bezoek {0} om deze advertenties te beantwoorden..."
 
-#: Controller/ItemsController.php:149
+#: Controller/ItemsController.php:150
 msgid "Utilisateur inconnu."
 msgstr "Onbekende gebruiker."
 
-#: Controller/ItemsController.php:205
+#: Controller/ItemsController.php:206
 msgid "Votre message est vide ou trop court."
 msgstr "Uw boodschap is leeg of te kort."
 
-#: Controller/ItemsController.php:220
+#: Controller/ItemsController.php:221
 msgid "Veuillez donner votre nom et votre email."
 msgstr "Gelieve uw naam en e-mail in te vullen."
 
-#: Controller/ItemsController.php:223
+#: Controller/ItemsController.php:224
 msgid "Votre adresse email n'est pas valide."
 msgstr "Uw e-mailadres is niet geldig."
 
-#: Controller/ItemsController.php:226
+#: Controller/ItemsController.php:227
 msgid "Vous n'avez plus le droit d'utiliser ce site."
 msgstr "U heeft niet langer het recht om deze site te gebruiken."
 
-#: Controller/ItemsController.php:248
+#: Controller/ItemsController.php:249
 msgid "{0} : message pour votre annonce {1}"
 msgstr "{0} : bericht voor uw advertentie {1}"
 
-#: Controller/ItemsController.php:267
+#: Controller/ItemsController.php:268
 msgid "{0} : votre message pour l'annonce {1}"
 msgstr "{0} : uw bericht voor uw advertentie {1}"
 
-#: Controller/ItemsController.php:272
+#: Controller/ItemsController.php:273
 msgid "Votre message a été envoyé à {0}."
 msgstr "Uw bericht is verzonden tot {0}."
 
-#: Controller/ItemsController.php:294;359
+#: Controller/ItemsController.php:295;360
 msgid "Veuillez écrire une description de minimum 10 caractères."
 msgstr "Gelieve een omschrijving van ten minste 10 karakters geven."
 
-#: Controller/ItemsController.php:322
+#: Controller/ItemsController.php:329
 msgid "Votre annonce est en ligne."
 msgstr "Uw advertentie staat online."
 
-#: Controller/ItemsController.php:332
+#: Controller/ItemsController.php:333
 msgid ""
 "Aïe ! L'annonce n'a pas pu être publiée. Ré-essayez et si le problème "
 "persiste contactez-nous (lien en bas à droite)."
@@ -150,27 +150,44 @@ msgstr ""
 "contacteer ons indien het probleem zich opnieuw voordoet (link rechts "
 "onderaan)."
 
-#: Controller/ItemsController.php:403
+#: Controller/ItemsController.php:405
 msgid "L'annonce est modifiée."
 msgstr "De advertentie is gewijzidg."
 
-#: Controller/ItemsController.php:410;447
+#: Controller/ItemsController.php:412;463;480;500
 msgid "Technical error."
 msgstr ""
 
-#: Controller/ItemsController.php:427
+#: Controller/ItemsController.php:429
 msgid "L'annonce est supprimée."
 msgstr "De advertentie is verwijderd."
 
-#: Controller/ItemsController.php:429
+#: Controller/ItemsController.php:431
 msgid "The item could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ItemsController.php:442
+#: Controller/ItemsController.php:459
+msgid "traitez votre ancienne annonce {0}"
+msgstr ""
+
+#: Controller/ItemsController.php:461
+msgid ""
+"Un email d'avertissement a été envoyé à l'annonceur, concernant son annonce "
+"{0}."
+msgstr ""
+
+#: Controller/ItemsController.php:478
+msgid ""
+"Votre annonce est renouvellée : elle est à nouveau visible en haut de la "
+"page d'accueil."
+msgstr ""
+"Uw advertentie is vernieuwd: ze is opnieuw zichtbaar bovenaan op de homepage."
+
+#: Controller/ItemsController.php:495
 msgid "Votre annonce apparaît maintenant comme étant réservée."
 msgstr "Uw advertentie verschijnt nu als gereserveerd."
 
-#: Controller/ItemsController.php:444
+#: Controller/ItemsController.php:497
 msgid "Votre annonce n'apparaît plus comme étant réservée."
 msgstr "Uw advertentie verschijnt niet langer als gereserveerd."
 
@@ -375,7 +392,7 @@ msgstr "{0} dagen geleden"
 msgid "C'est dans votre rue"
 msgstr "Het is in jouw straat"
 
-#: Template/Element/grid-item.ctp:49 Template/Items/mines.ctp:57
+#: Template/Element/grid-item.ctp:49 Template/Items/mines.ctp:73
 #: Template/Items/view.ctp:135
 msgid "Réservé"
 msgstr "Gereserveerd"
@@ -428,7 +445,7 @@ msgstr ""
 msgid "Bonjour"
 msgstr "Hallo"
 
-#: Template/Element/header.ctp:73 Template/Items/mines.ctp:1;4
+#: Template/Element/header.ctp:73 Template/Items/mines.ctp:2;13
 msgid "Mes annonces"
 msgstr "Mjin advertenties"
 
@@ -517,7 +534,7 @@ msgstr ""
 msgid "Erreur"
 msgstr ""
 
-#: Template/Items/add.ctp:3 Template/Items/mines.ctp:6
+#: Template/Items/add.ctp:3 Template/Items/mines.ctp:18
 msgid "Nouvelle annonce"
 msgstr "Nieuwe advertentie"
 
@@ -644,11 +661,23 @@ msgstr "Er zijn {{count}} advertenties"
 msgid "Export Excel"
 msgstr ""
 
-#: Template/Items/index.ctp:46
+#: Template/Items/index.ctp:59
 msgid "Êtes vous sûr de supprimer {0}?"
 msgstr "Bent u zeker dat uw {0} wenst te verwijderen?"
 
-#: Template/Items/mines.ctp:5
+#: Template/Items/index.ctp:63
+msgid "Un avertissement a déjà été envoyé."
+msgstr ""
+
+#: Template/Items/index.ctp:66
+msgid "Envoyer un email d'avertissement à l'annonceur ?"
+msgstr ""
+
+#: Template/Items/index.ctp:69
+msgid "Envoyer un avertissement à l'annonceur"
+msgstr ""
+
+#: Template/Items/mines.ctp:14
 msgid ""
 "Voici vos annonces. Pensez à les supprimer quand elles ne sont plus "
 "d'actualité."
@@ -656,31 +685,43 @@ msgstr ""
 "Dit zijn uw advertenties. Denk eraan ze te verwijderen indien ze niet meer "
 "van toepassing zijn."
 
-#: Template/Items/mines.ctp:17
+#: Template/Items/mines.ctp:16
+msgid ""
+"Il existe au moins une annonce signalée comme trop ancienne par les "
+"administrateurs du site : veuillez la {0} renouveler ou la {1} supprimer."
+msgstr ""
+"Er is minstens één advertentie als te oud gerapporteerd door de beheerders "
+"van de site: gelieve ze te {0} vernieuwen of te {1} verwijderen."
+
+#: Template/Items/mines.ctp:28
 msgid "Posté le"
 msgstr "Geplaatst op"
 
-#: Template/Items/mines.ctp:24
+#: Template/Items/mines.ctp:35
 msgid "Pas d'image : image par défaut utilisée"
 msgstr "Geen afbeelding: er zal een standaardafbeelding gebruikt worden"
 
-#: Template/Items/mines.ctp:40
+#: Template/Items/mines.ctp:49
+msgid "Renouveler l'annonce"
+msgstr "Vernieuw de advertentie"
+
+#: Template/Items/mines.ctp:55
 msgid "Retirer l'étiquette de réservation"
 msgstr "Verwijder het reserveringslabel"
 
-#: Template/Items/mines.ctp:44
+#: Template/Items/mines.ctp:59
 msgid "Montrer que l'annonce est réservée"
 msgstr "Laat zien dat de advertentie gereserveerd is"
 
-#: Template/Items/mines.ctp:49
+#: Template/Items/mines.ctp:64
 msgid "Modifier l'annonce"
 msgstr "Advertentie wijzigen"
 
-#: Template/Items/mines.ctp:51 Template/Users/index.ctp:51
+#: Template/Items/mines.ctp:67 Template/Users/index.ctp:51
 msgid "Êtes-vous sûr de supprimer {0} ?"
 msgstr "Weet u zeker dat u {0} wil verwijderen?"
 
-#: Template/Items/mines.ctp:51
+#: Template/Items/mines.ctp:67
 msgid "Supprimer l'annonce"
 msgstr "De advertentie verwijderen"
 
@@ -716,7 +757,7 @@ msgstr "inloggen"
 msgid "pour pouvoir contacter {0}"
 msgstr "om {0} te contacteren"
 
-#: Template/Layout/error.ctp:35
+#: Template/Layout/error.ctp:35 Template/Error/error500.ctp:41
 msgid "Error"
 msgstr ""
 
@@ -1025,6 +1066,10 @@ msgstr ""
 
 #: Template/Users/view.ctp:79
 msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
 msgstr ""
 
 #~ msgid "Bonnes pratiques"
