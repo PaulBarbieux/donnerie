@@ -1,7 +1,8 @@
 <?php
 $this->assign('title', h($item->title));
 // Connected or not
-if ($this->request->session()->read("Auth.User.id")) {
+$session = $this->request->getSession();
+if ($session->read("Auth.User.id")) {
 	$connected = true;
 } else {
 	$connected = false;
@@ -112,8 +113,8 @@ $this->Html->css('lightbox', ['block' => true]);
 					</TABLE>
 					<H3><I class="fa fa-send"></I> <?= __("Prendre contact pour cette annonce") ?></H3>
 					<?php if (PUBLIC_CONTACT or $connected) { ?>
-					<FORM method="post">
 						<?php 
+						echo $this->Form->create();
 						echo $this->Form->textarea('message' , ['placeholder'=>__("Votre message concernant cette annonce") , 'class'=>"form-control" , 'required'=>"required" , 'rows'=>"5" ]);
 						if (PUBLIC_CONTACT and !$connected) {
 							echo $this->Form->text('name' , ['placeholder'=>__("Votre nom") , 'class'=>"form-control" , 'required'=>"required" ]);
@@ -123,7 +124,7 @@ $this->Html->css('lightbox', ['block' => true]);
 						?>
 						<IMG class="waiting-animation" src="<?= $this->Url->build("/img/loading.gif") ?>" style="display: none;">
 						<BUTTON type="submit" name="contact" class="btn btn-primary" value="send"><i class="fa fa-paper-plane" aria-hidden="true"></i> <?= __("Envoyer") ?></BUTTON>
-					</FORM>
+						<?= $this->Form->end() ?>
 					<?php } else { ?>
 					<P><?= __("Vous devez") . " " . $this->Html->link(__("vous connecter"), array('controller'=>"users", 'action'=>"login", '?'=>['redirect'=>"/items/view/".$item->id])) . " " . __("pour pouvoir contacter {0}" , h($item->user->alias) ) ?>.</P>
 					<?php } ?>

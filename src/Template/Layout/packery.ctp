@@ -27,7 +27,7 @@
 	<?php
 	// Infinite scroll on announces
 	if (HOME_INFINITE_SCROLL) {
-		echo $this->Html->script(['infinite-scroll.pkgd.min.js', 'items-infinite.js?20180819']);
+		echo $this->Html->script(['infinite-scroll.pkgd.min.js', 'items-infinite.js?20210807']);
 	}
 	?>
 	

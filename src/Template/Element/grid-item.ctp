@@ -1,3 +1,6 @@
+<?php
+$session = $this->request->getSession();
+?>
 <A href="<?= $this->Url->build(['controller'=>"Items", 'action'=>"view",$item->id]) ?>" class="card grid-item item-<?= $item->type ?> <?php if ($item->isBooked()) { ?>item-booked<?php } ?>">
 	<DIV class="card-header">
 		<h2 class="card-title"><?= h($item->title) ?></h2>
@@ -36,7 +39,7 @@
 				<?= h($item->category->title) ?>
 				<?php } ?>
 			</SPAN>
-			<?php if ($item->user->street == $this->request->session()->read("Auth.User.street") and $item->user->id != $this->request->session()->read("Auth.User.id")) { ?>
+			<?php if ($item->user->street == $session->read("Auth.User.street") and $item->user->id != $session->read("Auth.User.id")) { ?>
 			<SPAN class="item-same-street" title="<?= __("C'est dans votre rue") ?>"></SPAN>
 			<?php } ?>
 		</DIV>

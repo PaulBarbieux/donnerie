@@ -4,7 +4,7 @@ jQuery(document).ready(function(){
 	var pckr = $gridPackery.data('packery');
 	// Infinite scroll
 	$gridPackery.infiniteScroll({
-		path: ".paginator .page-next",
+		path: ".paginator .next A",
 		append: ".grid-item",
 		prefill: true,
 		outlayer: pckr,

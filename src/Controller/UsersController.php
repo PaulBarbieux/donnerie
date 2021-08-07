@@ -29,7 +29,7 @@ class UsersController extends AppController
 	
 	public function isAuthorized($user = null) {
 		parent::isAuthorized($user);
-		$action = $this->request->params['action'];
+		$action = $this->request->getParam('action');
 		if (in_array($action, ['index', 'exportEmailsCsv', 'add', 'view', 'edit', 'delete' ])) {
 			if ($user['role'] == "admin") {
 				return true;
@@ -108,15 +108,15 @@ class UsersController extends AppController
 					if ($this->Users->save($user)) {
 						// Confirmation email
 						$email = new Email();
-						$email->to($user->username)
-							->setTemplate('register_'.$user->language)
-							->viewVars([
+						$email->setTo($user->username);
+						$email->viewBuilder()->setTemplate('register_'.$user->language);
+						$email->setViewVars([
 								'user' => $user->alias,
 								'site_url' => Router::url("/", true), 
 								'site_name' => SITE_NAME, 
-								'confirm_url' => Router::url("/users/activate/".$confirmCode, true)])
-							->subject(__("{0} : confirmez votre inscription", SITE_NAME))
-							->send();
+								'confirm_url' => Router::url("/users/activate/".$confirmCode, true)]);
+						$email->setSubject(__("{0} : confirmez votre inscription", SITE_NAME));
+						$email->send();
 						$this->Flash->success(__("Vous êtes enregistré. Un email de confirmation a été envoyé à l'adresse {0}. Cela peut prendre quelques minutes - vérifiez votre dossier des spams.",$user->username));
 						return $this->redirect(['controller' => 'items', 'action' => 'home']);
 					}
@@ -253,8 +253,9 @@ class UsersController extends AppController
 				if ($user) {
 					$this->Auth->setUser($user);
 					$langIso = $user['language']."_".strtoupper($user['language']);
-					$this->request->session()->write('Config.language', $langIso);
-					I18n::locale($this->request->session()->read('Config.language'));
+					$session = $this->request->getSession();
+					$session->write('Config.language', $langIso);
+					I18n::setLocale($session->read('Config.language'));
 					return $this->redirect($this->Auth->redirectUrl());
 				}
 				$this->Flash->error(__("L'email ou le mot de passe est invalide. Avez-vous bien créé un compte sur notre site ?"));
@@ -282,10 +283,11 @@ class UsersController extends AppController
 	
 	public function resetPassword() {
         if ($this->request->is('post')) {
+			$session = $this->request->getSession();
 			// Get data
 			$data = $this->request->getData();
 			// Find user
-			$user = $this->Users->find()->where([ 'username'=>$data['username'] , 'status IS'=>$null ])->first();
+			$user = $this->Users->find()->where([ 'username'=>$data['username'] , 'status IS NULL' ])->first();
 			if (!isset($data['resetcode'])) {
 				// First pass : email and street
 				if ($this->isItHuman()) {
@@ -295,17 +297,17 @@ class UsersController extends AppController
 						} else {
 							// Make a reset code and save it in session
 							$resetCode = md5($data['username'].$data['street'].rand(1,9999).time());
-							$this->request->session()->write('resetCode', $resetCode);
+							$session->write('resetCode', $resetCode);
 							$email = new Email();
-							$email->to($user->username)
-								->setTemplate('reset_password_'.$user->language)
-								->viewVars([
+							$email->setTo($user->username);
+							$email->viewBuilder()->setTemplate('reset_password_'.$user->language);
+							$email->setViewVars([
 									'user' => $user->alias,
 									'site_url' => Router::url("/", true), 
 									'site_name' => SITE_NAME, 
-									'reset_code' => $resetCode])
-								->subject(__("{0} : code de renouvellement de mot de passe", SITE_NAME))
-								->send();
+									'reset_code' => $resetCode]);
+							$email->setSubject(__("{0} : code de renouvellement de mot de passe", SITE_NAME));
+							$email->send();
 							$this->Flash->success(__("Un code vient de vous être envoyé par email. Voyez les instructions plus bas."));
 							$this->set("inputCode", true);
 						}
@@ -315,7 +317,7 @@ class UsersController extends AppController
 				}
 			} else {
 				// Second pass : reset code
-				if (trim($data['resetcode']) != $this->request->session()->read('resetCode')) {
+				if (trim($data['resetcode']) != $session->read('resetCode')) {
 					$this->Flash->error(__("Votre code n'est pas correct."));
 				} elseif (strlen($data['password']) < 8) {
 					$this->Flash->error(__("Veuillez donner un mot de passe d'au moins 8 caractères."));

@@ -31,7 +31,7 @@ class ItemsController extends AppController
 		if ($user['role'] == "admin") {
 			return true;
 		}
-		$action = $this->request->params['action'];
+		$action = $this->request->getParam('action');
 		if (in_array($action, ['edit', 'delete'])) {
 			if ($id = $this->request->getParam('pass.0')) {
 				$item = $this->Items->get($id);
@@ -73,7 +73,7 @@ class ItemsController extends AppController
 	public function diaporama()
 	{
 		// Get translations for labels
-		I18n::locale('fr_FR');
+		I18n::setLocale('fr_FR');
 		$labels = array(
 			'd' => array(__("Je donne")),
 			'r' => array(__("Je cherche")),
@@ -82,7 +82,7 @@ class ItemsController extends AppController
 			'broken' => array(__("À réparer")),
 			'title' => array(__("Rendez-vous sur {0} pour répondre à ces annonces...", "<A href='http://".DOMAIN_NAME."'>".DOMAIN_NAME."</A>"))
 		);
-		I18n::locale('nl_NL');
+		I18n::setLocale('nl_NL');
 		$labels['d'][] = __("Je donne");
 		$labels['r'][] = __("Je cherche");
 		$labels['new'][] = __("Comme neuf");
@@ -210,7 +210,7 @@ class ItemsController extends AppController
 					$email = new Email();
 					if ($this->Auth->user('id') !== null) {
 						// Connected user
-						$email->replyTo([$this->Auth->user('username') => $this->Auth->user('alias')]);
+						$email->setReplyTo([$this->Auth->user('username') => $this->Auth->user('alias')]);
 						$applicant = $this->Auth->user('alias');
 						$applicantEmail = $this->Auth->user('username');
 					} else {
@@ -227,15 +227,15 @@ class ItemsController extends AppController
 							$this->Flash->error(__("Vous n'avez plus le droit d'utiliser ce site."));
 							$error = true;
 						} else {
-							$email->replyTo([$applicantEmail => $applicant]);
+							$email->setReplyTo([$applicantEmail => $applicant]);
 						}
 					}
 				}
 				if (!$error) {
 					// Send email to the owner
 					$email
-						->setTemplate('contact_item_'.$item->user->language)
-						->viewVars([
+						->viewBuilder()->setTemplate('contact_item_'.$item->user->language);
+					$email->setViewVars([
 							'owner' => $item->user->alias, 
 							'applicant' => $applicant,
 							'email' => $applicantEmail,
@@ -245,8 +245,8 @@ class ItemsController extends AppController
 							'item_delete' => Router::url("/items/mines/", true), 
 							'message' => nl2br($message)
 						])
-						->to($item->user->username)
-						->subject(__("{0} : message pour votre annonce {1}" , SITE_NAME , $item->title ))
+						->setTo($item->user->username)
+						->setSubject(__("{0} : message pour votre annonce {1}" , SITE_NAME , $item->title ))
 						->send();
 					// Count stats
 					$stats = TableRegistry::get('Stats');
@@ -255,20 +255,20 @@ class ItemsController extends AppController
 					$stats->save($stat);
 					// Send copy to applicant
 					$email
-						->setTemplate('contact_item_copy_'.LG)
-						->viewVars([
+						->viewBuilder()->setTemplate('contact_item_copy_'.LG);
+					$email->setViewVars([
 							'owner' => $item->user->alias, 
 							'applicant' => $applicant,
 							'item_title' => $item->title, 
 							'item_link' => Router::url("/items/view/".$item->id, true), 
 							'message' => nl2br($message)
 						])
-						->to($applicantEmail)
-						->replyTo("noreply@".DOMAIN_NAME)
-						->subject(__("{0} : votre message pour l'annonce {1}" , SITE_NAME , $item->title ))
+						->setTo($applicantEmail)
+						->setReplyTo("noreply@".DOMAIN_NAME)
+						->setSubject(__("{0} : votre message pour l'annonce {1}" , SITE_NAME , $item->title ))
 						->send();
 					// Reset form
-					$this->request->data('message', "");
+					$this->request->withData('message', "");
 					// Completed
 					$this->Flash->success(__("Votre message a été envoyé à {0}." , $item->user->alias ));
 				}
@@ -316,16 +316,15 @@ class ItemsController extends AppController
 					$stats->save($stat);
 					// Send email to admin
 					$email = new Email();
-					$email
-						->setTo($this->getAdminEmails())
-						->setTemplate('item_added_'.LG)
-						->viewVars([
+					$email->setTo($this->getAdminEmails());
+					$email->viewBuilder()->setTemplate('item_added_'.LG);
+					$email->setViewVars([
 							'alias' => $this->Auth->user('alias'), 
 							'title' => $item->title, 
 							'description' => $item->description,
-							'url' => Router::url("/items/view/".$item->id, true)])
-						->subject(SITE_NAME." : nouvelle annonce ".$item->title)
-						->send();
+							'url' => Router::url("/items/view/".$item->id, true)]);
+					$email->setSubject(SITE_NAME." : nouvelle annonce ".$item->title);
+					$email->send();
 					$this->Flash->success(__('Votre annonce est en ligne.'));
 					// Completed
 					return $this->redirect(['action' => 'mines']);
@@ -446,18 +445,17 @@ class ItemsController extends AppController
         if ($this->Items->save($item)) {
 			// Send email to the owner
 			$email = new Email();
-			$email
-				->to($item->user->username)
-				->setTemplate('outdate_item_'.$item->user->language)
-				->viewVars([
+			$email->setTo($item->user->username);
+			$email->viewBuilder()->setTemplate('outdate_item_'.$item->user->language);
+			$email->setViewVars([
 					'owner' => $item->user->alias, 
 					'item_title' => $item->title, 
 					'item_link' => Router::url("/items/view/".$item->id, true),
 					'mines_link' => Router::url("/items/mines/", true),
 					'site_name' => SITE_NAME
-					])
-				->subject(SITE_NAME." : ".__("traitez votre ancienne annonce {0}",$item->title))
-				->send();
+					]);
+			$email->setSubject(SITE_NAME." : ".__("traitez votre ancienne annonce {0}",$item->title));
+			$email->send();
             $this->Flash->success(__("Un email d'avertissement a été envoyé à l'annonceur, concernant son annonce {0}.", $item->title));
         } else {
             $this->Flash->error(__('Technical error.'));

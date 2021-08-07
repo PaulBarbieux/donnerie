@@ -3,9 +3,10 @@
 	https://v4-alpha.getbootstrap.com/components/navbar/
 */
 $admin = false;
-if ($this->request->session()->read("Auth.User.id")) {
+$session = $this->request->getSession();
+if ($session->read("Auth.User.id")) {
 	$connected = true;
-	if ($this->request->session()->read("Auth.User.role") == "admin") {
+	if ($session->read("Auth.User.role") == "admin") {
 		$admin = true;
 	}
 } else {
@@ -30,7 +31,7 @@ if ($this->request->session()->read("Auth.User.id")) {
 				</A>
 				<DIV class="dropdown-menu" aria-labelledby="categoryLinks">
 					<?php 
-					$categories = $this->request->session()->read('Categories');
+					$categories = $session->read('Categories');
 					foreach ($categories as $category) {
 						print $this->Html->link($category['title'], array('controller'=>"items", 'action'=>"category", $category['id']), array('class'=>"dropdown-item"));
 					}
@@ -67,8 +68,8 @@ if ($this->request->session()->read("Auth.User.id")) {
 				<?php } ?>
 			<LI class="nav-item dropdown">
 				<A class="nav-link dropdown-toggle" href="#" id="myProfileLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($this->request->session()->read('Auth.User.alias'),0,1)).".jpg") ?>');" src="https://www.gravatar.com/avatar/<?php echo md5($this->request->session()->read('Auth.User.username')) ?>?s=25&d=blank">
-          			<?= __("Bonjour") ?> <?php echo $this->request->session()->read('Auth.User.alias'); ?>
+					<IMG width="25" class="gravatar" style="background-image:url('<?= $this->Url->build("/img/gravatar/".strtoupper(substr($session->read('Auth.User.alias'),0,1)).".jpg") ?>');" src="https://www.gravatar.com/avatar/<?php echo md5($session->read('Auth.User.username')) ?>?s=25&d=blank">
+          			<?= __("Bonjour") ?> <?php echo $session->read('Auth.User.alias'); ?>
         		</A>
 				<DIV class="dropdown-menu" aria-labelledby="myProfileLinks">
 					<?= $this->Html->link(__("Mes annonces"), array('controller'=>"items", 'action'=>"mines"), array('class'=>"dropdown-item")) ?>
@@ -85,8 +86,9 @@ if ($this->request->session()->read("Auth.User.id")) {
 		<?php if (MULTI_LG) { ?>
 		<DIV class="btn-group btn-group-sm" id="switch-lg">
 			<?php
-			if ($this->request->session()->read('Config.language')) {
-				$lang = $this->request->session()->read('Config.language');
+			$session = $this->request->getSession();
+			if ($session->read('Config.language')) {
+				$lang = $session->read('Config.language');
 			} else {
 				$lang = "fr_FR";
 			}

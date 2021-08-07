@@ -37,8 +37,12 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler');
+        $this->loadComponent('RequestHandler', [
+            'enableBeforeRedirect' => false,
+        ]);
         $this->loadComponent('Flash');
+		
+        $session = $this->request->getSession();
 		
 		/*
 			Authorization
@@ -70,18 +74,18 @@ class AppController extends Controller
 			// Only one language set for the site
 			define ('MULTI_LG', false);
 			if (LANGUAGES == "fr") {
-				I18n::locale("fr_FR");
+				I18n::setLocale("fr_FR");
 				define('LG','fr');
 			} else {
-				I18n::locale("nl_NL");
+				I18n::setLocale("nl_NL");
 				define('LG','nl');
 			}
 		} else {
 			define ('MULTI_LG', true);
-			if ($this->request->session()->check('Config.language')) {
+			if ($session->check('Config.language')) {
 				// Get language from user profile (set by language switch)
-				I18n::locale($this->request->session()->read('Config.language'));
-				define('LG',substr($this->request->session()->read('Config.language'),0,2));
+				I18n::setLocale($session->read('Config.language'));
+				define('LG',substr($session->read('Config.language'),0,2));
 			} else {
 				// Set language based on browser, first fr or nl found (language switch neer clicked)
 				$firstLg = false;
@@ -96,10 +100,10 @@ class AppController extends Controller
 					}
 				}
 				if ($firstLg == "nl") {
-					I18n::locale("nl_NL");
+					I18n::setLocale("nl_NL");
 					define('LG','nl');
 				} else {
-					I18n::locale("fr_FR");
+					I18n::setLocale("fr_FR");
 					define('LG','fr');
 				}
 			}
@@ -113,10 +117,10 @@ class AppController extends Controller
 		/*
 			Categories
 		*/
-		if (!$this->request->session()->check('Categories')) {
+		if (!$session->check('Categories')) {
 			$connection = ConnectionManager::get('default');
 			$categories = $connection->execute('SELECT id, title_'.LG.' title FROM categories ORDER BY title_'.LG)->fetchAll('assoc');
-			$this->request->session()->write('Categories',$categories);
+			$session->write('Categories',$categories);
 		}
 		
         /*
@@ -136,7 +140,7 @@ class AppController extends Controller
     public function beforeRender(Event $event)
     {
        if (!array_key_exists('_serialize', $this->viewVars) &&
-            in_array($this->response->type(), ['application/json', 'application/xml'])
+            in_array($this->response->getType(), ['application/json', 'application/xml'])
         ) {
             $this->set('_serialize', true);
         }
@@ -147,8 +151,9 @@ class AppController extends Controller
 	}
 	
 	public function changeLanguage($language) {
-		$this->request->session()->write('Config.language', $language);
-		$this->request->session()->delete('Categories'); // Force reload categories in session
+		$session = $this->request->getSession();
+		$session->write('Config.language', $language);
+		$session->delete('Categories'); // Force reload categories in session
 		$this->redirect($this->referer());
 	}
 	
@@ -164,16 +169,16 @@ class AppController extends Controller
 				$data['url'] = $this->referer();
 				$template = "contact_".LG;
 				$email = new Email();
-				$email->replyTo([$data['email'] => $data['name']])
-					->setTemplate($template)
-					->viewVars([
+				$email->setReplyTo([$data['email'] => $data['name']]);
+				$email->viewBuilder()->setTemplate($template);
+				$email->setViewVars([
 						'email' => $data['email'], 
 						'name' => $data['name'], 
 						'url' => $data['url'], 
-						'message' => nl2br($data['message'])])
-					->setTo($this->getAdminEmails())
-					->subject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']))
-					->send();
+						'message' => nl2br($data['message'])]);
+				$email->setTo($this->getAdminEmails());
+				$email->setSubject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']));
+				$email->send();
 				$this->Flash->success(__("Votre message a été envoyé. Merci."));
 			}
 			$this->redirect($this->referer());

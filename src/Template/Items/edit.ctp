@@ -44,7 +44,7 @@
 								</DIV>
 							</DIV>
 							<?= $this->Form->file('image[]') ?>
-							<?= $this->Form->input('image_'.$iImg.'_url' , ['type' => 'hidden' ]); ?>
+							<?= $this->Form->control('image_'.$iImg.'_url' , ['type' => 'hidden' ]); ?>
 						</DIV>
 						<?php } ?>
 						&nbsp;

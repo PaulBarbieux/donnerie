@@ -9,7 +9,7 @@ class StatsController extends AppController
 
 	public function isAuthorized($user = null) {
 		parent::isAuthorized($user);
-		$action = $this->request->params['action'];
+		$action = $this->request->getParam('action');
 		if ($user['role'] == "admin") {
 			return true;
 		} else {
