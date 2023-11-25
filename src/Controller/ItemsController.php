@@ -32,7 +32,11 @@ class ItemsController extends AppController
 			return true;
 		}
 		$action = $this->request->getParam('action');
-		if (in_array($action, ['edit', 'delete'])) {
+		if ($action == "outdate") {
+			$this->Auth->config('authError', "Cette action n'est pas autorisée.");
+			return false;
+		}
+		if (in_array($action, ['edit', 'delete', 'book', 'renew'])) {
 			if ($id = $this->request->getParam('pass.0')) {
 				$item = $this->Items->get($id);
 				if ($item->user_id == $user['id']) {
@@ -433,7 +437,7 @@ class ItemsController extends AppController
     }
 
 	/*
-		Send a warning the the user about his old item
+		Send a warning to the user about his old item
 	*/
     public function outdate($id = null)
     {
