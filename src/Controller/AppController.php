@@ -113,7 +113,7 @@ class AppController extends Controller
 		} else {
 			define ('SITE_NAME',SITE_NAME_FR);
 		}
-		
+
 		/*
 			Categories
 		*/
@@ -253,8 +253,8 @@ class AppController extends Controller
 			}
 		}
 		
-		// list of permitted file types, this is only images but documents can be added
-		$permitted = array('image/gif'=>true,'image/jpeg'=>true,'image/pjpeg'=>true,'image/png'=>true);
+		// List of permitted file types, this is only images but documents can be added
+		$permitted = array('image/gif'=>false,'image/jpeg'=>true,'image/pjpeg'=>false,'image/png'=>false);
 		
 		// First pass : loop through and check file size and types
 		foreach($formdata as $file) {
@@ -262,8 +262,8 @@ class AppController extends Controller
 				if ($file['error'] == 1) {
 					$result['errors'][] = __("{0} est trop grande. Choisissez une autre image ou réduisez celle-ci avec un programme d'image.",$file['name']);
 					return $result;
-				} elseif (!isset($permitted[$file['type']])) {
-					$result['errors'][] = __("{0} ({1}) n'est pas un format accepté : gif, jpg, png.",$file['name'],$file['type']);
+				} elseif (!isset($permitted[$file['type']]) or !$permitted[$file['type']]) {
+					$result['errors'][] = __("L'image {0} n'a pas un format accepté ({1}) : uniquement JPEG.",$file['name'],$file['type']);
 					return $result;
 				} else {
 					list($widthSrc,$heightSrc) = getimagesize($file['tmp_name']);
