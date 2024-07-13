@@ -312,6 +312,27 @@ class AppController extends Controller
 	}
 		
 	public function resizeImage($rootFileName,$maxLongSize=800) {
+		// Get orientation
+		$deg = 0;
+		if (function_exists('exif_read_data')) {
+			$exif = exif_read_data($rootFileName);
+			if ($exif and isset($exif['Orientation'])) {
+		  		$orientation = $exif['Orientation'];
+		  		if ($orientation != 1) {
+					switch ($orientation) {
+						case 3: 
+							$deg = 180; 
+							break;
+						case 6: 
+							$deg = 270; 
+							break;
+						case 8: 
+							$deg = 90; 
+							break;
+					}
+				}
+			}
+		}
 		// Current size
 		list($widthSrc,$heightSrc) = getimagesize($rootFileName);
 		if (($widthSrc > $maxLongSize) or ($heightSrc > $maxLongSize)) {
@@ -333,8 +354,40 @@ class AppController extends Controller
 		$imgObj = imagecreatefromjpeg($rootFileName) or die ("Error imagecreatefromjpeg from ".$rootFileName);
 		$imgResized = imagecreatetruecolor($widthNew,$heightNew) or die ("Error imagecreatetruecolor");
 		if (!imagecopyresampled($imgResized,$imgObj,0,0,0,0,$widthNew,$heightNew,$widthSrc,$heightSrc)) die ("Error imagecopyreresampled");
+		if ($deg) {
+			$imgResized = imagerotate($imgResized, $deg, 0);
+		}
 		if (!imagejpeg($imgResized,$rootFileName,100)) die ("Error imagejpeg");
 		return true;
+	}
+	
+	function correctImageOrientation($filename) {
+	  if (function_exists('exif_read_data')) {
+		$exif = exif_read_data($filename);
+		if($exif && isset($exif['Orientation'])) {
+		  $orientation = $exif['Orientation'];
+		  if($orientation != 1){
+			$img = imagecreatefromjpeg($filename);
+			$deg = 0;
+			switch ($orientation) {
+			  case 3:
+				$deg = 180;
+				break;
+			  case 6:
+				$deg = 270;
+				break;
+			  case 8:
+				$deg = 90;
+				break;
+			}
+			if ($deg) {
+			  $img = imagerotate($img, $deg, 0);        
+			}
+			// then rewrite the rotated image back to the disk as $filename 
+			imagejpeg($img, $filename, 95);
+		  } // if there is some rotation necessary
+		} // if have the exif orientation info
+	  } // if function exists      
 	}
 
 	/*
