@@ -327,22 +327,27 @@ A.card:focus {
 :-ms-input-placeholder.form-control {
     color: #BBB;
     opacity: 1;
+  	letter-spacing: -.1rem;
 }
 ::-webkit-input-placeholder {
-  color: #AAA !important;
-  opacity:1;
+	color: #AAA !important;
+	opacity:1;
+	letter-spacing: -.1rem;
 }
 ::-moz-placeholder {
-  color: #AAA !important;
-  opacity:1;
+	color: #AAA !important;
+	opacity:1;
+	letter-spacing: -.1rem;
 }
 :-ms-input-placeholder {
-  color: #AAA !important;
-  opacity:1;
+	color: #AAA !important;
+	opacity:1;
+	letter-spacing: -.1rem;
 }
 ::placeholder {
-  color: #AAA !important;
-  opacity:1;
+	color: #AAA !important;
+	opacity:1;
+	letter-spacing: -.1rem;
 }
 /* Inline checkbox and radio */
 .form-group.row > .form-check-label {
@@ -398,6 +403,12 @@ NAV .gravatar {
 	#contact-block FORM {
 		width:100%;
 	}
+}
+#given_name { /* Robot trap */
+	position: absolute;
+	top:0;
+	left: -99999px;
+	overflow:hidden;
 }
 /*
 	Image uploading

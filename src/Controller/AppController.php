@@ -161,25 +161,29 @@ class AppController extends Controller
         if ($this->request->is('post')) {
 			if ($this->isItHuman(2)) {
 				$data = $this->request->getData();
-				if (!isset($data['email'])) {
-					$data['email'] = $this->Auth->user('username');
-					$data['name'] = $this->Auth->user('alias');
+				if (trim($data['district']) == POSTCODE) {
+					if (!isset($data['email'])) {
+						$data['email'] = $this->Auth->user('username');
+						$data['name'] = $this->Auth->user('alias');
+					}
+					$data['message'] = strip_tags(trim($data['message']));
+					$data['url'] = $this->referer();
+					$template = "contact_".LG;
+					$email = new Email();
+					$email->setReplyTo([$data['email'] => $data['name']]);
+					$email->viewBuilder()->setTemplate($template);
+					$email->setViewVars([
+							'email' => $data['email'], 
+							'name' => $data['name'], 
+							'url' => $data['url'], 
+							'message' => nl2br($data['message'])]);
+					$email->setTo($this->getAdminEmails());
+					$email->setSubject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']));
+					$email->send();
+					$this->Flash->success(__("Votre message a été envoyé. Merci."));
+				} else {
+					$this->Flash->error(__("Protection anti-spam : veuillez donner le code postal de notre commune dans le formulaire de contact."));
 				}
-				$data['message'] = strip_tags(trim($data['message']));
-				$data['url'] = $this->referer();
-				$template = "contact_".LG;
-				$email = new Email();
-				$email->setReplyTo([$data['email'] => $data['name']]);
-				$email->viewBuilder()->setTemplate($template);
-				$email->setViewVars([
-						'email' => $data['email'], 
-						'name' => $data['name'], 
-						'url' => $data['url'], 
-						'message' => nl2br($data['message'])]);
-				$email->setTo($this->getAdminEmails());
-				$email->setSubject(__("{0} : {1} ({2})", SITE_NAME, $data['subject'], $data['name']));
-				$email->send();
-				$this->Flash->success(__("Votre message a été envoyé. Merci."));
 			}
 			$this->redirect($this->referer());
 		}
@@ -359,6 +363,35 @@ class AppController extends Controller
 		}
 		if (!imagejpeg($imgResized,$rootFileName,100)) die ("Error imagejpeg");
 		return true;
+	}
+	
+	function correctImageOrientation($filename) {
+	  if (function_exists('exif_read_data')) {
+		$exif = exif_read_data($filename);
+		if($exif && isset($exif['Orientation'])) {
+		  $orientation = $exif['Orientation'];
+		  if($orientation != 1){
+			$img = imagecreatefromjpeg($filename);
+			$deg = 0;
+			switch ($orientation) {
+			  case 3:
+				$deg = 180;
+				break;
+			  case 6:
+				$deg = 270;
+				break;
+			  case 8:
+				$deg = 90;
+				break;
+			}
+			if ($deg) {
+			  $img = imagerotate($img, $deg, 0);        
+			}
+			// then rewrite the rotated image back to the disk as $filename 
+			imagejpeg($img, $filename, 95);
+		  } // if there is some rotation necessary
+		} // if have the exif orientation info
+	  } // if function exists      
 	}
 
 	/*
