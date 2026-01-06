@@ -169,7 +169,7 @@ class UsersController extends AppController
 			}
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
@@ -242,7 +242,7 @@ class UsersController extends AppController
 		if (!$error) {
 			$this->deleteUserItems($id);
 		}
-		return $this->redirect(['action' => 'index']);
+		return $this->redirect($this->referer());
     }
 
     public function login()
